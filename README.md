@@ -12,7 +12,7 @@ Level 2 was where I finally nailed particles, texturing & modelling, and where I
 
 The eagle eyed will be able to see the difference between the Level 1 and Level 2 screen shots; 
 On the left, very little texturing on surfaces (except the hand) - this is using Unity's in-built texture mapping.
-On the right, texturing everywhere (yes I know the slalom is too smooth, shush), these textures are added with Substance Painter.
+On the right, texturing everywhere; these textures are added with Substance Painter.
 
 <img src="https://user-images.githubusercontent.com/11778864/155048472-3447fc73-da5d-48c0-86c8-de1ce1deff7a.png" width="450"> <img src="https://user-images.githubusercontent.com/11778864/155048470-cfe21e08-6165-4d19-a2d3-fd3b3d17c738.png" width="450">
 
