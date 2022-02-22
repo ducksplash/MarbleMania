@@ -6,7 +6,7 @@ The 1984 classic holds a particular place in my heart; it was also a source of u
 
 Marble Mania is a 3D third person game built in Unity.
 
-Compared to my other projects, MM represents the extent of the skills & experiencew I have built up since <a href="https://github.com/ducksplash/moonshot">Winston is Stuck on the Moon</a> and the height within this project is Level 2.
+Compared to my other projects, MM represents the extent of the skills & experience I have built up since <a href="https://github.com/ducksplash/moonshot">Winston is Stuck on the Moon</a> and the height within this project is Level 2.
 
 Level 2 was where I finally nailed particles, texturing & modelling, and where I was able to refine my codebase for creating and destroying objects on the fly (for the volcano).
 
