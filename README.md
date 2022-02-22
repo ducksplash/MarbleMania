@@ -8,7 +8,7 @@ Marble Mania is a 3D third person game built in Unity.
 
 Compared to my other projects, MM represents the extent of the skills & experience I have built up since <a href="https://github.com/ducksplash/moonshot">Winston is Stuck on the Moon</a> and the height within this project is Level 2.
 
-Level 2 was where I finally nailed particles, texturing & modelling, and where I was able to refine my codebase for creating and destroying objects on the fly (for the volcano).
+Level 2 was where I finally nailed particles, texturing & modelling, and where I was able to refine my codebase for creating and destroying objects on the fly (for the volcanic eruptions).
 
 The eagle eyed will be able to see the difference between the Level 1 and Level 2 screen shots; 
 On the left, very little texturing on surfaces (except the hand) - this is using Unity's in-built texture mapping.
