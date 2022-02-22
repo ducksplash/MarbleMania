@@ -17,7 +17,7 @@ On the right, texturing everywhere; these textures are added with Substance Pain
 <img src="https://user-images.githubusercontent.com/11778864/155048472-3447fc73-da5d-48c0-86c8-de1ce1deff7a.png" width="450"> <img src="https://user-images.githubusercontent.com/11778864/155048470-cfe21e08-6165-4d19-a2d3-fd3b3d17c738.png" width="450">
 
 Level 3 has had more work done on it that it appears; that shark tank was a f****** nightmare; the shark just kept floating away, and the fix was MATHS.
-The other time sink was getting that Pirate to follow the player, fire at the player, crash into the player - but not flip over, row backwards, float away or tilt (as he verymuch  wanted to!) - By contrast, making the player itself get in a boat and row it took about half an hour.
+The other time sink was getting that Pirate to follow the player, fire at the player, crash into the player - but not flip over, row backwards, float away or tilt (as he very much wanted to!) - By contrast, making the player itself get in a boat and row it took about half an hour.
 Just like before, mathematics came to save the day. So to anyone who says "YoU cAn Be A GaMe DeV WiThOuT MaThS" - EFF OFF :P
 
 <img src="https://user-images.githubusercontent.com/11778864/155138845-d92d1f0e-019f-478b-a842-36184da4bec4.png" width="450"> <img src="https://user-images.githubusercontent.com/11778864/155048481-8f4c4b6c-3a5a-467a-bf04-e4a27b5df3ae.png" width="450">
