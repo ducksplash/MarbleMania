@@ -22,7 +22,7 @@ Just like before, mathematics came to save the day. So to anyone who says "YoU c
 
 <img src="https://user-images.githubusercontent.com/11778864/155138845-d92d1f0e-019f-478b-a842-36184da4bec4.png" width="450"> <img src="https://user-images.githubusercontent.com/11778864/155048481-8f4c4b6c-3a5a-467a-bf04-e4a27b5df3ae.png" width="450">
 
-MM has been a labour of love thus far - even for a 3 level demo, I have easily sunk 1,000 hours into this, mainly making models and doing textures with my favourite part - writing the code - taking the least amount of time.
+MM has been a labour of love thus far - even for a 3 level demo, I have easily sunk 1,000 hours into this approximately 13GB project (I need to optimise a LOT during polish stage!), mainly making models and doing textures with my favourite part - writing the code - taking the least amount of time.
 
 The plan was to have the demo out before October, but I started a new job and my studies started to heat up again, so this has been rescheduled for May 2020.
 
