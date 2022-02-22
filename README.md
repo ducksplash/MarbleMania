@@ -24,6 +24,6 @@ Just like before, mathematics came to save the day. So to anyone who says "YoU c
 
 MM has been a labour of love thus far - even for a 3 level demo, I have easily sunk 1,000 hours into this approximately 13GB project (I need to optimise a LOT during polish stage!), mainly making models and doing textures with my favourite part - writing the code - taking the least amount of time.
 
-The plan was to have the demo out before October, but I started a new job and my studies started to heat up again, so this has been rescheduled for May 2020.
+The plan was to have the demo out before October, but I started a new job and my studies started to heat up again, so this has been rescheduled for June 2022 (studies go off-season in May so i'll have my evenings back!).
 
 The decision to continue the game after the demo will be determined by the audience - if there is one at all :P
