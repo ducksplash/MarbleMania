@@ -33,9 +33,10 @@ public class PirateBoat : MonoBehaviour
 	public Mesh IntactBoatMesh;
 	public Mesh DamagedBoatMeshOne;
 	public Mesh DamagedBoatMeshTwo;
-	
-	
-    void Start()
+	public float PirateVisionDistance;
+	public float MinimumCannonDistance;
+
+	void Start()
     {
 		
 		CurrentBoat = TheBoat;
@@ -90,7 +91,7 @@ void OnTriggerEnter(Collider other)
 	
 
 					
-			if (Vector3.Distance(TheBoat.transform.position, Player.transform.position) < 20f && !PlayerSpotted)
+			if (Vector3.Distance(TheBoat.transform.position, Player.transform.position) < PirateVisionDistance && !PlayerSpotted)
 			{
 				CrookLightMaterial.SetColor("_EmissionColor", CrookLightSpottedColor);
 				Player.transform.GetComponent<SoundManager>().ENEMYSPOTTED();
@@ -98,7 +99,7 @@ void OnTriggerEnter(Collider other)
 				PlayerSpotted = true;
 			}
 			
-			if (Vector3.Distance(TheBoat.transform.position, Player.transform.position) > 25f && PlayerSpotted)
+			if (Vector3.Distance(TheBoat.transform.position, Player.transform.position) > PirateVisionDistance && PlayerSpotted)
 			{
 				CrookLightMaterial.SetColor("_EmissionColor", CrookLightStartColor);
 				CrookLight.GetComponent<Light>().color = CrookLightStartColor;
@@ -107,7 +108,7 @@ void OnTriggerEnter(Collider other)
 			
 			
 				
-			if (Vector3.Distance(TheBoat.transform.position, Player.transform.position) > 8f && Vector3.Distance(TheBoat.transform.position, Player.transform.position) < 20f)
+			if (Vector3.Distance(TheBoat.transform.position, Player.transform.position) > MinimumCannonDistance && Vector3.Distance(TheBoat.transform.position, Player.transform.position) < PirateVisionDistance)
 			{
 				if (!CannonEngaged)
 				{
