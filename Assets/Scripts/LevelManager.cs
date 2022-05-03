@@ -386,6 +386,7 @@ public class LevelManager : MonoBehaviour
 		LevelStartScreen.GetComponent<CanvasGroup>().blocksRaycasts = false;
 		LevelStartScreen.GetComponent<CanvasGroup>().alpha = 0.0f;		
 		PlayerStats.DEAD = false;
+		PlayerStats.STOP = false;
 		PlayerStats.shielded = false;
 		LevelManager.TimeUpTriggered = false;
 		CollisionHandler.GoalTriggered = false;
