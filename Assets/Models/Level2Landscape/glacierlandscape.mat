@@ -21,23 +21,22 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: glacierlandscape
-  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-  m_ValidKeywords:
-  - _EMISSION
-  - _METALLICSPECGLOSSMAP
-  - _NORMALMAP
-  - _SPECULAR_SETUP
+  m_Shader: {fileID: -6465566751694194690, guid: 5048a2165abb77d4796626b323d48a4e, type: 3}
+  m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 1
-  m_CustomRenderQueue: 2000
-  stringTagMap:
-    RenderType: Opaque
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_BA7A7B69:
+        m_Texture: {fileID: 2800000, guid: 3368ee4c8cd681b4f8dbfba8197cfbc5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BaseMap:
         m_Texture: {fileID: 2800000, guid: f8e66c70f02e49c41baa65def86cbd2b, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -78,6 +77,14 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_0c074bd266894d80a4bcc3af250f8f40_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 0a1c66924b49b6e4f83a31d71c4f2693, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_a909b76afd924197aa5021b53dfe843c_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 376f739b38c9896469edef3e8421ff32, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
         m_Texture: {fileID: 2800000, guid: c0d27c0ba3670c145886268c4b38b340, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -96,6 +103,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - Vector1_54C8F996: 3
+    - Vector1_62063AE: 0.01
+    - Vector1_9A5AA8FA: 0.71
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -114,6 +124,7 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _Smoothness: 0
@@ -125,6 +136,8 @@ Material:
     - _WorkflowMode: 0
     - _ZWrite: 1
     m_Colors:
+    - Color_235DB7F: {r: 0.17755425, g: 0.33436576, b: 0.35849056, a: 0}
+    - Color_DFC2AB36: {r: 0, g: 0.7199998, b: 1, a: 0}
     - _BaseColor: {r: 0.3882353, g: 0.7830189, b: 0.7830189, a: 1}
     - _Color: {r: 0.38823527, g: 0.7830188, b: 0.7830188, a: 1}
     - _EmissionColor: {r: 0.01886791, g: 0.01886791, b: 0.01886791, a: 1}
