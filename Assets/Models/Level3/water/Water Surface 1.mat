@@ -2,15 +2,15 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Water Surface 1
-  m_Shader: {fileID: 4800000, guid: cab0bc95e1ce4946a1298a052a7d1d6f, type: 3}
-  m_ShaderKeywords: EFFECT_ALBEDO2 EFFECT_FOAM EFFECT_MICROWAVE EFFECT_NORMALMAP2
-    EFFECT_PARALLAX
+  m_Shader: {fileID: -6465566751694194690, guid: 8ed8073c62442374e9c9d77d7f543e2f, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -124,6 +124,14 @@ Material:
         m_Texture: {fileID: 2800000, guid: dd148cda80391e24ab09fc059044a69a, type: 3}
         m_Scale: {x: 0.1, y: 0.1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_0c074bd266894d80a4bcc3af250f8f40_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 0a1c66924b49b6e4f83a31d71c4f2693, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_a909b76afd924197aa5021b53dfe843c_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 376f739b38c9896469edef3e8421ff32, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _WaveNormals:
         m_Texture: {fileID: 2800000, guid: 072631bffdf560c429f23de4caae0c28, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -132,6 +140,19 @@ Material:
         m_Texture: {fileID: 2800000, guid: 0c41e829b9bb6ee4cb72abae07230cdb, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - _Albedo2Flow: 0.9
     - _Albedo2Tiling: 0.9
@@ -209,6 +230,8 @@ Material:
     - _ParallaxNoiseScale: 1
     - _ParallaxNormal2Offset: 2
     - _ParallaxScale: 0.51
+    - _QueueControl: 0
+    - _QueueOffset: 0
     - _Radius: 1
     - _Reflect: 1
     - _RefractionIntensity: 0.61
@@ -244,3 +267,17 @@ Material:
     - _ReflectColor: {r: 0.07605405, g: 0.084, b: 0.082864866, a: 1}
     - _SpecColor: {r: 0.4, g: 0.4, b: 0.3764706, a: 1}
     - _SpecularColor: {r: 0.5808823, g: 0.5808823, b: 0.5808823, a: 1}
+  m_BuildTextureStacks: []
+--- !u!114 &2206114183554146301
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5

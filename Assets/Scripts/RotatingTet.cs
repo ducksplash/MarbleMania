@@ -8,28 +8,16 @@ public class RotatingTet : MonoBehaviour
 	
 	private ParticleSystem part;
 	
-	
 	void Start()
 	{
-		
-			part = gameObject.GetComponent<ParticleSystem>();
-		
+		part = gameObject.GetComponent<ParticleSystem>();
 	}
 	
 	
 	void Update()
 	{
-	
-			gameObject.transform.Rotate(new Vector3 (0, 4, 0) * (Time.smoothDeltaTime * 7));
-
-
-		
+		gameObject.transform.Rotate(new Vector3 (0, 4, 0) * (Time.smoothDeltaTime * 7));
 	}
-	
-
-	
-	
-	
 	
 	
 	void OnParticleCollision(GameObject other)

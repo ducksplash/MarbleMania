@@ -15,24 +15,28 @@ MonoBehaviour:
   version: 5
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Water Specular 1
-  m_Shader: {fileID: -6465566751694194690, guid: 8ed8073c62442374e9c9d77d7f543e2f, type: 3}
-  m_ShaderKeywords: EFFECT_ALBEDO2 EFFECT_FOAM EFFECT_MICROWAVE EFFECT_NORMALMAP2
-    EFFECT_PARALLAX EFFECT_REFLECTION
-  m_LightmapFlags: 2
+  m_Shader: {fileID: -6465566751694194690, guid: 5048a2165abb77d4796626b323d48a4e, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 1
-  m_CustomRenderQueue: 2000
+  m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_BA7A7B69:
+        m_Texture: {fileID: 2800000, guid: 3368ee4c8cd681b4f8dbfba8197cfbc5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _AlbedoTex1:
         m_Texture: {fileID: 2800000, guid: d6840f77873948aeba2cdce3985ccf47, type: 3}
         m_Scale: {x: 60, y: 60}
@@ -195,6 +199,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - Vector1_54C8F996: 1
+    - Vector1_62063AE: 0.01
+    - Vector1_9A5AA8FA: 0.71
     - _Albedo2Flow: 0.3
     - _Albedo2Tiling: 0.9
     - _AlbedoContrast: 1.4
@@ -315,6 +322,8 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
+    - Color_235DB7F: {r: 0.17755422, g: 0.33436573, b: 0.35849053, a: 0.6117647}
+    - Color_DFC2AB36: {r: 0.43867922, g: 0.84371066, b: 1, a: 0.57254905}
     - _AlbedoColor: {r: 0.050980393, g: 0.06182073, b: 0.101960786, a: 1}
     - _BaseColor: {r: 0.6084906, g: 0.7988715, b: 1, a: 1}
     - _BlendColor: {r: 0.29411763, g: 0.29411763, b: 0.29411763, a: 1}

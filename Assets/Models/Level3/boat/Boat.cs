@@ -16,23 +16,16 @@ public class Boat : MonoBehaviour
 	public Vector3 BoatStartPos;
 	public GameObject BoatPrefab;
 	public GameObject CurrentBoat;
-	public int DamageLevel;
-	public GameObject DamageableVessel;
-	
-	
 	
     void Start()
     {
-		DamageLevel = 0;
 		BoatStartPos = transform.position;
-		BoatIntact = true;
 		
 		PlayerRB = Player.GetComponent<Rigidbody>();
 		InBoat = false;
 		
 		Rains = TheBoat.transform.Find("rains").GetComponent<ParticleSystem>();
 		PlayerLock = TheBoat.transform.Find("seat");
-		
     }
 	
 	
@@ -40,58 +33,45 @@ public class Boat : MonoBehaviour
 	
 void OnTriggerEnter(Collider other)
 	{
-		
-		
-	if (!InBoat && BoatIntact)
-	{
-		
-		
-		if (other.gameObject.name.Contains("PLAYER"))
+
+
+		if (!InBoat && !PlayerStats.DEAD)
 		{
-			Debug.Log("grab player");
-			PlayerStats.STOP = true;
-			PlayerRB.velocity = Vector3.zero;
-			PlayerRB.isKinematic = true;
-			PlayerRB.useGravity = false;
-			Player.transform.parent = TheBoat.transform;
-			Rains.Play();	
-			Player.transform.position = PlayerLock.position;			
-			InBoat = true;
+
+			if (other.gameObject.name.Contains("PLAYER"))
+			{
+				Debug.Log("grab player");
+				PlayerStats.STOP = true;
+				PlayerRB.velocity = Vector3.zero;
+				PlayerRB.isKinematic = true;
+				PlayerRB.useGravity = false;
+				Player.transform.parent = TheBoat.transform;
+				Rains.Play();
+				Player.transform.position = PlayerLock.position;
+				InBoat = true;
+			}
 		}
-		
-		
-				
-		// if (other.gameObject.name.Contains("cannonball"))
-		// {
-			// Debug.Log("cannonball");
-		// }
-		
-	}	
-}
+
+		if (InBoat)
+		{
+
+		}
+
+
+	}
 
     void OnCollisionEnter(Collision collision)
     {
-		Debug.Log(gameObject.name);
-		Debug.Log(collision.gameObject.name);
 		if (collision.gameObject.name.Contains("cannonball"))
 		{
-			Debug.Log("cannonball");
-			DamageLevel = 1;
-			var dmgVesselOne = Resources.Load<Mesh>("boatmeshes/dasboot-dmg1");
-			
-			DamageableVessel.GetComponent<MeshFilter>().mesh = dmgVesselOne;
-			//var meshImageZero = Resources.Load<Texture>("playermeshimages/default");
-			
-			
-			
-			
+			Debug.Log("cannon ball");
+
 		}
-		
 	}
 	
 
-public void ExitBoat()
-{
+	public void ExitBoat()
+	{
 	PlayerStats.STOP = false;
 	PlayerRB.isKinematic = false;
 	PlayerRB.useGravity = true;
@@ -99,13 +79,31 @@ public void ExitBoat()
 	Rains.Stop();				
 	InBoat = false;	
 	Debug.Log("all this happened");
-}
+	}
+
+
+	public void DestroyBoat()
+	{
+		Destroy(TheBoat);
+		Invoke("RespawnBoat", 1);
+
+	}
+
+	public void RespawnBoat()
+	{
+		CurrentBoat = Instantiate(BoatPrefab, BoatStartPos, Quaternion.identity);
+		CurrentBoat.transform.parent = transform;
+		TheBoat = CurrentBoat;
+		Rains = TheBoat.transform.Find("rains").GetComponent<ParticleSystem>();
+		BoatRB = TheBoat.GetComponent<Rigidbody>();
+		PlayerLock = TheBoat.transform.Find("seat");
+
+	}
 
 
 
 
-
-void MoveBoat() 
+	void MoveBoat() 
 {
 	
 	if (InBoat)
@@ -152,24 +150,6 @@ void MoveBoat()
 		}
 		
     }
-	
-	public void DestroyBoat()
-	{
-		Destroy(TheBoat);
-		Invoke("RespawnBoat",1);
-		
-	}
-	
-	void RespawnBoat()
-	{
-		CurrentBoat = Instantiate(BoatPrefab, BoatStartPos, Quaternion.identity);
-		CurrentBoat.transform.parent = transform;
-		TheBoat = CurrentBoat;
-		Rains = TheBoat.transform.Find("rains").GetComponent<ParticleSystem>();
-		BoatRB = TheBoat.GetComponent<Rigidbody>();
-		PlayerLock = TheBoat.transform.Find("seat");
-		
-	}
 	
 
 }

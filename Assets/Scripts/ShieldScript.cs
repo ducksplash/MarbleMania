@@ -22,65 +22,62 @@ public class ShieldScript : MonoBehaviour
 	
 	
 	
-	    void OnCollisionEnter(Collision collision)
+	void OnCollisionEnter(Collision collision)
+	{
+
+		if (collision.gameObject.name.Contains("spikes") && PlayerStats.shielded && !amnesty)
 		{
+			RemoveShield();
+				
+			gameObject.GetComponent<SoundManager>().POP();
+			gameObject.GetComponent<Toast>().NewToast("Careful Now");
+		}	
+			
+			
+		if (collision.gameObject.name.Contains("VOID") && PlayerStats.shielded && !amnesty)
+		{
+			RemoveShield();
+				
+			gameObject.GetComponent<SoundManager>().POP();
+		}	
+			
+		if (collision.gameObject.name.Contains("LAVA") && PlayerStats.shielded && !amnesty)
+		{
+			RemoveShield();
+				
+			gameObject.GetComponent<SoundManager>().POP();
+		}	
+				
+				
+		if (collision.gameObject.name.Contains("EnemyBall") && PlayerStats.shielded && !amnesty)
+		{
+			RemoveShield();
 
-			if (collision.gameObject.name.Contains("spikes") && PlayerStats.shielded)
-			{
-				RemoveShield();
-				
-				gameObject.GetComponent<SoundManager>().POP();
-				gameObject.GetComponent<Toast>().NewToast("Careful Now");
-			}	
-			
-			
-			if (collision.gameObject.name.Contains("VOID") && PlayerStats.shielded)
-			{
-				RemoveShield();
-				
-				gameObject.GetComponent<SoundManager>().POP();
-				gameObject.GetComponent<Toast>().NewToast("i can't help you anymore soz");
-			}	
-			
-			if (collision.gameObject.name.Contains("LAVA") && PlayerStats.shielded)
-			{
-				RemoveShield();
-				
-				gameObject.GetComponent<SoundManager>().POP();
-				gameObject.GetComponent<Toast>().NewToast("i can't help you anymore soz");
-			}	
-				
-				
-			if (collision.gameObject.name.Contains("EnemyBall") && PlayerStats.shielded)
-			{
-				RemoveShield();
-
-				gameObject.GetComponent<SoundManager>().POP();
-				gameObject.GetComponent<Score>().Add(100,"Enemy");
-			}
-			
-			
-			
-			if (collision.gameObject.name.Contains("WALL") || gameObject.name.Contains("wall"))
-			{
-				gameObject.GetComponent<SoundManager>().WALLCOLLIDE();
-			}
-
-			if (collision.gameObject.name.Contains("funnel"))
-			{
-				gameObject.GetComponent<SoundManager>().PLASTICCOLLIDE();
-			}
-			
-			
-			if (collision.gameObject.name.Contains("WeeBeastie") && PlayerStats.shielded)
-			{
-				RemoveShield();
-				
-				gameObject.GetComponent<SoundManager>().POP();
-				gameObject.GetComponent<Toast>().NewToast("you're on your own, soz.");
-			}
-	
+			gameObject.GetComponent<SoundManager>().POP();
 		}
+			
+			
+			
+		if (collision.gameObject.name.Contains("WALL") || gameObject.name.Contains("wall"))
+		{
+			gameObject.GetComponent<SoundManager>().WALLCOLLIDE();
+		}
+
+		if (collision.gameObject.name.Contains("funnel"))
+		{
+			gameObject.GetComponent<SoundManager>().PLASTICCOLLIDE();
+		}
+
+
+		if (collision.gameObject.name.Contains("WeeBeastie") && PlayerStats.shielded && !amnesty)
+		{
+			RemoveShield();
+
+			gameObject.GetComponent<SoundManager>().POP();
+			gameObject.GetComponent<Toast>().NewToast("you're on your own, soz.");
+		}
+	}
+
 
 
 
@@ -122,11 +119,9 @@ public class ShieldScript : MonoBehaviour
 	
 	IEnumerator EndAmnesty()
 	{
-		yield return new WaitForSeconds(0.5f);	
+		yield return new WaitForSeconds(1f);	
 		amnesty = false;
-	
-		
-		
+
 	}
 	
 

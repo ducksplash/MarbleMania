@@ -9,7 +9,8 @@ public class LevelManager : MonoBehaviour
 {
 	
 	public bool LevelOver;
-	public bool LevelComplete;
+	public static bool LevelComplete;
+	public static int ContestedScore;
 	public bool LevelFailed;
 	
 	public TextMeshProUGUI LevelEndMessage;
@@ -87,6 +88,7 @@ public class LevelManager : MonoBehaviour
 	    LevelOver = false;
 		LevelComplete = false;
 		LevelFailed = false;
+		ContestedScore = 0;
 		ThisTimerUpScreen = TimerUpScreen.GetComponent<CanvasGroup>();
 		LevelCamera.GetComponent<Camera>();
 		ThisPausedPanel = PausedPanel.GetComponent<CanvasGroup>();
@@ -245,8 +247,10 @@ public class LevelManager : MonoBehaviour
 	
 	public static void LevelEnded(float timeleft)
 	{
-		
-		
+
+		LevelComplete = true;
+
+
 		Cursor.lockState = CursorLockMode.None;
 
 		LevelManager.CloseAllStatic();
@@ -281,7 +285,8 @@ public class LevelManager : MonoBehaviour
 		
 		ThisPlayerScoreTotalText.text = (PlayerStats.PlayerScore+TotalToAdd).ToString();
 		
-		PlayerStats.PlayerScore += TotalToAdd;		
+		PlayerStats.PlayerScore += TotalToAdd;
+		ContestedScore = TotalToAdd;
 		TheLevelEndHeaderText.text = "Level Complete";
 	
 	}
@@ -355,26 +360,26 @@ public class LevelManager : MonoBehaviour
 		SceneManager.LoadScene(nextLevel);
 		
 	}
-	
-	
-	
-	
+
+
+
+
 	public void RestartLevel()
 	{
 		ThisHUDGUI.alpha = 0.0f;
 		StartCoroutine(ThisCamera.GetComponent<CameraFade>().DoFlatBlack());
 		StartCoroutine(ResetLevel());
 		PausedPanel.GetComponent<CanvasGroup>().blocksRaycasts = false;
-		PausedPanel.GetComponent<CanvasGroup>().alpha = 0.0f;		
+		PausedPanel.GetComponent<CanvasGroup>().alpha = 0.0f;
 		LevelEndScreen.GetComponent<CanvasGroup>().blocksRaycasts = false;
-		LevelEndScreen.GetComponent<CanvasGroup>().alpha = 0.0f;		
+		LevelEndScreen.GetComponent<CanvasGroup>().alpha = 0.0f;
 		TimerUpScreen.GetComponent<CanvasGroup>().blocksRaycasts = false;
-		TimerUpScreen.GetComponent<CanvasGroup>().alpha = 0.0f;	
+		TimerUpScreen.GetComponent<CanvasGroup>().alpha = 0.0f;
 		RestartScreen.GetComponent<CanvasGroup>().blocksRaycasts = false;
-		RestartScreen.GetComponent<CanvasGroup>().alpha = 0.0f;	
-		
+		RestartScreen.GetComponent<CanvasGroup>().alpha = 0.0f;
+
 	}
-	
+
 	public IEnumerator ResetLevel()
 	{
 		yield return new WaitForSeconds(0.8f);	
@@ -384,7 +389,13 @@ public class LevelManager : MonoBehaviour
 		PlayerStats.shielded = false;
 		LevelManager.TimeUpTriggered = false;
 		CollisionHandler.GoalTriggered = false;
-		PlayerStats.Playing = false;			
+		PlayerStats.Playing = false;
+        if (LevelComplete)
+        {
+			PlayerStats.PlayerScore -= PlayerStats.PlayerScoreThisLevel;
+			PlayerStats.PlayerScore -= ContestedScore;
+
+		}
 		PlayerStats.PlayerScoreThisLevel = 0;	
 		Timer.TimerRunning = false;	
 		PlayerStats.ScoreMultiplier	= 1;

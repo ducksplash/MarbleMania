@@ -16,13 +16,9 @@ public class Toast : MonoBehaviour
 	
 	public void NewToast(string Slug)
 	{
-	
 		StartCoroutine(DoToast(Slug));
-		
 	}
-	
-	
-	
+		
 	IEnumerator DoToast(string ToastMessage)
 	{
 		
@@ -30,5 +26,4 @@ public class Toast : MonoBehaviour
 		ToastAnimator.SetTrigger("NewToast");	
 		yield break;
 	}
-	
 }

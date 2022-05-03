@@ -12,7 +12,6 @@ using System.Collections;
 	 public float enemySpawnZ;
 	 private Vector3 enemyRespawnLanding;
 	 Rigidbody rb;
-	 private bool PlayerSpoted = false;
 	void Start()
 	{
 		

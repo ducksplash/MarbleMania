@@ -2,16 +2,20 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: floatingSign
   m_Shader: {fileID: -6465566751694194690, guid: ab027db824b6b4e499b248d6b20100e6, type: 3}
-  m_ShaderKeywords: _ALPHAMODULATE_ON _EMISSION _ENVIRONMENTREFLECTIONS_OFF _METALLICSPECGLOSSMAP
-    _SPECULAR_SETUP
-  m_LightmapFlags: 1
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - _ALPHAMODULATE_ON
+  - _EMISSION
+  - _ENVIRONMENTREFLECTIONS_OFF
+  - _METALLICSPECGLOSSMAP
+  m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1

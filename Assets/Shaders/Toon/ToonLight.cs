@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class ToonLight : MonoBehaviour
 {
-    private Light light = null;
+    private new Light light = null;
 
     private void OnEnable()
     {

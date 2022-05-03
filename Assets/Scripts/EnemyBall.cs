@@ -76,7 +76,7 @@ using System.Collections;
 				
 		if (collision.transform.name.Contains("spikes") && !enemyDead)
 		{
-			Player.GetComponent<Score>().Add(50,"Kamikaze");
+			Player.GetComponent<Score>().Add(50,"Spiked");
 			
 			
 			gameObject.GetComponent<SoundManager>().ENEMYSMASH(gameObject);
@@ -88,7 +88,7 @@ using System.Collections;
 				
 		if (collision.transform.name.Contains("LongSpike") && !enemyDead)
 		{
-			Player.GetComponent<Score>().Add(50,"Kamikaze");
+			Player.GetComponent<Score>().Add(50, "Spiked");
 			
 			
 			gameObject.GetComponent<SoundManager>().ENEMYSMASH(gameObject);
@@ -98,20 +98,22 @@ using System.Collections;
 		}
 				
 				
-		if (collision.transform.name.Contains("PLAYER"))
-		{
-		
-			
-			transform.GetComponent<SphereCollider>().enabled = false;
+		if (collision.transform.name.Contains("PLAYER") && !PlayerStats.shielded)
+			{
+				Player.GetComponent<Score>().Add(50, "Enemy");
+
+
+				transform.GetComponent<SphereCollider>().enabled = false;
 		
 			transform.GetComponent<DIE>().ENEMYDEATH(gameObject, enemyRespawnLanding, Player);
 		}	
 				
 		if (collision.transform.name.Contains("VOID"))
 		{
-		
-			
-			transform.GetComponent<SphereCollider>().enabled = false;
+				Player.GetComponent<Score>().Add(50, "EnemyVoid");
+
+
+				transform.GetComponent<SphereCollider>().enabled = false;
 		
 			transform.GetComponent<DIE>().ENEMYDEATH(gameObject, enemyRespawnLanding, Player);
 		}	

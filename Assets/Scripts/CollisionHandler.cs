@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class CollisionHandler : MonoBehaviour
 {
@@ -46,7 +47,6 @@ public class CollisionHandler : MonoBehaviour
 						{
 							
 							collision.gameObject.GetComponent<SoundManager>().SMASH();
-							collision.gameObject.GetComponent<Toast>().NewToast("ouch");
 							collision.transform.GetComponent<DIE>().DEATH();
 
 						}
@@ -55,56 +55,59 @@ public class CollisionHandler : MonoBehaviour
 						{
 
 							collision.gameObject.GetComponent<SoundManager>().SMASH();
-							collision.gameObject.GetComponent<Toast>().NewToast("bai");
 							collision.transform.GetComponent<DIE>().InstaDeath();
 
 						}
 
-						if (gameObject.name.Contains("LAVA"))
+						if (gameObject.name.Contains("LAVA") && !collision.transform.GetComponent<ShieldScript>().amnesty)
 						{
 
 							collision.gameObject.GetComponent<SoundManager>().SMASH();
-							collision.gameObject.GetComponent<Toast>().NewToast("bai");
 							collision.transform.GetComponent<DIE>().InstaDeath();
 
 						}
 						
 						
-						if (gameObject.name.Contains("LongSpike"))
+						if (gameObject.name.Contains("LongSpike") && !collision.transform.GetComponent<ShieldScript>().amnesty)
 						{
 
 							collision.gameObject.GetComponent<SoundManager>().SMASH();
-							collision.gameObject.GetComponent<Toast>().NewToast("skewered");
 							collision.transform.GetComponent<DIE>().DEATH();
 
 						}
 						
 						
-						if (gameObject.name.Contains("bigbit"))
+						if (gameObject.name.Contains("bigbit") && !collision.transform.GetComponent<ShieldScript>().amnesty)
 						{
 
 							collision.gameObject.GetComponent<SoundManager>().SMASH();
-							collision.gameObject.GetComponent<Toast>().NewToast("watch those rocks!");
 							collision.transform.GetComponent<DIE>().DEATH();
 
 						}
 						
 						
-						if (gameObject.name.Contains("Cylinder"))
+						if (gameObject.name.Contains("Cylinder") && !collision.transform.GetComponent<ShieldScript>().amnesty)
 						{
 
 							collision.gameObject.GetComponent<SoundManager>().SMASH();
-							collision.gameObject.GetComponent<Toast>().NewToast("on point");
 							collision.transform.GetComponent<DIE>().DEATH();
 
 						}
 
-						
-						if (gameObject.name.Contains("ActionRock"))
+
+						if (gameObject.name.Contains("ActionRock") && !collision.transform.GetComponent<ShieldScript>().amnesty)
 						{
 
 							collision.gameObject.GetComponent<SoundManager>().SMASH();
-							collision.gameObject.GetComponent<Toast>().NewToast("down pompeii");
+							collision.transform.GetComponent<DIE>().DEATH();
+
+						}
+
+
+						if (gameObject.name.Contains("PoleAxeBlade") && !collision.transform.GetComponent<ShieldScript>().amnesty)
+						{
+
+							collision.gameObject.GetComponent<SoundManager>().SMASH();
 							collision.transform.GetComponent<DIE>().DEATH();
 
 						}
@@ -113,17 +116,15 @@ public class CollisionHandler : MonoBehaviour
 						if (gameObject.name.Contains("EnemyBall") &&
 							!collision.transform.GetComponent<ShieldScript>().amnesty)
 						{
+
 							collision.gameObject.GetComponent<SoundManager>().SMASH();
-							collision.gameObject.GetComponent<Toast>().NewToast("ow");
 							collision.transform.GetComponent<DIE>().DEATH();
 
 						}
-
 						if (gameObject.name.Contains("EnemyPirate") &&
 							!collision.transform.GetComponent<ShieldScript>().amnesty)
 						{
 							collision.gameObject.GetComponent<SoundManager>().SMASH();
-							collision.gameObject.GetComponent<Toast>().NewToast("ow");
 							collision.transform.GetComponent<DIE>().DEATH();
 
 						}
@@ -137,29 +138,11 @@ public class CollisionHandler : MonoBehaviour
 						{
 							collision.gameObject.GetComponent<SoundManager>().PLASTICCOLLIDE();
 						}
-
-						if (gameObject.name.Contains("cannonball"))
-						{
-							collision.gameObject.GetComponent<Toast>().NewToast("cannon fodder");
-							collision.transform.GetComponent<DIE>().DEATH();
-						}
-
-						if (gameObject.name.Contains("EnemyBall") &&
-							!collision.transform.GetComponent<ShieldScript>().amnesty)
-						{
-							collision.gameObject.GetComponent<SoundManager>().SMASH();
-							collision.gameObject.GetComponent<Toast>().NewToast("rekt");
-							collision.transform.GetComponent<DIE>().DEATH();
-
-						}
 					}
 				}
 			}
-
 		}
-
     }
-
     
     void OnTriggerEnter(Collider other)
     {
@@ -198,38 +181,72 @@ public class CollisionHandler : MonoBehaviour
 				}
 				
 				
-				other.GetComponent<Score>().Add(10,"CollectableShield");
+				other.GetComponent<Score>().Add(15,"CollectableShield");
 				
 				Destroy(gameObject);
-			}		
-			
-			
+			}
+
+
 			if (gameObject.name.Contains("CollectableTime"))
 			{
-				
+
 				other.gameObject.GetComponent<SoundManager>().PICKUP();
 				Timer.timeRemaining += (float)ExtraTime;
-		
-				other.GetComponent<Score>().Add(ExtraTime,"Add Seconds");
+
+				other.GetComponent<Score>().Add(ExtraTime, "Add Seconds");
 				Destroy(gameObject);
-			}	
-			
-			
+			}
+
+
+
+
+			if (gameObject.name.Contains("sign-"))
+			{
+
+				other.gameObject.GetComponent<SoundManager>().PICKUP();
+
+				other.GetComponent<Score>().Add(15, "silent");
+
+
+				var signText = gameObject.transform.GetChild(0).GetChild(0).GetChild(0).gameObject;
+				var mytext = signText.GetComponent<TextMeshProUGUI>().text;
+
+
+
+				other.gameObject.GetComponent<Toast>().NewToast(mytext);
+
+
+				Destroy(gameObject);
+			}
 			if (gameObject.name.Contains("Collectable2x"))
 			{
-				
+
 				other.gameObject.GetComponent<SoundManager>().PICKUP();
 				PlayerStats.ScoreMultiplier = 2;
-				
-				other.GetComponent<Score>().Add(10,"2x Score");
+
+				other.GetComponent<Score>().Add(15, "2x Score");
 				Destroy(gameObject);
-			}	
-			
-			
-			if (gameObject.name.Contains("wooosh"))
+			}
+
+
+			if (gameObject.name.Contains("Collectable-Cat"))
 			{
-				
-				
+
+				other.gameObject.GetComponent<SoundManager>().PICKUP();
+
+				other.GetComponent<Score>().Add(1000, "FoundGod");
+				Destroy(gameObject);
+			}
+
+
+			// end collectables
+
+
+
+
+
+			if (gameObject.name.Contains("wooosh"))
+			{				
 				other.gameObject.GetComponent<Toast>().NewToast("see you next week");
 			}			
 			
@@ -241,13 +258,11 @@ public class CollisionHandler : MonoBehaviour
 				other.gameObject.GetComponent<Toast>().NewToast("good luck out there :)");
 			}	
 			
-			
-
 
 		}
 		
 		
-		if (gameObject.name.Contains("bugzapper") && !other.gameObject.name.Contains("PLAYER"))
+		if (gameObject.name.Contains("bugzapper") || gameObject.name.Contains("VOID") && !other.gameObject.name.Contains("PLAYER"))
 		{
 			
 			if (other.gameObject.name.Contains("WeeBeastie"))

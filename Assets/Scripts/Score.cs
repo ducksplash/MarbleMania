@@ -16,7 +16,6 @@ public class Score : MonoBehaviour
 		// TOAST HERE
 		if (doType.Equals("Enemy"))
 		{
-			
 			gameObject.GetComponent<Toast>().NewToast("Enemy Down +"+ScoreForThat+" Points");
 			PlayerStats.PlayerScoreThisLevel += ScoreForThat;
 		}
@@ -31,7 +30,7 @@ public class Score : MonoBehaviour
 		if (doType.Equals("Add Seconds"))
 		{
 			gameObject.GetComponent<Toast>().NewToast("+"+scoreForThis+" Seconds");
-			PlayerStats.PlayerScoreThisLevel += 10;
+			PlayerStats.PlayerScoreThisLevel += 15;
 		}
 		
 		
@@ -40,36 +39,56 @@ public class Score : MonoBehaviour
 			gameObject.GetComponent<Toast>().NewToast("2x Score");
 			PlayerStats.PlayerScoreThisLevel += ScoreForThat;
 		}
-		
-		
-		if (doType.Equals("Kamikaze"))
+
+
+		if (doType.Equals("Spiked"))
 		{
-			gameObject.GetComponent<Toast>().NewToast("Kamikaze; +"+ScoreForThat+" points");
+			gameObject.GetComponent<Toast>().NewToast("Enemy Got Piked; +" + ScoreForThat + " points");
 			PlayerStats.PlayerScoreThisLevel += ScoreForThat;
 		}
-		
-		
+
+
 		if (doType.Equals("RuddyShark"))
 		{
 			gameObject.GetComponent<Toast>().NewToast("Bumped The Shark; +"+ScoreForThat+" points");
 			PlayerStats.PlayerScoreThisLevel += ScoreForThat;
 		}
-		
+
 		if (doType.Equals("EnemyPortal"))
 		{
-			gameObject.GetComponent<Toast>().NewToast("Portal Trap; +"+ScoreForThat+" points");
+			gameObject.GetComponent<Toast>().NewToast("Portal Trap; +" + ScoreForThat + " points");
 			PlayerStats.PlayerScoreThisLevel += ScoreForThat;
 		}
-		
+
+		if (doType.Equals("EnemyVoid"))
+		{
+			gameObject.GetComponent<Toast>().NewToast("Enemy Voided; +" + ScoreForThat + " points");
+			PlayerStats.PlayerScoreThisLevel += ScoreForThat;
+		}
+
 		if (doType.Equals("WeeBeastie"))
 		{
-			gameObject.GetComponent<Toast>().NewToast("WeeBeastie was sent to Tartarus; +"+ScoreForThat+" points");
+			gameObject.GetComponent<Toast>().NewToast("WeeBeastie was sent to Tartarus; +" + ScoreForThat + " points");
 			PlayerStats.PlayerScoreThisLevel += ScoreForThat;
 		}
-		
-		
-		
-		
-		
+
+		if (doType.Equals("FoundGod"))
+		{
+			gameObject.GetComponent<Toast>().NewToast("You found GOD; +" + ScoreForThat + " points");
+			PlayerStats.PlayerScoreThisLevel += ScoreForThat;
+		}
+
+
+
+		// silent 'no toast' cos it's happening elsewhere
+		if (doType.Equals("silent"))
+		{
+			PlayerStats.PlayerScoreThisLevel += ScoreForThat;
+		}
+
+
+
+
+
 	}
 }

@@ -51,6 +51,7 @@ public class DIE : MonoBehaviour
 		{
 			SphereBit.GetComponent<MeshRenderer>().material = Player1Damage;
 			PlayerStats.PlayerDamage += 1;
+			gameObject.GetComponent<Toast>().NewToast("careful now");
 			LightBit.GetComponent<Light>().color = new Color32(255,255,0,1);
 			
 		}
@@ -58,18 +59,21 @@ public class DIE : MonoBehaviour
 		{
 			SphereBit.GetComponent<MeshRenderer>().material = Player2Damage;
 			PlayerStats.PlayerDamage += 1;
+			gameObject.GetComponent<Toast>().NewToast("watch it");
 			LightBit.GetComponent<Light>().color = new Color32(255,70,0,1);
 		}
 		else if (PlayerStats.PlayerDamage == 2 && !PlayerStats.DEAD)
 		{
 			SphereBit.GetComponent<MeshRenderer>().material = Player3Damage;
 			PlayerStats.PlayerDamage += 1;
+			gameObject.GetComponent<Toast>().NewToast("that hurt");
 			LightBit.GetComponent<Light>().color = new Color32(180,10,10,1);
 		}
 		else if (PlayerStats.PlayerDamage == 3 && !PlayerStats.DEAD)
 		{
 			SphereBit.GetComponent<MeshRenderer>().material = Player4Damage;
 			PlayerStats.PlayerDamage += 1;
+			gameObject.GetComponent<Toast>().NewToast("last legs");
 			LightBit.GetComponent<Light>().color = new Color32(255,0,0,1);
 		}
 		else		
@@ -83,7 +87,9 @@ public class DIE : MonoBehaviour
 	public void InstaDeath()
 	{
 		PlayerStats.DEAD = true;
-										
+
+		gameObject.GetComponent<Toast>().NewToast("rekt");
+
 		MarbleBitMeshRenderer = SphereBit.GetComponent<MeshRenderer>();
 		LightBitLight = LightBit.GetComponent<Light>();
 		InnerBitMeshRenderer = InnerbitBit.GetComponent<MeshRenderer>();

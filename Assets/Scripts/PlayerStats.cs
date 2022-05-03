@@ -64,16 +64,16 @@ public class PlayerStats : MonoBehaviour
 	
 	
 	// LEVEL VARS
-	public static float TimeLevel1 = 50.0f;
-	public static float TimeLevel2 = 50.0f;
-	public static float TimeLevel3 = 50.0f;
-	public static float TimeLevel4 = 50.0f;
-	public static float TimeLevel5 = 50.0f;
-	public static float TimeLevel6 = 50.0f;
-	public static float TimeLevel7 = 50.0f;
-	public static float TimeLevel8 = 50.0f;
-	public static float TimeLevel9 = 50.0f;
-	public static float TimeLevel10 = 50.0f;
+	public static float TimeLevel1 = 1999f;
+	public static float TimeLevel2 = 1999f;
+	public static float TimeLevel3 = 1999f;
+	public static float TimeLevel4 = 1999f;
+	public static float TimeLevel5 = 1999f;
+	public static float TimeLevel6 = 1999f;
+	public static float TimeLevel7 = 1999f;
+	public static float TimeLevel8 = 1999f;
+	public static float TimeLevel9 = 1999f;
+	public static float TimeLevel10 = 1999f;
 	
 	
 	public TextMeshProUGUI PlayerScoreGUIText;
@@ -273,7 +273,7 @@ public class PlayerStats : MonoBehaviour
 		
 		Dictionary<string,float> LevelOne = new Dictionary<string,float>()
 		{
-			{"Tutorial", 60f}
+			{"Tutorial", TimeLevel1}
 		};
 		
 		LevelDict.Add(1,LevelOne);
@@ -284,7 +284,7 @@ public class PlayerStats : MonoBehaviour
 		
 		Dictionary<string,float> LevelTwo = new Dictionary<string,float>()
 		{
-			{"Hades", 120f}
+			{"Moist", TimeLevel2}
 		};	
 
 		LevelDict.Add(2,LevelTwo);
@@ -295,7 +295,7 @@ public class PlayerStats : MonoBehaviour
 		
 		Dictionary<string,float> LevelThree = new Dictionary<string,float>()
 		{
-			{"Moist", 240f}
+			{"Hades", TimeLevel3}
 		};	
 
 		LevelDict.Add(3,LevelThree);

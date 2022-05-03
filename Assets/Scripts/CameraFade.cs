@@ -11,6 +11,9 @@ public class CameraFade : MonoBehaviour
 
     void Start()
     {
+
+
+        
         StartCoroutine(DoFadeIn(0.6f,0));
         
         

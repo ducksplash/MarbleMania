@@ -228,7 +228,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6270858222526914509}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &9064655657051685798
 MeshFilter:
@@ -636,7 +636,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6270858222526914509}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -1.181, z: 0}
 --- !u!198 &5804059276709312263
 ParticleSystem:
@@ -5513,7 +5513,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6270858222526914509}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1912454613188850230
 MeshFilter:
@@ -5589,6 +5589,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6270858222526914509}
   - component: {fileID: 6651043661481870710}
+  - component: {fileID: 4469720116885477843}
+  - component: {fileID: 540737833093814239}
+  - component: {fileID: 3912227112552312576}
   m_Layer: 0
   m_Name: TheBoatPrefab
   m_TagString: Untagged
@@ -5608,11 +5611,11 @@ Transform:
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1744126288544715438}
   - {fileID: 5804059276695169051}
   - {fileID: 7533187684213824967}
   - {fileID: 7167257556978549928}
   - {fileID: 7505155871264530827}
-  - {fileID: 1744126288544715438}
   - {fileID: 941217538973166327}
   - {fileID: 9116545784542719882}
   - {fileID: 2476454525876729371}
@@ -5637,6 +5640,46 @@ Rigidbody:
   m_Interpolate: 2
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!114 &4469720116885477843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6651043661481870711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cedc136be868cdb4cac81f57cc9a8b4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DamageLevel: 0
+--- !u!65 &540737833093814239
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6651043661481870711}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 41.78133, y: 2.2802382, z: 11.150781}
+  m_Center: {x: -4.645698, y: -4.8199773, z: 1.0761178}
+--- !u!64 &3912227112552312576
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6651043661481870711}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &7158918724805881744
 GameObject:
   m_ObjectHideFlags: 0
@@ -5767,7 +5810,7 @@ Transform:
   - {fileID: 562333646066274129}
   - {fileID: 3639526699793164541}
   m_Father: {fileID: 6270858222526914509}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 144.83, z: 0}
 --- !u!1 &8215370513116553008
 GameObject:
@@ -5880,7 +5923,7 @@ GameObject:
   - component: {fileID: 2796673803347349822}
   - component: {fileID: 1913562588847971757}
   m_Layer: 3
-  m_Name: vessel
+  m_Name: playervessel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5899,7 +5942,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6270858222526914509}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1896213187983349539
 MeshFilter:

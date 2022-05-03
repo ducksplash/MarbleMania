@@ -17,7 +17,7 @@ public class PirateBoat : MonoBehaviour
 	public Vector3 BoatStartPos;
 	public GameObject BoatPrefab;
 	public GameObject CurrentBoat;
-	private bool PlayerSpotted = false;
+	public bool PlayerSpotted = false;
 	private Light CrookLight;
 	public Material CrookLightMaterial;
 	public Color CrookLightSpottedColor;
@@ -27,8 +27,8 @@ public class PirateBoat : MonoBehaviour
 	private bool PlayerInRange;
 	private GameObject InstantiatedCannonball;
 	private int CannonBallTimeout;
-	public Transform CannonDirection;
-	public Transform CannonBallTarget;
+	private Transform CannonDirection;
+	private Transform CannonBallTarget;
 	public int DamageLevel;
 	public Mesh IntactBoatMesh;
 	public Mesh DamagedBoatMeshOne;
@@ -43,8 +43,10 @@ public class PirateBoat : MonoBehaviour
 		BoatStartPos = transform.position;
 		BoatIntact = true;
 		CrookLightMaterial.SetColor("_EmissionColor", CrookLightStartColor);
+		CannonDirection = TheBoat.transform.Find("CannonballDir");
+		CannonBallTarget = TheBoat.transform.Find("CannonballTarget");
 
-    }
+	}
 	
 	
 	
@@ -88,7 +90,7 @@ void OnTriggerEnter(Collider other)
 	
 
 					
-			if (Vector3.Distance(TheBoat.transform.position, Player.transform.position) < 30f && !PlayerSpotted)
+			if (Vector3.Distance(TheBoat.transform.position, Player.transform.position) < 20f && !PlayerSpotted)
 			{
 				CrookLightMaterial.SetColor("_EmissionColor", CrookLightSpottedColor);
 				Player.transform.GetComponent<SoundManager>().ENEMYSPOTTED();
@@ -96,7 +98,7 @@ void OnTriggerEnter(Collider other)
 				PlayerSpotted = true;
 			}
 			
-			if (Vector3.Distance(TheBoat.transform.position, Player.transform.position) > 35f && PlayerSpotted)
+			if (Vector3.Distance(TheBoat.transform.position, Player.transform.position) > 25f && PlayerSpotted)
 			{
 				CrookLightMaterial.SetColor("_EmissionColor", CrookLightStartColor);
 				CrookLight.GetComponent<Light>().color = CrookLightStartColor;
@@ -105,7 +107,7 @@ void OnTriggerEnter(Collider other)
 			
 			
 				
-			if (Vector3.Distance(TheBoat.transform.position, Player.transform.position) > 10f && Vector3.Distance(TheBoat.transform.position, Player.transform.position) < 20f)
+			if (Vector3.Distance(TheBoat.transform.position, Player.transform.position) > 8f && Vector3.Distance(TheBoat.transform.position, Player.transform.position) < 20f)
 			{
 				if (!CannonEngaged)
 				{
@@ -179,22 +181,26 @@ void OnTriggerEnter(Collider other)
 		if (BoatIntact)
 		{
 			BoatIntact = false;
+			CannonEngaged = false;
+			PlayerSpotted = false;
 			Destroy(TheBoat);
 			Invoke("RespawnBoat",3);
 		}
 		
 	}
 	
+
 	void RespawnBoat()
 	{
 		CurrentBoat = Instantiate(BoatPrefab, BoatStartPos, Quaternion.identity);
 		CurrentBoat.transform.parent = transform;
+		BoatIntact = true;
 		TheBoat = CurrentBoat;
-		//BoatIntact = true;
-		//Rains = TheBoat.transform.Find("rains").GetComponent<ParticleSystem>();
+		CrookLight = CurrentBoat.GetComponentInChildren<Light>();
 		BoatRB = TheBoat.GetComponent<Rigidbody>();
-		//PlayerLock = TheBoat.transform.Find("seat");
-		
+		CannonDirection = TheBoat.transform.Find("CannonballDir");
+		CannonBallTarget = TheBoat.transform.Find("CannonballTarget");
+
 	}
 	
 

@@ -181,14 +181,14 @@ void MovePlayer()
 			if (Input.GetKey(PlayerStats.InputForUP) || Input.GetKey(KeyCode.W))
 			{			
 				
-				gameObject.transform.Translate(_camera.transform.forward / 2);
+				gameObject.transform.Translate(Camera.main.transform.forward / 2, Space.World);
 			}	
 			
 			
 			if (Input.GetKey(PlayerStats.InputForDOWN) || Input.GetKey(KeyCode.S))
 			{			
 				
-				gameObject.transform.Translate(-_camera.transform.forward / 2);
+				gameObject.transform.Translate(-Camera.main.transform.forward / 2, Space.World);
 			}	
 		}
 		

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3812459543958134646}
   - component: {fileID: 1372582523535420348}
   - component: {fileID: 1953094981018613159}
-  - component: {fileID: 4452551231244744869}
+  - component: {fileID: 6581142481295415658}
   m_Layer: 0
   m_Name: cannonballprefab
   m_TagString: Untagged
@@ -101,7 +101,7 @@ Rigidbody:
   m_Interpolate: 2
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &4452551231244744869
+--- !u!135 &6581142481295415658
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,5 +112,5 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.009999998
+  m_Radius: 0.008
   m_Center: {x: -0.0000000027939682, y: -0.0000000032596286, z: 2.3161057e-23}
