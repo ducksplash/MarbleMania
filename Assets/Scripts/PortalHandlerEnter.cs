@@ -15,17 +15,32 @@ public class PortalHandlerEnter : MonoBehaviour
 
 	void OnTriggerEnter(Collider other)
 	{
-		
+
 		if (other.gameObject.name.Contains("PLAYER") && !IsTravelling)
 		{
 			IsTravelling = true;
 			Target.GetComponent<MeshCollider>().enabled = false;
 			Player.transform.position = Target.transform.position;
 			StartCoroutine(TravelTimeout());
-			
+
 		}
-		
-		
+
+
+
+
+		if (other.gameObject.name.Contains("playervessel") && !IsTravelling)
+		{
+			IsTravelling = true;
+			Target.GetComponent<MeshCollider>().enabled = false;
+			Player.transform.position = Target.transform.position;
+			other.gameObject.GetComponentInParent<Boat>().ExitBoat();
+			other.gameObject.GetComponentInParent<Boat>().DestroyBoat();
+			StartCoroutine(TravelTimeout());
+			Debug.Log("got boat");
+
+		}
+
+
 	}
 	IEnumerator TravelTimeout()
 	{

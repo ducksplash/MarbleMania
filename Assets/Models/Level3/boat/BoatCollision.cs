@@ -55,6 +55,12 @@ public class BoatCollision : MonoBehaviour
 				gameObject.transform.parent.GetComponent<Boat>().DestroyBoat();
 			}
 		}
+
+		if (other.gameObject.name.ToLower().Contains("portal"))
+		{
+
+			Debug.Log("wer we go'n lads?");
+		}
 	}
 
 
