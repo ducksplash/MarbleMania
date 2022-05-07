@@ -49,10 +49,10 @@ MonoBehaviour:
   active: 1
   postExposure:
     m_OverrideState: 1
-    m_Value: 0.74
+    m_Value: 1
   contrast:
     m_OverrideState: 1
-    m_Value: 56
+    m_Value: -100
   colorFilter:
     m_OverrideState: 0
     m_Value: {r: 0, g: 0.03137255, b: 0.6901961, a: 1}
@@ -61,7 +61,7 @@ MonoBehaviour:
     m_Value: 35
   saturation:
     m_OverrideState: 1
-    m_Value: 36
+    m_Value: 100
 --- !u!114 &-2360617862773753450
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -108,7 +108,7 @@ MonoBehaviour:
     m_Value: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 2.1
+    m_Value: 2.05
   scatter:
     m_OverrideState: 0
     m_Value: 0.7
@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5e1dc532bcb41949b58bc4f2abfbb7e, type: 3}
   m_Name: LensDistortion
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   intensity:
     m_OverrideState: 1
     m_Value: 0
