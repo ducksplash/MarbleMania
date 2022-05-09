@@ -43,6 +43,7 @@ public class PirateBoat : MonoBehaviour
 		CrookLight = CurrentBoat.GetComponentInChildren<Light>();
 		BoatStartPos = transform.position;
 		BoatIntact = true;
+		PirateVisionDistance = PlayerStats.EnemyVisionDistance;
 		CrookLightMaterial.SetColor("_EmissionColor", CrookLightStartColor);
 		CannonDirection = TheBoat.transform.Find("CannonballDir");
 		CannonBallTarget = TheBoat.transform.Find("CannonballTarget");

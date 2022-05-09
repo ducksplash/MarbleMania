@@ -151,7 +151,7 @@ public class PlayerStats : MonoBehaviour
 		{
 			Difficulty = 0;
 			EnemyMoveSpeed = 28;
-			EnemyVisionDistance = 15;
+			EnemyVisionDistance = 45;
 			EnemyRespawnTime = 5;
 		}	
 		
@@ -159,7 +159,7 @@ public class PlayerStats : MonoBehaviour
 		{
 			Difficulty = 1;
 			EnemyMoveSpeed = 38;
-			EnemyVisionDistance = 30;
+			EnemyVisionDistance = 60;
 			EnemyRespawnTime = 3;
 		}
 		
@@ -167,7 +167,7 @@ public class PlayerStats : MonoBehaviour
 		{
 			Difficulty = 2;
 			EnemyMoveSpeed = 48;
-			EnemyVisionDistance = 45;
+			EnemyVisionDistance = 90;
 			EnemyRespawnTime = 1;
 		}
 		
@@ -241,20 +241,90 @@ public class PlayerStats : MonoBehaviour
 		var meshImageFive = Resources.Load<Texture>("playermeshimages/shamrock");
 		
 		
-		PlayerPrefabMeshDict.Add(meshFive.name,meshImageFive);	
-		
-		// one of these needs
-		// a prefab for meshFive
+		PlayerPrefabMeshDict.Add(meshFive.name,meshImageFive);
+
+		// one of these needs:
+		// a prefab for meshNumber
 		// a prefab for icon (texture)
 		// a consecutive name.
-			
+
 		var meshSix = Resources.Load<Mesh>("playermeshes/skull");
 		var meshImageSix = Resources.Load<Texture>("playermeshimages/skull");
-		
-		
-		PlayerPrefabMeshDict.Add(meshSix.name,meshImageSix);	
-		
-		
+
+
+		PlayerPrefabMeshDict.Add(meshSix.name, meshImageSix);
+
+
+
+
+		// one of these needs:
+		// a prefab for meshNumber
+		// a prefab for icon (texture)
+		// a consecutive name.
+
+		var meshSeven = Resources.Load<Mesh>("playermeshes/cat");
+		var meshImageSeven = Resources.Load<Texture>("playermeshimages/cat");
+
+
+		PlayerPrefabMeshDict.Add(meshSeven.name, meshImageSeven);
+
+
+		// one of these needs:
+		// a prefab for meshNumber
+		// a prefab for icon (texture)
+		// a consecutive name.
+
+		var meshEight = Resources.Load<Mesh>("playermeshes/hamster");
+		var meshImageEight = Resources.Load<Texture>("playermeshimages/hamster");
+
+
+		PlayerPrefabMeshDict.Add(meshEight.name, meshImageEight);
+
+		// one of these needs:
+		// a prefab for meshNumber
+		// a prefab for icon (texture)
+		// a consecutive name.
+
+		var meshNine = Resources.Load<Mesh>("playermeshes/ethereum");
+		var meshImageNine = Resources.Load<Texture>("playermeshimages/ethereum");
+
+
+		PlayerPrefabMeshDict.Add(meshNine.name, meshImageNine);
+
+		// one of these needs:
+		// a prefab for meshNumber
+		// a prefab for icon (texture)
+		// a consecutive name.
+
+		var meshTen = Resources.Load<Mesh>("playermeshes/btc");
+		var meshImageTen = Resources.Load<Texture>("playermeshimages/btc");
+
+
+		PlayerPrefabMeshDict.Add(meshTen.name, meshImageTen);
+
+
+		// one of these needs:
+		// a prefab for meshNumber
+		// a prefab for icon (texture)
+		// a consecutive name.
+
+		var meshEleven = Resources.Load<Mesh>("playermeshes/ltc");
+		var meshImageEleven = Resources.Load<Texture>("playermeshimages/ltc");
+
+
+		PlayerPrefabMeshDict.Add(meshEleven.name, meshImageEleven);
+
+
+		// one of these needs:
+		// a prefab for meshNumber
+		// a prefab for icon (texture)
+		// a consecutive name.
+
+		var meshTwelve = Resources.Load<Mesh>("playermeshes/trx");
+		var meshImageTwelve = Resources.Load<Texture>("playermeshimages/trx");
+
+
+		PlayerPrefabMeshDict.Add(meshTwelve.name, meshImageTwelve);
 	}
 	
 	

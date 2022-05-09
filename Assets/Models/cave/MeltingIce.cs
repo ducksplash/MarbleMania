@@ -29,10 +29,10 @@ public class MeltingIce : MonoBehaviour
 	{
 		if (!onIce)
 		{
-			Debug.Log("onstone " + IceCube.name);
+			Debug.Log("on ice " + IceCube.name);
 
 				float emissiveIntensity = 0.8f;
-				Color emissiveColor = new Color32(0,0,100,255);
+				Color emissiveColor = new Color32(0,0,50,255);
 
 
 				Debug.Log("found bad");
