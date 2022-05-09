@@ -229,7 +229,19 @@ public class CollisionHandler : MonoBehaviour
 			}
 
 
-			if (gameObject.name.Contains("Collectable-Cat"))
+			if (gameObject.name.Contains("hamster"))
+			{
+
+				other.gameObject.GetComponent<SoundManager>().PICKUP();
+
+				other.GetComponent<Score>().Add(1000, "FoundHamster");
+				Destroy(gameObject);
+			}
+
+
+
+
+			if (gameObject.name.Contains("Collectable-C"))
 			{
 
 				other.gameObject.GetComponent<SoundManager>().PICKUP();

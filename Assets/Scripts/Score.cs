@@ -74,7 +74,14 @@ public class Score : MonoBehaviour
 
 		if (doType.Equals("FoundGod"))
 		{
-			gameObject.GetComponent<Toast>().NewToast("You found GOD; +" + ScoreForThat + " points");
+			gameObject.GetComponent<Toast>().NewToast("Collectable GOD found!; +" + ScoreForThat + " points");
+			PlayerStats.PlayerScoreThisLevel += ScoreForThat;
+		}
+
+
+		if (doType.Equals("FoundHamster"))
+		{
+			gameObject.GetComponent<Toast>().NewToast("Collectable Hamster found! +" + ScoreForThat + " points");
 			PlayerStats.PlayerScoreThisLevel += ScoreForThat;
 		}
 
