@@ -24,7 +24,7 @@ public class BoatCollision : MonoBehaviour
 	void OnTriggerEnter(Collider other)
 	{
 
-		if (other.gameObject.name.Contains("cannonball"))
+		if (other.gameObject.name.Contains("cannonball") || other.gameObject.name.Contains("IceRock"))
 		{
 
 			DamageLevel += 1;

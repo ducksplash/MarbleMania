@@ -167,11 +167,11 @@ void OnTriggerEnter(Collider other)
     {
 		if (BoatIntact)
 		{
-			if (Vector3.Distance(TheBoat.transform.position, Player.transform.position) < 20f)
+			if (Vector3.Distance(TheBoat.transform.position, Player.transform.position) < PirateVisionDistance)
 			{
 				Vector3 direction = Player.transform.position - TheBoat.transform.position;
 			
-				var moveForce = direction * 2;
+				var moveForce = direction * 2.5f;
 				BoatRB.AddForce(moveForce);
 			}	
 		}		
