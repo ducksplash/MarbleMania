@@ -32,7 +32,7 @@ public class MeltingIce : MonoBehaviour
 			Debug.Log("onstone " + IceCube.name);
 
 				float emissiveIntensity = 0.8f;
-				Color emissiveColor = new Color32(0,255,255,255);
+				Color emissiveColor = new Color32(0,0,100,255);
 
 
 				Debug.Log("found bad");
@@ -49,9 +49,10 @@ public class MeltingIce : MonoBehaviour
 
 	IEnumerator DropIce()
 	{
-		yield return new WaitForSeconds(1);
+		yield return new WaitForSeconds(1.5f);
 
 		// animate melt here
+		IceCube.GetComponent<BoxCollider>().isTrigger = true;
 
 		meltani.SetTrigger("melt");
 
@@ -64,7 +65,7 @@ public class MeltingIce : MonoBehaviour
 
 	IEnumerator DestroyIce()
 	{
-		yield return new WaitForSeconds(2);
+		yield return new WaitForSeconds(0.5f);
 		// do another coroutine to reconstitute the ice cube... maybe? If we can be arsed.
 		// don't try to do anything after destroy fella ;)
 
@@ -83,7 +84,11 @@ public class MeltingIce : MonoBehaviour
 		{
 
 			float emissiveIntensity = 0.0f;
+			Color emissiveColor = new Color32(10, 10, 10, 255);
 
+			icecubeMaterials.SetColor("_EmissionColor", emissiveColor * emissiveIntensity);
+			icecubeMaterials.SetColor("_Color", emissiveColor);
+			icecubeMaterials.EnableKeyword("_EMISSION");
 		}
 	}
 
