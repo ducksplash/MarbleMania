@@ -151,7 +151,7 @@ public class PlayerStats : MonoBehaviour
 		{
 			Difficulty = 0;
 			EnemyMoveSpeed = 28;
-			EnemyVisionDistance = 45;
+			EnemyVisionDistance = 25;
 			EnemyRespawnTime = 5;
 		}	
 		
@@ -159,7 +159,7 @@ public class PlayerStats : MonoBehaviour
 		{
 			Difficulty = 1;
 			EnemyMoveSpeed = 38;
-			EnemyVisionDistance = 60;
+			EnemyVisionDistance = 40;
 			EnemyRespawnTime = 3;
 		}
 		
@@ -167,7 +167,7 @@ public class PlayerStats : MonoBehaviour
 		{
 			Difficulty = 2;
 			EnemyMoveSpeed = 48;
-			EnemyVisionDistance = 90;
+			EnemyVisionDistance = 60;
 			EnemyRespawnTime = 1;
 		}
 		
@@ -325,6 +325,39 @@ public class PlayerStats : MonoBehaviour
 
 
 		PlayerPrefabMeshDict.Add(meshTwelve.name, meshImageTwelve);
+
+		// one of these needs:
+		// a prefab for meshNumber
+		// a prefab for icon (texture)
+		// a consecutive name.
+
+		var meshThirteen = Resources.Load<Mesh>("playermeshes/pepe");
+		var meshImageThirteen = Resources.Load<Texture>("playermeshimages/pepe");
+
+
+		PlayerPrefabMeshDict.Add(meshThirteen.name, meshImageThirteen);
+
+		// one of these needs:
+		// a prefab for meshNumber
+		// a prefab for icon (texture)
+		// a consecutive name.
+
+		var meshFourteen = Resources.Load<Mesh>("playermeshes/sparkle");
+		var meshImageFourteen = Resources.Load<Texture>("playermeshimages/sparkle");
+
+
+		PlayerPrefabMeshDict.Add(meshFourteen.name, meshImageFourteen);
+
+		// one of these needs:
+		// a prefab for meshNumber
+		// a prefab for icon (texture)
+		// a consecutive name.
+
+		var meshFifteen = Resources.Load<Mesh>("playermeshes/trex");
+		var meshImageFifteen = Resources.Load<Texture>("playermeshimages/trex");
+
+
+		PlayerPrefabMeshDict.Add(meshFifteen.name, meshImageFifteen);
 	}
 	
 	
@@ -354,7 +387,7 @@ public class PlayerStats : MonoBehaviour
 		
 		Dictionary<string,float> LevelTwo = new Dictionary<string,float>()
 		{
-			{"Moist", TimeLevel2}
+			{"Planet Water", TimeLevel2}
 		};	
 
 		LevelDict.Add(2,LevelTwo);
@@ -365,7 +398,7 @@ public class PlayerStats : MonoBehaviour
 		
 		Dictionary<string,float> LevelThree = new Dictionary<string,float>()
 		{
-			{"Hades", TimeLevel3}
+			{"Planet Fire", TimeLevel3}
 		};	
 
 		LevelDict.Add(3,LevelThree);
