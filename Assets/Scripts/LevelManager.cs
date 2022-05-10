@@ -249,7 +249,7 @@ public class LevelManager : MonoBehaviour
 	{
 
 		LevelComplete = true;
-
+		PlayerStats.STOP = true;
 
 		Cursor.lockState = CursorLockMode.None;
 
@@ -386,7 +386,6 @@ public class LevelManager : MonoBehaviour
 		LevelStartScreen.GetComponent<CanvasGroup>().blocksRaycasts = false;
 		LevelStartScreen.GetComponent<CanvasGroup>().alpha = 0.0f;		
 		PlayerStats.DEAD = false;
-		PlayerStats.STOP = false;
 		PlayerStats.shielded = false;
 		LevelManager.TimeUpTriggered = false;
 		CollisionHandler.GoalTriggered = false;
@@ -423,7 +422,10 @@ public class LevelManager : MonoBehaviour
 		TimerUpScreen.GetComponent<CanvasGroup>().blocksRaycasts = false;
 		TimerUpScreen.GetComponent<CanvasGroup>().alpha = 0.0f;		
 		PlayerStats.PlayerScoreThisLevel = 0;	
-		PlayerStats.Playing = true;	
+		PlayerStats.Playing = true;
+		PlayerStats.STOP = false;
+		PlayerStats.shielded = false;
+		PlayerStats.ScoreMultiplier = 1;
 		CheckPoint.ResetCheckpoint();
 		
 	}

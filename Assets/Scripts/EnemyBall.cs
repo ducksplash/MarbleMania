@@ -76,8 +76,7 @@ using System.Collections;
 				
 		if (collision.transform.name.Contains("spikes") && !enemyDead)
 		{
-			Player.GetComponent<Score>().Add(50,"Spiked");
-			
+		
 			
 			gameObject.GetComponent<SoundManager>().ENEMYSMASH(gameObject);
 			
@@ -87,9 +86,7 @@ using System.Collections;
 		
 				
 		if (collision.transform.name.Contains("LongSpike") && !enemyDead)
-		{
-			Player.GetComponent<Score>().Add(50, "Spiked");
-			
+		{	
 			
 			gameObject.GetComponent<SoundManager>().ENEMYSMASH(gameObject);
 			
@@ -110,8 +107,6 @@ using System.Collections;
 				
 		if (collision.transform.name.Contains("VOID"))
 		{
-				Player.GetComponent<Score>().Add(50, "EnemyVoid");
-
 
 				transform.GetComponent<SphereCollider>().enabled = false;
 		

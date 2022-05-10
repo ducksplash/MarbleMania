@@ -62,6 +62,11 @@ public class GameStart : MonoBehaviour
 	{
 		gameObject.GetComponent<SoundManager>().MenuForward();
 		PlayerStats.MainMenu = false;
+		PlayerStats.DEAD = false;
+		PlayerStats.shielded = false;
+		PlayerStats.PlayerScore = 0;
+		PlayerStats.PlayerDeaths = 0;
+		PlayerStats.CurrentLevel = 0;
 		SceneManager.LoadScene("1");
 	}
 

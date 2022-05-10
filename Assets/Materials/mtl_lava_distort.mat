@@ -1,15 +1,29 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8894117272058135209
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: mtl_lava_distort
-  m_Shader: {fileID: 4800000, guid: 6a151f652f5ba03458e9a7cd03ae88e8, type: 3}
-  m_ShaderKeywords: 
+  m_Shader: {fileID: -6465566751694194690, guid: 6fc0de6d066004b4493318df45f940d7, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -19,6 +33,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_BA7A7B69:
+        m_Texture: {fileID: 2800000, guid: 34ecf11cc7d466b42a03e382a08d488f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Distort:
         m_Texture: {fileID: 2800000, guid: 0ebfaeff4eb7328498165095f9cfc32f, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -39,13 +57,32 @@ Material:
         m_Texture: {fileID: 2800000, guid: 1a5d8cd24a805cd44b00c7f1e1e4d287, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 1.5691679, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - Vector1_54C8F996: 1
+    - Vector1_62063AE: 0.01
+    - Vector1_9A5AA8FA: 0.71
     - _Displacement: 0.0375
     - _DistortX: 1.0714285
     - _DistortY: 0
+    - _QueueControl: 0
+    - _QueueOffset: 0
     - _RefractTexTiling: 1
     m_Colors:
+    - Color_235DB7F: {r: 0.28123885, g: 0.6889038, b: 0.75471693, a: 0}
+    - Color_DFC2AB36: {r: 0.09531859, g: 0.30869377, b: 0.39622638, a: 0}
     - _ChannelFactor: {r: -0.3281326, g: 0.5920941, b: 0.7360384, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 0.07058824}
     - _SpeedStrength: {r: 1, g: 1, b: 1, a: 1}

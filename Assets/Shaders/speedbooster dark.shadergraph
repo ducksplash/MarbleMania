@@ -250,7 +250,8 @@
         "serializedMesh": {
             "m_SerializedMesh": "{\"mesh\":{\"fileID\":10207,\"guid\":\"0000000000000000e000000000000000\",\"type\":0}}",
             "m_Guid": ""
-        }
+        },
+        "preventRotation": false
     },
     "m_Path": "Shader Graphs",
     "m_GraphPrecision": 0,
@@ -641,8 +642,8 @@
     "m_Color": {
         "color": {
             "r": 0.0,
-            "g": 0.018137255683541299,
-            "b": 0.0,
+            "g": 0.3463636338710785,
+            "b": 0.4528301954269409,
             "a": 0.0
         },
         "mode": 1
@@ -881,7 +882,8 @@
     "m_AlphaClip": false,
     "m_CastShadows": true,
     "m_ReceiveShadows": true,
-    "m_CustomEditorGUI": ""
+    "m_CustomEditorGUI": "",
+    "m_SupportVFX": false
 }
 
 {
