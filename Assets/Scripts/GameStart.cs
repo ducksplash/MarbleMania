@@ -59,10 +59,18 @@ public class GameStart : MonoBehaviour
 
 
 	public void GameBoot()
-	{	
+	{
 		gameObject.GetComponent<SoundManager>().MenuForward();
 		PlayerStats.MainMenu = false;
 		SceneManager.LoadScene("1");
+	}
+
+
+	public void DoCredits()
+	{
+		gameObject.GetComponent<SoundManager>().MenuForward();
+		PlayerStats.MainMenu = false;
+		SceneManager.LoadScene("credits");
 	}
 
 

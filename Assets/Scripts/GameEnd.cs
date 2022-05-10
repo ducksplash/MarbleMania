@@ -20,6 +20,10 @@ public class GameEnd : MonoBehaviour
 		PlayerStatsScript = gameObject.GetComponent<PlayerStats>();
 		gameObject.GetComponent<SoundManager>().BootAudio();
 
+
+
+
+
 		PlayerScoreGUIText.text = PlayerStats.PlayerScore.ToString();
 		PlayerDeathsGUIText.text = PlayerStats.PlayerDeaths.ToString();
 	}
@@ -30,17 +34,24 @@ public class GameEnd : MonoBehaviour
 	public void QuitToDesktop()
 	{
 		
-		Application.Quit();		
-		
+		Application.Quit();
+
 	}
 
 	public void ToMainMenu()
 	{
-	
-		gameObject.GetComponent<SoundManager>().MenuBackward();
-		Debug.Log("change scene here");
 
-		
+		gameObject.GetComponent<SoundManager>().MenuBackward();
+		SceneManager.LoadScene("mainmenu");
+
+	}
+
+	public void ToCredits()
+	{
+
+		gameObject.GetComponent<SoundManager>().MenuBackward();
+		SceneManager.LoadScene("credits");
+
 	}
 
 
