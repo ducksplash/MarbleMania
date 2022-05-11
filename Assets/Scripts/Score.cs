@@ -87,6 +87,14 @@ public class Score : MonoBehaviour
 
 
 
+		if (doType.Equals("FoundDuck"))
+		{
+			gameObject.GetComponent<Toast>().NewToast("Collectable Duck found! +" + ScoreForThat + " points");
+			PlayerStats.PlayerScoreThisLevel += ScoreForThat;
+		}
+
+
+
 		// silent 'no toast' cos it's happening elsewhere
 		if (doType.Equals("silent"))
 		{

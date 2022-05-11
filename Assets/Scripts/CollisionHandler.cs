@@ -234,7 +234,19 @@ public class CollisionHandler : MonoBehaviour
 
 				other.gameObject.GetComponent<SoundManager>().PICKUP();
 
-				other.GetComponent<Score>().Add(1000, "FoundHamster");
+				other.GetComponent<Score>().Add(2000, "FoundHamster");
+				Destroy(gameObject);
+			}
+
+
+
+
+			if (gameObject.name.Contains("duck"))
+			{
+
+				other.gameObject.GetComponent<SoundManager>().PICKUP();
+
+				other.GetComponent<Score>().Add(3000, "FoundDuck");
 				Destroy(gameObject);
 			}
 
