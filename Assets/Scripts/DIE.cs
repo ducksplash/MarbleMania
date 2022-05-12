@@ -88,7 +88,6 @@ public class DIE : MonoBehaviour
 	{
 		PlayerStats.DEAD = true;
 
-		gameObject.GetComponent<Toast>().NewToast("rekt");
 
 		MarbleBitMeshRenderer = SphereBit.GetComponent<MeshRenderer>();
 		LightBitLight = LightBit.GetComponent<Light>();
@@ -115,6 +114,7 @@ public class DIE : MonoBehaviour
 			PlayerStats.PlayerDeaths ++;
 			DeathRecorded = true;
 			PlayerStats.PlayerDamage = 0;
+			gameObject.GetComponent<Toast>().NewToast("dead");
 			SphereBit.GetComponent<MeshRenderer>().material = PlayerNoDamage;
 
 		}

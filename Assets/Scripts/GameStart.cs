@@ -88,18 +88,58 @@ public class GameStart : MonoBehaviour
 
 	public void ToMainMenu()
 	{
-	
+
 		gameObject.GetComponent<SoundManager>().MenuBackward();
 		CloseAllScreens();
 
 		MainMenuScreen.alpha = 1f;
-		MainMenuScreen.blocksRaycasts = true;  
-		
+		MainMenuScreen.blocksRaycasts = true;
+
+	}
+	public void DoLevelSelect()
+	{
+
+		gameObject.GetComponent<SoundManager>().MenuBackward();
+		CloseAllScreens();
+
+		LevelSelectScreen.alpha = 1f;
+		LevelSelectScreen.blocksRaycasts = true;
+
+	}
+
+	public void DoLevel1()
+	{
+
+		gameObject.GetComponent<SoundManager>().MenuBackward();
+		CloseAllScreens();
+		PlayerStats.MainMenu = false;
+		SceneManager.LoadScene("1");
+
+	}
+
+	public void DoLevel2()
+	{
+
+		gameObject.GetComponent<SoundManager>().MenuBackward();
+		CloseAllScreens();
+		PlayerStats.MainMenu = false;
+		SceneManager.LoadScene("2");
+
+	}
+
+	public void DoLevel3()
+	{
+
+		gameObject.GetComponent<SoundManager>().MenuBackward();
+		CloseAllScreens();
+		PlayerStats.MainMenu = false;
+		SceneManager.LoadScene("3");
+
 	}
 
 
 
-	
+
 	public void SettingsMenu()
 	{
 		
