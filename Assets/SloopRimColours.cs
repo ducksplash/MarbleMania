@@ -13,7 +13,6 @@ public class SloopRimColours : MonoBehaviour
     bool greenToRed = false;
     bool redToBlue = false;
 
-    // Update is called once per frame
     void Update()
     {
 
