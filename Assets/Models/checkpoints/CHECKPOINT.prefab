@@ -83,7 +83,7 @@ GameObject:
   - component: {fileID: 8080001535942240087}
   - component: {fileID: 5871330923721394778}
   m_Layer: 0
-  m_Name: Cone
+  m_Name: Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
