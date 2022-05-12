@@ -38,7 +38,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 75}
-  m_SizeDelta: {x: 700, y: 70}
+  m_SizeDelta: {x: 1000, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7924572138393210814
 CanvasRenderer:
@@ -68,19 +68,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Do not run
-
-    out of time!'
+  m_text: Do not run out of time!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c81484763645e1f478323e3093588bad, type: 2}
-  m_sharedMaterial: {fileID: -462636542082361141, guid: c81484763645e1f478323e3093588bad, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: da0ba4b4b39349945850760f29abba7b, type: 2}
+  m_sharedMaterial: {fileID: 8867057375911603731, guid: da0ba4b4b39349945850760f29abba7b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278228480
-  m_fontColor: {r: 0, g: 0.5882353, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

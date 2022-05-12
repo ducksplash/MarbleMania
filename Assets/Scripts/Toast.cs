@@ -95,7 +95,7 @@ public class Toast : MonoBehaviour
 
 		toasting = false;
 
-		yield return new WaitForSeconds(1.5f);
+		yield return new WaitForSeconds(2f);
 		Destroy(ThisToast);
 
 	}
