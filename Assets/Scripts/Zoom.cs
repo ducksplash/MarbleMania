@@ -22,7 +22,7 @@ public class Zoom : MonoBehaviour
         defaultFOV = MainCamera.fieldOfView;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         zoomAmount += Input.mouseScrollDelta.y * sensitivity * .05f;
         zoomAmount = Mathf.Clamp01(zoomAmount);
