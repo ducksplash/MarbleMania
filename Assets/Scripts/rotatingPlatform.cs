@@ -4,21 +4,36 @@ using UnityEngine;
  
 public class RotatingPlatform : MonoBehaviour
 {
-	
 
 
-	
-	
-	
-	void Update()
+
+
+
+
+	void FixedUpdate()
 	{
-	
-			gameObject.transform.Rotate(new Vector3 (0, 0, 4) * (Time.smoothDeltaTime * 7));
+
+		gameObject.transform.Rotate(new Vector3(0, 0, 8) * (Time.fixedDeltaTime * 2));
 
 
-		
+
 	}
-	
 
-	
+
+
+	private void OnCollisionEnter(Collision collision)
+	{
+		collision.transform.parent = gameObject.transform;
+	}
+
+	private void OnCollisionExit(Collision collision)
+	{
+		Debug.Log("exi");
+		collision.transform.parent = null;
+	}
+
+
+
+
+
 }
