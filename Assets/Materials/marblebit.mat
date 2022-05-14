@@ -151,11 +151,11 @@ Material:
     - Color_DFC2AB36: {r: 0, g: 0.7199998, b: 1, a: 0}
     - Vector2_DA7E6B0B: {r: 1, g: 3, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 1, g: 0.91319543, b: 0, a: 1}
+    - _Color: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     - _ColorBot: {r: 0, g: 0, b: 1, a: 1}
     - _ColorMid: {r: 0, g: 1, b: 0, a: 1}
     - _ColorTop: {r: 1, g: 0, b: 0, a: 1}
-    - _EmissionColor: {r: 6, g: 5.4791727, b: 0, a: 6}
+    - _EmissionColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 1, g: 1, b: 1, a: 1}
