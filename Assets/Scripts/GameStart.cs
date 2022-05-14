@@ -16,6 +16,7 @@ public class GameStart : MonoBehaviour
 	public CanvasGroup KeyboardSettings;
 	public CanvasGroup MainMenuScreen;
 	public CanvasGroup LevelSelectScreen;
+	public CanvasGroup CreditsScreen;
 	private PlayerStats PlayerStatsScript;
    	private GameObject BGMToggle;
 	private GameObject SFXToggle;
@@ -70,13 +71,6 @@ public class GameStart : MonoBehaviour
 		SceneManager.LoadScene("1");
 	}
 
-
-	public void DoCredits()
-	{
-		gameObject.GetComponent<SoundManager>().MenuForward();
-		PlayerStats.MainMenu = false;
-		SceneManager.LoadScene("credits");
-	}
 
 
 	public void QuitToDesktop()
@@ -196,11 +190,11 @@ public class GameStart : MonoBehaviour
 		ControlScreen.alpha = 1f;
 		ControlScreen.blocksRaycasts = true;  
 	}
-	
-	
+
+
 	public void KeysMenu()
 	{
-		
+
 		gameObject.GetComponent<SoundManager>().MenuForward();
 		//Time.timeScale = 0;
 
@@ -208,11 +202,25 @@ public class GameStart : MonoBehaviour
 		CloseAllScreens();
 
 		KeyboardSettings.alpha = 1f;
-		KeyboardSettings.blocksRaycasts = true;  
+		KeyboardSettings.blocksRaycasts = true;
 	}
-		
-	
-	
+
+
+
+
+
+	public void CreditsMenu()
+	{
+
+		gameObject.GetComponent<SoundManager>().MenuForward();
+		//Time.timeScale = 0;
+
+
+		CloseAllScreens();
+
+		CreditsScreen.alpha = 1f;
+		CreditsScreen.blocksRaycasts = true;
+	}
 	public void BGMVolume(float sliderValue)
 	{	
 
@@ -290,8 +298,10 @@ public class GameStart : MonoBehaviour
 		LevelSelectScreen.blocksRaycasts = false;
 		CustomiseScreen.alpha = 0f;
 		CustomiseScreen.blocksRaycasts = false;
+		CreditsScreen.alpha = 0f;
+		CreditsScreen.blocksRaycasts = false;
 
-   }
+	}
    	
 	 
 	
