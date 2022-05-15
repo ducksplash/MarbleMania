@@ -30,12 +30,17 @@ public class FallingRocks : MonoBehaviour
 			StartCoroutine(CreateActionRockQuickly());
 			DebounceRock = true;
 		}
-		else
+		else if (gameObject.name.Contains("StepstoneLauncher"))
 		{
-		
+
+			StartCoroutine(CreateActionRockAtAMediumPace());
+			DebounceRock = true;
+		}
+		else
+        {
+
 			StartCoroutine(CreateActionRockSlowly());
-			DebounceRock = true;	
-			
+			DebounceRock = true;
 		}
 	}
 
@@ -51,25 +56,37 @@ public class FallingRocks : MonoBehaviour
 		yield return new WaitForSeconds(0.25f);
 		CreateActionRock();
 		DebounceRock = false;
-		
-		
-		
+
+
+
 	}
-	
+
 	public IEnumerator CreateActionRockQuickly()
 	{
-		
-		
+
+
 		yield return new WaitForSeconds(0.05f);
 		CreateActionRock();
 		DebounceRock = false;
-		
-		
-		
+
+
+
 	}
-    
-	
-    void OnTriggerEnter(Collider other)
+
+	public IEnumerator CreateActionRockAtAMediumPace()
+	{
+
+
+		yield return new WaitForSeconds(0.15f);
+		CreateActionRock();
+		DebounceRock = false;
+
+
+
+	}
+
+
+	void OnTriggerEnter(Collider other)
     {
 		if (other.gameObject.name.Contains("PLAYER"))
 		{
@@ -101,15 +118,21 @@ public class FallingRocks : MonoBehaviour
 			RandomNumberForX = Random.Range(-150f,150f);
 			RandomNumberForZ = Random.Range(-150f,150f);
 			RockScaleMultiplier = 4f;
-			
+
+		}
+		else if (gameObject.name.Contains("StepstoneLauncher"))
+		{
+			RandomNumberForX = Random.Range(-50f, 50f);
+			RandomNumberForZ = Random.Range(-50f, 50f);
+			RockScaleMultiplier = 3f;
 		}
 		else
 		{
-			RandomNumberForX = Random.Range(-25f,25f);
-			RandomNumberForZ = Random.Range(-25f,25f);
+			RandomNumberForX = Random.Range(-25f, 25f);
+			RandomNumberForZ = Random.Range(-25f, 25f);
 			RockScaleMultiplier = 1f;
 		}
-		
+
 		var RandomPosition = new Vector3(transform.position.x+RandomNumberForX,transform.position.y,transform.position.z+RandomNumberForZ);
 		
 		ActionRock = Instantiate(ActionRockPrefab, RandomPosition, Quaternion.identity);

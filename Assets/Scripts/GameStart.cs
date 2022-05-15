@@ -104,9 +104,13 @@ public class GameStart : MonoBehaviour
 	public void DoLevel1()
 	{
 
-		gameObject.GetComponent<SoundManager>().MenuBackward();
-		CloseAllScreens();
+		gameObject.GetComponent<SoundManager>().MenuForward();
 		PlayerStats.MainMenu = false;
+		PlayerStats.DEAD = false;
+		PlayerStats.shielded = false;
+		PlayerStats.PlayerScore = 0;
+		PlayerStats.PlayerDeaths = 0;
+		PlayerStats.CurrentLevel = 0;
 		SceneManager.LoadScene("1");
 
 	}
@@ -114,9 +118,13 @@ public class GameStart : MonoBehaviour
 	public void DoLevel2()
 	{
 
-		gameObject.GetComponent<SoundManager>().MenuBackward();
-		CloseAllScreens();
+		gameObject.GetComponent<SoundManager>().MenuForward();
 		PlayerStats.MainMenu = false;
+		PlayerStats.DEAD = false;
+		PlayerStats.shielded = false;
+		PlayerStats.PlayerScore = 0;
+		PlayerStats.PlayerDeaths = 0;
+		PlayerStats.CurrentLevel = 0;
 		SceneManager.LoadScene("2");
 
 	}
@@ -124,9 +132,13 @@ public class GameStart : MonoBehaviour
 	public void DoLevel3()
 	{
 
-		gameObject.GetComponent<SoundManager>().MenuBackward();
-		CloseAllScreens();
+		gameObject.GetComponent<SoundManager>().MenuForward();
 		PlayerStats.MainMenu = false;
+		PlayerStats.DEAD = false;
+		PlayerStats.shielded = false;
+		PlayerStats.PlayerScore = 0;
+		PlayerStats.PlayerDeaths = 0;
+		PlayerStats.CurrentLevel = 0;
 		SceneManager.LoadScene("3");
 
 	}
