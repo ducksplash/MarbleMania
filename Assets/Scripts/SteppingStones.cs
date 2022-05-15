@@ -37,7 +37,7 @@ public class SteppingStones : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
 	{
-		if (!onStone)
+		if (!onStone && collision.gameObject.name.Equals("PLAYER"))
 		{
 			Debug.Log("onstone " + steppingStone.name);
 
@@ -53,7 +53,34 @@ public class SteppingStones : MonoBehaviour
 				steppingStoneMats.EnableKeyword("_EMISSION");
 
 
-				StartCoroutine(DropStone());
+				StartCoroutine(DropStone(transform.position));
+
+			}
+			else
+			{
+				float emissiveIntensity = 0.8f;
+				Color emissiveColor = new Color32(0, 60, 0, 255);
+
+				Debug.Log("found good");
+				steppingStoneMats.SetColor("_EmissionColor", emissiveColor * emissiveIntensity);
+				steppingStoneMats.SetColor("_Color", emissiveColor);
+				steppingStoneMats.EnableKeyword("_EMISSION");
+
+			}
+		}
+		else
+        {
+			if (isCursed)
+			{
+				float emissiveIntensity = 0.8f;
+				Color emissiveColor = new Color32(255, 0, 0, 255);
+
+
+				Debug.Log("found bad");
+				steppingStoneMats.SetColor("_EmissionColor", emissiveColor * emissiveIntensity);
+				steppingStoneMats.SetColor("_Color", emissiveColor);
+				steppingStoneMats.EnableKeyword("_EMISSION");
+
 
 			}
 			else
@@ -70,9 +97,10 @@ public class SteppingStones : MonoBehaviour
 		}
 	}
 
-	IEnumerator DropStone()
+	IEnumerator DropStone(Vector3 replentrans)
 	{
 		yield return new WaitForSeconds(1);
+		gameObject.GetComponentInParent<StoneParent>().ReplenishStone(replentrans);
 
 		float emissiveIntensity = 0.6f;
 		Color emissiveColor = new Color32(10, 10, 10, 255);
@@ -90,6 +118,9 @@ public class SteppingStones : MonoBehaviour
 	IEnumerator DestroyStone()
 	{
 		yield return new WaitForSeconds(1);
+
+
+		// create stone
 
 		Destroy(steppingStone);
 

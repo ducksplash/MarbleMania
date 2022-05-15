@@ -16,7 +16,7 @@ public class FallingVolcanicRock : MonoBehaviour
 
 	void OnCollisionEnter(Collision collision)
     {
-		if (collision.gameObject.name.Contains("slalom") || collision.gameObject.name.Contains("lavashard"))
+		if (collision.gameObject.name.Contains("slalom") || collision.gameObject.name.Contains("lavashard") || collision.gameObject.name.Contains("stone"))
 		{
 			ExplodeVolcanicRock();
 		}

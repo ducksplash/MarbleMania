@@ -43,7 +43,6 @@ public class GameStart : MonoBehaviour
 		PlayerStatsScript = gameObject.GetComponent<PlayerStats>();
 	
 	
-		gameObject.GetComponent<SoundManager>().BootAudio();
 	
 		BGMSlider = GameObject.Find("BGMSlider");
 		
@@ -54,6 +53,7 @@ public class GameStart : MonoBehaviour
 		
 		SFXSlider.GetComponent<Slider>().value = SoundManager.SFXVolume;	
 		
+		gameObject.GetComponent<SoundManager>().BootAudio();
 		
 	}
 
@@ -93,7 +93,7 @@ public class GameStart : MonoBehaviour
 	public void DoLevelSelect()
 	{
 
-		gameObject.GetComponent<SoundManager>().MenuBackward();
+		gameObject.GetComponent<SoundManager>().MenuForward();
 		CloseAllScreens();
 
 		LevelSelectScreen.alpha = 1f;

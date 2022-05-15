@@ -170,12 +170,13 @@ public class LevelManager : MonoBehaviour
 		PlayerStats.GamePaused = false;	
 		PlayerStats.CurrentLevel = int.Parse(SceneManager.GetActiveScene().name);
 		gameObject.GetComponent<SoundManager>().BGMON();
-		
-		//Cursor.lockState = CursorLockMode.Locked;
-		
+		gameObject.GetComponent<SoundManager>().BootAudio();
 
-		inGameAudioBGM.volume = SoundManager.BGMVolume;
-		inGameAudioSFX.volume = SoundManager.SFXVolume;
+		//Cursor.lockState = CursorLockMode.Locked;
+
+
+		//inGameAudioBGM.volume = SoundManager.BGMVolume;
+		//inGameAudioSFX.volume = SoundManager.SFXVolume;
 
 		//Time.timeScale = 1;	
 	}
