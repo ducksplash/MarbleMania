@@ -151,7 +151,7 @@ public class PlayerStats : MonoBehaviour
 		{
 			Difficulty = 0;
 			EnemyMoveSpeed = 28;
-			EnemyVisionDistance = 25;
+			EnemyVisionDistance = 40;
 			EnemyRespawnTime = 5;
 		}	
 		
@@ -159,7 +159,7 @@ public class PlayerStats : MonoBehaviour
 		{
 			Difficulty = 1;
 			EnemyMoveSpeed = 38;
-			EnemyVisionDistance = 40;
+			EnemyVisionDistance = 50;
 			EnemyRespawnTime = 3;
 		}
 		

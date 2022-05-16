@@ -40,6 +40,10 @@ public class SoundManager : MonoBehaviour
 	public AudioClip LevelCompleteClip;
 	public AudioClip TimerUpClip;
 	public AudioClip EnemySpottedClip;
+	public AudioClip SplashClip;
+	public AudioClip SharkSpotted;
+	public AudioClip MunchSound;
+	public AudioClip Woosh;
 
 
 	public AudioClip ExplosionClip;
@@ -127,6 +131,62 @@ public class SoundManager : MonoBehaviour
 
 
 
+
+
+
+
+	public void WOOSH()
+	{
+		if (PlayerStats.SoundFXEnabled)
+		{
+			SFXAudioSource.PlayOneShot(Woosh, SFXVolume);
+		}
+
+	}
+
+
+
+
+
+
+
+
+	public void NOM()
+	{
+		if (PlayerStats.SoundFXEnabled)
+		{
+			SFXAudioSource.PlayOneShot(MunchSound, SFXVolume);
+		}
+
+	}
+
+
+
+
+
+
+	public void SHARK()
+	{
+		if (PlayerStats.SoundFXEnabled)
+		{
+			SFXAudioSource.PlayOneShot(SharkSpotted, SFXVolume);
+		}
+
+	}
+
+
+
+
+
+
+	public void SPLASH()
+	{
+		if (PlayerStats.SoundFXEnabled)
+		{
+			SFXAudioSource.PlayOneShot(SplashClip, SFXVolume);
+		}
+
+	}
 
 
 

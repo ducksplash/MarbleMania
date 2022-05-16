@@ -83,8 +83,9 @@ public class SeaMine : MonoBehaviour
 	{
         InstantiatedExplosion = Instantiate(ExplosionPrefab, gameObject.transform.position, Quaternion.identity);
 
+		Player.GetComponent<SoundManager>().EXPLOSION();
 
-			Debug.Log("forceplayer");
+		Debug.Log("forceplayer");
 			Vector3 direction = Player.transform.position - transform.position;
 			Player.GetComponent<Rigidbody>().AddForce(direction.normalized * 100,ForceMode.Impulse);	
 			Player.GetComponent<DIE>().DEATH();

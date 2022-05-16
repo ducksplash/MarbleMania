@@ -43,7 +43,6 @@ public class PirateBoat : MonoBehaviour
 		CrookLight = CurrentBoat.GetComponentInChildren<Light>();
 		BoatStartPos = transform.position;
 		BoatIntact = true;
-		PirateVisionDistance = PlayerStats.EnemyVisionDistance;
 		CrookLightMaterial.SetColor("_EmissionColor", CrookLightStartColor);
 		CannonDirection = TheBoat.transform.Find("CannonballDir");
 		CannonBallTarget = TheBoat.transform.Find("CannonballTarget");
@@ -145,9 +144,10 @@ void OnTriggerEnter(Collider other)
 		Vector3 direction = CannonBallTarget.position - InstantiatedCannonball.transform.position;
 		var moveForce = direction * 450;
 		InstantiatedCannonball.GetComponent<Rigidbody>().AddForce(moveForce);
-		
-		
-		Debug.Log("Fire!");			
+
+			Player.GetComponent<SoundManager>().EXPLOSION();
+
+			Debug.Log("Fire!");			
 			
 		yield return new WaitForSeconds(2);
 		}

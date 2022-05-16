@@ -178,7 +178,9 @@ public class WeeShark : MonoBehaviour
 			if (Vector3.Distance(gameObject.transform.position, PlayerTransform.position) > 3f)
 			{
 
-			
+					PlayerTransform.gameObject.GetComponent<SoundManager>().SHARK();
+
+
 			var targetRotation = Quaternion.LookRotation(PlayerTransform.position - transform.position);
 		 
 			// Smoothly rotate towards the target point.
@@ -242,10 +244,9 @@ public class WeeShark : MonoBehaviour
 			PlayerRB.constraints = RigidbodyConstraints.FreezeAll;
 			PlayerCollider.enabled = false;
 			Player.transform.GetChild(0).GetComponent<Rigidbody>().isKinematic = true;
-			Player.GetComponent<ShieldScript>().RemoveShield();        
-			 yield return new WaitForSeconds(0.3f);	
-			Player.GetComponent<Toast>().NewToast("nom");
-			Player.GetComponent<SoundManager>().SQUISH();
+			Player.GetComponent<ShieldScript>().RemoveShield();
+			Player.GetComponent<SoundManager>().NOM();   
+			yield return new WaitForSeconds(0.3f);
 			Player.GetComponent<DIE>().InstaDeath();
 			PlayerCollider.enabled = true;
 			//And unfreeze before restoring velocities

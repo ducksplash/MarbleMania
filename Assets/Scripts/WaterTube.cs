@@ -51,6 +51,7 @@ public class WaterTube : MonoBehaviour
 
         PlayerRB.mass = 0.1f;
         PlayerRB.AddForce(0, LaunchForce, 0);
+		Player.GetComponent<SoundManager>().WOOSH();
 
 		Invoke("ReleasePlayer",0.5f);
 	}

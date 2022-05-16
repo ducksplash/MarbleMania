@@ -33,7 +33,6 @@ public class WaterElevator : MonoBehaviour
 			{				
 				if (other.transform.name.Contains("PLAYER"))
 				{
-					Debug.Log("this did something");
 					Invoke("ReleasePlayer",0f);
 			
 				}	
@@ -46,7 +45,8 @@ public class WaterElevator : MonoBehaviour
 				if (other.gameObject.name.Contains("PLAYER"))
 				{
 				PlayerStats.STOP = true;
-				
+				Player.GetComponent<SoundManager>().WOOSH();
+
 				PlayerRB.velocity = Vector3.zero;
 				PlayerRB = Player.GetComponent<Rigidbody>();
 				Debug.Log("wooosh");

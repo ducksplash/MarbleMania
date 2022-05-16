@@ -50,7 +50,7 @@ public class WaterMine : MonoBehaviour
 		Shark.GetComponent<WeeShark>().SetDead();
 		
 		
-		Player.GetComponent<Score>().Add(1000,"RuddyShark");
+		Player.GetComponent<Score>().Add(2000,"RuddyShark");
 		
 		Destroy(gameObject);
 		}
@@ -60,8 +60,10 @@ public class WaterMine : MonoBehaviour
 
 
     IEnumerator SplosionProcedure()
-	{
+	{		
+		Player.GetComponent<SoundManager>().EXPLOSION();
         InstantiatedExplosion = Instantiate(ExplosionPrefab, gameObject.transform.position, Quaternion.identity);
+
 
 
 		if (playerInRange)

@@ -182,6 +182,15 @@ public class CollisionHandler : MonoBehaviour
 
 
 
+			if (gameObject.name.Contains("Water Specular"))
+			{
+
+				other.gameObject.GetComponent<SoundManager>().SPLASH();
+
+			}
+
+
+
 
 			if (gameObject.name.Contains("sign-"))
 			{
