@@ -1736,7 +1736,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 458660023}
         m_TargetAssemblyTypeName: GameStart, Assembly-CSharp
-        m_MethodName: SettingsMenu
+        m_MethodName: ControlMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3104,7 +3104,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 177831840}
   m_LocalRotation: {x: 0.14711888, y: -0, z: -0, w: 0.9891189}
-  m_LocalPosition: {x: 4.6, y: 4.88, z: -16.17}
+  m_LocalPosition: {x: 4.6, y: 4.73, z: -15.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7121,6 +7121,7 @@ MonoBehaviour:
   LevelCompleteClip: {fileID: 8300000, guid: eafe9b52a954e0d459bf4a34212a8693, type: 3}
   TimerUpClip: {fileID: 8300000, guid: 4007b3a49aed3cf4485889fc73055d4b, type: 3}
   EnemySpottedClip: {fileID: 8300000, guid: ebc0dd00e8b662a4f9cdcc72c539e94d, type: 3}
+  ExplosionClip: {fileID: 0}
 --- !u!1 &466268030
 GameObject:
   m_ObjectHideFlags: 0

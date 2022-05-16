@@ -101,6 +101,7 @@ public class GameStart : MonoBehaviour
 
 	}
 
+	// this could be one function instead of three.
 	public void DoLevel1()
 	{
 

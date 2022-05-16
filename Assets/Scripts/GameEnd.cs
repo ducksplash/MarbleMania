@@ -12,20 +12,29 @@ public class GameEnd : MonoBehaviour
 	private PlayerStats PlayerStatsScript;
 	public TextMeshProUGUI PlayerScoreGUIText;
 	public TextMeshProUGUI PlayerDeathsGUIText;
-
-
+	public int FinScoreGross;
+	public int FinScoreNet;
+	public int FinDeaths;
+	public int DeathTax;
 
 	void Start()
 	{
+
+		DeathTax = 10;
+
+
 		PlayerStatsScript = gameObject.GetComponent<PlayerStats>();
 		gameObject.GetComponent<SoundManager>().BootAudio();
 
+		FinScoreNet = PlayerStats.PlayerScore;
+
+		FinDeaths = PlayerStats.PlayerDeaths;
+
+		FinScoreNet = (PlayerStats.PlayerScore - (PlayerStats.PlayerDeaths * DeathTax));
 
 
-
-
-		PlayerScoreGUIText.text = PlayerStats.PlayerScore.ToString();
-		PlayerDeathsGUIText.text = PlayerStats.PlayerDeaths.ToString();
+		PlayerScoreGUIText.text = FinScoreNet.ToString();
+		PlayerDeathsGUIText.text = FinDeaths.ToString();
 	}
 
 

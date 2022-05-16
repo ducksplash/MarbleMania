@@ -141,7 +141,8 @@ public class LevelManager : MonoBehaviour
 			
 			// default inputs
 			
-				
+			
+			// we can allow users to set these themselves later
 			PlayerStats.InputForUP = KeyCode.UpArrow;
 			PlayerStats.InputForDOWN = KeyCode.DownArrow;
 			PlayerStats.InputForLEFT =  KeyCode.LeftArrow;
@@ -150,11 +151,7 @@ public class LevelManager : MonoBehaviour
 			PlayerStats.InputForPAUSE =  KeyCode.E;
 			PlayerStats.InputForREARVIEW =  KeyCode.I;
 			PlayerStats.InputForRESTART =  KeyCode.R;
-			
-			
-			
-			
-			
+
 		}
 		
 	}
@@ -330,7 +327,7 @@ public class LevelManager : MonoBehaviour
 				
 		var PointsSubtotal = (PlayerStats.PlayerScoreThisLevel+PlayerStats.PlayerScore);		
 				
-				
+		// calculate deaths here, and at GameEnd
 		var DeathTax = PlayerStats.PlayerDeaths * 10;
 		
 		
