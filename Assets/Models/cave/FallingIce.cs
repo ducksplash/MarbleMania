@@ -21,19 +21,12 @@ public class FallingIce : MonoBehaviour
 
 	if (IsInRange && !DebounceRock)
 	{
-		if (gameObject.name.Contains("IceLauncher"))
-		{
-		
-			StartCoroutine(CreateActionRockQuickly());
-			DebounceRock = true;
-		}
-		else
-		{
+
 		
 			StartCoroutine(CreateActionRockSlowly());
 			DebounceRock = true;	
 			
-		}
+		
 	}
 
 

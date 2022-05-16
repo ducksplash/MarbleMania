@@ -12,9 +12,20 @@ public class FallingVolcanicRock : MonoBehaviour
 	private GameObject InstantiatedDebris;
 	private GameObject InstantiatedExplosion;
 	public bool AestheticRock;
-	
+	public GameObject Player;
 
-	void OnCollisionEnter(Collision collision)
+
+
+
+    private void Start()
+    {
+		Player = GameObject.FindWithTag("Player");
+	}
+
+
+
+
+    void OnCollisionEnter(Collision collision)
     {
 		if (collision.gameObject.name.Contains("slalom") || collision.gameObject.name.Contains("lavashard") || collision.gameObject.name.Contains("stone"))
 		{
@@ -58,6 +69,7 @@ public class FallingVolcanicRock : MonoBehaviour
 	{
 		InstantiatedDebris = Instantiate(DebrisPrefab, debrisPos, Quaternion.identity);
 
+
 		Destroy(InstantiatedDebris,2);
 		yield break;
 
@@ -65,6 +77,7 @@ public class FallingVolcanicRock : MonoBehaviour
     IEnumerator SplosionProcedure(Vector3 explosionPos)
 	{
         InstantiatedExplosion = Instantiate(ExplosionEffect, explosionPos, ExplosionEffect.transform.rotation);
+			Player.GetComponent<SoundManager>().EXPLOSION();
 
 
 		Destroy(InstantiatedDebris,2);

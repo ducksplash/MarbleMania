@@ -12,7 +12,14 @@ public class FallingIceRock : MonoBehaviour
 	private GameObject InstantiatedDebris;
 	private GameObject InstantiatedExplosion;
 	public bool AestheticRock;
-	
+	public GameObject Player;
+
+
+	private void Start()
+	{
+		Player = GameObject.FindWithTag("Player");
+	}
+
 
 	void OnCollisionEnter(Collision collision)
     {
@@ -65,6 +72,7 @@ public class FallingIceRock : MonoBehaviour
     IEnumerator SplosionProcedure(Vector3 explosionPos)
 	{
         InstantiatedExplosion = Instantiate(ExplosionEffect, explosionPos, ExplosionEffect.transform.rotation);
+		Player.GetComponent<SoundManager>().EXPLOSION();
 
 
 		Destroy(InstantiatedDebris,2);

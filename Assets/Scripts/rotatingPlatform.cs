@@ -23,13 +23,20 @@ public class RotatingPlatform : MonoBehaviour
 
 	private void OnCollisionEnter(Collision collision)
 	{
+		if (collision.gameObject.name.Contains("PLAYER"))
+        {
+
 		collision.transform.parent = gameObject.transform;
+        }
 	}
 
 	private void OnCollisionExit(Collision collision)
 	{
-		Debug.Log("exi");
-		collision.transform.parent = null;
+		if (collision.gameObject.name.Contains("PLAYER"))
+		{
+			Debug.Log("exi");
+			collision.transform.parent = null;
+		}
 	}
 
 

@@ -130,3 +130,5 @@ MonoBehaviour:
   ExplosionEffect: {fileID: 100006, guid: e076683e0305e35498b8e8834978c0fa, type: 3}
   DebrisPrefab: {fileID: 3567893288637682189, guid: fe13f13c1f32dae48b8750ab58b4eee5, type: 3}
   AestheticRock: 0
+  ExplosionClip: {fileID: 8300000, guid: 2c8035c8d091cdb4f8fc2d0ef6435f43, type: 3}
+  SFXAudioSource: {fileID: 0}

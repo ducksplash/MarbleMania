@@ -34,11 +34,16 @@ public class SoundManager : MonoBehaviour
 	public AudioClip LevelCompleteClip;
 	public AudioClip TimerUpClip;
 	public AudioClip EnemySpottedClip;
+
+
+	public AudioClip ExplosionClip;
+
+
 	// ATTACHED TO PLAYER
-	
-		
-	
-	
+
+
+
+
 	void Start()
 	{
 		
@@ -55,10 +60,10 @@ public class SoundManager : MonoBehaviour
 	{
 		
 
-		SFXVolume = 0.4f;
+		SFXVolume = 0.6f;
 		SFXAudioSource.volume = SFXVolume;
 		
-		BGMVolume = 0.2f;
+		BGMVolume = 0.1f;
 		BGMAudioSource.volume = BGMVolume;		
 		
 				
@@ -124,18 +129,27 @@ public class SoundManager : MonoBehaviour
 		{
 			SFXAudioSource.PlayOneShot(SmashedBallClip, SFXVolume);
 		}
-		
+
 	}
-	
+
 	public void POP()
 	{
 		if (PlayerStats.SoundFXEnabled)
 		{
 			SFXAudioSource.PlayOneShot(PoppedShieldClip, SFXVolume);
 		}
-		
+
 	}
-	
+
+	public void EXPLOSION()
+	{
+		if (PlayerStats.SoundFXEnabled)
+		{
+			SFXAudioSource.PlayOneShot(ExplosionClip, SFXVolume);
+		}
+
+	}
+
 	public void LAND()
 	{
 		if (PlayerStats.SoundFXEnabled)

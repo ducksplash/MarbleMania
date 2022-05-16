@@ -37,7 +37,7 @@ public class SteppingStones : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
 	{
-		if (!onStone && collision.gameObject.name.Equals("PLAYER"))
+		if (!onStone && collision.gameObject.name.Contains("PLAYER"))
 		{
 			Debug.Log("onstone " + steppingStone.name);
 
