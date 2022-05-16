@@ -18,7 +18,13 @@ public class SoundManager : MonoBehaviour
 	// SFX 
 	public static float BGMVolume;
 	public static float SFXVolume;
-	
+
+	public AudioClip PortalNoiseClip;
+	public AudioClip OtherCollectable;
+	public AudioClip CrackedBallClip1;
+	public AudioClip CrackedBallClip2;
+	public AudioClip CrackedBallClip3;
+	public AudioClip CrackedBallClip4;
 	public AudioClip SmashedBallClip;
 	public AudioClip PoppedShieldClip;
 	public AudioClip LandingMarbleClip;
@@ -118,11 +124,88 @@ public class SoundManager : MonoBehaviour
 		}
 		
 	}
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+	public void OTHER()
+	{
+		if (PlayerStats.SoundFXEnabled)
+		{
+			SFXAudioSource.PlayOneShot(OtherCollectable, SFXVolume);
+		}
+
+	}
+
+
+
+
+
+
+	public void PORTAL()
+	{
+		if (PlayerStats.SoundFXEnabled)
+		{
+			SFXAudioSource.PlayOneShot(PortalNoiseClip, SFXVolume);
+		}
+
+	}
+
+
+
+
+	public void CRACK1()
+	{
+		if (PlayerStats.SoundFXEnabled)
+		{
+			SFXAudioSource.PlayOneShot(CrackedBallClip1, SFXVolume);
+		}
+
+	}
+
+
+
+
+
+	public void CRACK2()
+	{
+		if (PlayerStats.SoundFXEnabled)
+		{
+			SFXAudioSource.PlayOneShot(CrackedBallClip2, SFXVolume);
+		}
+
+	}
+
+
+
+
+
+	public void CRACK3()
+	{
+		if (PlayerStats.SoundFXEnabled)
+		{
+			SFXAudioSource.PlayOneShot(CrackedBallClip3, SFXVolume);
+		}
+
+	}
+
+
+
+
+
+	public void CRACK4()
+	{
+		if (PlayerStats.SoundFXEnabled)
+		{
+			SFXAudioSource.PlayOneShot(CrackedBallClip4, SFXVolume);
+		}
+
+	}
+
+
 	public void SMASH()
 	{
 		if (PlayerStats.SoundFXEnabled)

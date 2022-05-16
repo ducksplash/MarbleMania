@@ -22,6 +22,7 @@ public class PortalHandler : MonoBehaviour
 		{
 			IsTravelling = true;
 			Target.GetComponent<MeshCollider>().enabled = false;
+			other.gameObject.GetComponent<SoundManager>().PORTAL();
 			Player.transform.position = Target.transform.position;
 			StartCoroutine(TravelTimeout());
 			

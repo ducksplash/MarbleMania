@@ -20,8 +20,10 @@ public class PortalHandlerEnter : MonoBehaviour
 		{
 			IsTravelling = true;
 			Target.GetComponent<MeshCollider>().enabled = false;
-			Player.transform.position = Target.transform.position;
+			Player.transform.position = Target.transform.position; 
+			other.gameObject.GetComponent<SoundManager>().PORTAL();
 			StartCoroutine(TravelTimeout());
+
 
 		}
 
@@ -35,7 +37,10 @@ public class PortalHandlerEnter : MonoBehaviour
 			Player.transform.position = Target.transform.position;
 			other.gameObject.GetComponentInParent<Boat>().ExitBoat();
 			other.gameObject.GetComponentInParent<Boat>().DestroyBoat();
+			other.gameObject.GetComponent<SoundManager>().PORTAL();
+
 			StartCoroutine(TravelTimeout());
+
 			Debug.Log("got boat");
 
 		}

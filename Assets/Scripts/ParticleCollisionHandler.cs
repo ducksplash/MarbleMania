@@ -38,7 +38,6 @@ public class ParticleCollisionHandler : MonoBehaviour
 					Debug.Log("shieldless");
 
 					DidTheDeath = true;
-					other.gameObject.GetComponent<SoundManager>().SMASH();
 					other.gameObject.GetComponent<Toast>().NewToast(phrases[rand]);
 					other.transform.GetComponent<DIE>().DEATH();
 					StartCoroutine(reset());
@@ -52,11 +51,11 @@ public class ParticleCollisionHandler : MonoBehaviour
 				{
 
 
-					int rand = Random.Range(0, phrases.Length);
 					Debug.Log("shieldless");
 
 					DidTheDeath = true;
 					other.gameObject.GetComponent<SoundManager>().SMASH();
+					int rand = Random.Range(0, phrases.Length);
 					other.gameObject.GetComponent<Toast>().NewToast(phrases[rand]);
 					other.transform.GetComponent<DIE>().DEATH();
 					StartCoroutine(reset());

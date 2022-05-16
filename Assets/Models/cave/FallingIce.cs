@@ -14,7 +14,7 @@ public class FallingIce : MonoBehaviour
     private bool DebounceRock = false;
 	
     
-    private void Update()
+    private void FixedUpdate()
     {
 
 
@@ -38,7 +38,7 @@ public class FallingIce : MonoBehaviour
 	{
 		
 		
-		yield return new WaitForSeconds(0.25f);
+		yield return new WaitForSeconds(2.5f);
 		CreateActionRock();
 		DebounceRock = false;
 		
@@ -46,17 +46,6 @@ public class FallingIce : MonoBehaviour
 		
 	}
 	
-	public IEnumerator CreateActionRockQuickly()
-	{
-		
-		
-		yield return new WaitForSeconds(0.05f);
-		CreateActionRock();
-		DebounceRock = false;
-		
-		
-		
-	}
     
 	
     void OnTriggerEnter(Collider other)
@@ -86,19 +75,11 @@ public class FallingIce : MonoBehaviour
 		var RockScaleMultiplier = 1f;
 		
 		
-		if (gameObject.name.Contains("IceLauncher"))
-		{
-			RandomNumberForX = Random.Range(-150f,150f);
-			RandomNumberForZ = Random.Range(-150f,150f);
-			RockScaleMultiplier = 4f;
-			
-		}
-		else
-		{
+
 			RandomNumberForX = Random.Range(-25f,25f);
 			RandomNumberForZ = Random.Range(-25f,25f);
-			RockScaleMultiplier = 1f;
-		}
+			RockScaleMultiplier = 2f;
+		
 		
 		var RandomPosition = new Vector3(transform.position.x+RandomNumberForX,transform.position.y,transform.position.z+RandomNumberForZ);
 		

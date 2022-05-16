@@ -275,16 +275,20 @@ public class GameStart : MonoBehaviour
 	
 	public void DoEasyMode()
 	{
+		gameObject.GetComponent<SoundManager>().MenuForward();
+
 		PlayerStats.DoGameMode(0);
 	}
 	
 	public void DoStandardMode()
 	{
+		gameObject.GetComponent<SoundManager>().MenuForward();
 		PlayerStats.DoGameMode(1);
 	}	
 	
 	public void DoHardMode()
 	{
+		gameObject.GetComponent<SoundManager>().MenuForward();
 		PlayerStats.DoGameMode(2);
 	}	
 
@@ -323,7 +327,6 @@ public class GameStart : MonoBehaviour
 		
 		gameObject.GetComponent<SoundManager>().MenuForward();
 		PlayerStats.GamePaused = true;
-		//Time.timeScale = 0;
 
 		if (!CustomiserButtonsDone)
 		{

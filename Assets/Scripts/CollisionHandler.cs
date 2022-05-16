@@ -46,7 +46,6 @@ public class CollisionHandler : MonoBehaviour
 						if (gameObject.name.Contains("spikes") && !collision.transform.GetComponent<ShieldScript>().amnesty)
 						{
 							
-							collision.gameObject.GetComponent<SoundManager>().SMASH();
 							collision.transform.GetComponent<DIE>().DEATH();
 
 						}
@@ -54,7 +53,6 @@ public class CollisionHandler : MonoBehaviour
 						if (gameObject.name.Contains("VOID"))
 						{
 
-							collision.gameObject.GetComponent<SoundManager>().SMASH();
 							collision.transform.GetComponent<DIE>().InstaDeath();
 
 						}
@@ -62,7 +60,6 @@ public class CollisionHandler : MonoBehaviour
 						if (gameObject.name.Contains("LAVA") && !collision.transform.GetComponent<ShieldScript>().amnesty)
 						{
 
-							collision.gameObject.GetComponent<SoundManager>().SMASH();
 							collision.transform.GetComponent<DIE>().InstaDeath();
 
 						}
@@ -71,25 +68,15 @@ public class CollisionHandler : MonoBehaviour
 						if (gameObject.name.Contains("LongSpike") && !collision.transform.GetComponent<ShieldScript>().amnesty)
 						{
 
-							collision.gameObject.GetComponent<SoundManager>().SMASH();
 							collision.transform.GetComponent<DIE>().DEATH();
 
 						}
 						
-						
-						if (gameObject.name.Contains("bigbit") && !collision.transform.GetComponent<ShieldScript>().amnesty)
-						{
-
-							collision.gameObject.GetComponent<SoundManager>().SMASH();
-							collision.transform.GetComponent<DIE>().DEATH();
-
-						}
 						
 						
 						if (gameObject.name.Contains("Cylinder") && !collision.transform.GetComponent<ShieldScript>().amnesty)
 						{
 
-							collision.gameObject.GetComponent<SoundManager>().SMASH();
 							collision.transform.GetComponent<DIE>().DEATH();
 
 						}
@@ -98,7 +85,6 @@ public class CollisionHandler : MonoBehaviour
 						if (gameObject.name.Contains("ActionRock") && !collision.transform.GetComponent<ShieldScript>().amnesty)
 						{
 
-							collision.gameObject.GetComponent<SoundManager>().SMASH();
 							collision.transform.GetComponent<DIE>().DEATH();
 
 						}
@@ -107,7 +93,6 @@ public class CollisionHandler : MonoBehaviour
 						if (gameObject.name.Contains("PoleAxeBlade") && !collision.transform.GetComponent<ShieldScript>().amnesty)
 						{
 
-							collision.gameObject.GetComponent<SoundManager>().SMASH();
 							collision.transform.GetComponent<DIE>().DEATH();
 
 						}
@@ -117,14 +102,12 @@ public class CollisionHandler : MonoBehaviour
 							!collision.transform.GetComponent<ShieldScript>().amnesty)
 						{
 
-							collision.gameObject.GetComponent<SoundManager>().SMASH();
 							collision.transform.GetComponent<DIE>().DEATH();
 
 						}
 						if (gameObject.name.Contains("EnemyPirate") &&
 							!collision.transform.GetComponent<ShieldScript>().amnesty)
 						{
-							collision.gameObject.GetComponent<SoundManager>().SMASH();
 							collision.transform.GetComponent<DIE>().DEATH();
 
 						}
@@ -203,7 +186,7 @@ public class CollisionHandler : MonoBehaviour
 			if (gameObject.name.Contains("sign-"))
 			{
 
-				other.gameObject.GetComponent<SoundManager>().PICKUP();
+				other.gameObject.GetComponent<SoundManager>().OTHER();
 
 				other.GetComponent<Score>().Add(15, "silent");
 

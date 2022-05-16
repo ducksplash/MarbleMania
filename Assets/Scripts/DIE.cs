@@ -20,8 +20,9 @@ public class DIE : MonoBehaviour
 	private Camera ThisCamera;
 	public SoundManager GameSound;
 	private bool DeathRecorded;
-	
-	
+	private string[] phrases;
+
+
 	public Material PlayerNoDamage;
 	public Material Player1Damage;
 	public Material Player2Damage;
@@ -37,9 +38,10 @@ public class DIE : MonoBehaviour
 		GameSound = gameObject.GetComponent<SoundManager>();
 		
 		DeathRecorded = false;
-		
-		
-		
+
+		phrases = new string[] { "dead", "rekt", "shattered", "in bits", "atomised", "disassembled", "gone", "you're done fam", "irreparable" };
+
+
 	}
 
 
@@ -49,6 +51,8 @@ public class DIE : MonoBehaviour
 		
 		if (PlayerStats.PlayerDamage == 0 && !PlayerStats.DEAD)
 		{
+			gameObject.GetComponent<SoundManager>().CRACK1();
+
 			SphereBit.GetComponent<MeshRenderer>().material = Player1Damage;
 			PlayerStats.PlayerDamage += 1;
 			gameObject.GetComponent<Toast>().NewToast("careful now");
@@ -57,6 +61,7 @@ public class DIE : MonoBehaviour
 		}
 		else if (PlayerStats.PlayerDamage == 1 && !PlayerStats.DEAD)
 		{
+			gameObject.GetComponent<SoundManager>().CRACK2();
 			SphereBit.GetComponent<MeshRenderer>().material = Player2Damage;
 			PlayerStats.PlayerDamage += 1;
 			gameObject.GetComponent<Toast>().NewToast("watch it");
@@ -64,6 +69,7 @@ public class DIE : MonoBehaviour
 		}
 		else if (PlayerStats.PlayerDamage == 2 && !PlayerStats.DEAD)
 		{
+			gameObject.GetComponent<SoundManager>().CRACK3();
 			SphereBit.GetComponent<MeshRenderer>().material = Player3Damage;
 			PlayerStats.PlayerDamage += 1;
 			gameObject.GetComponent<Toast>().NewToast("that hurt");
@@ -71,6 +77,7 @@ public class DIE : MonoBehaviour
 		}
 		else if (PlayerStats.PlayerDamage == 3 && !PlayerStats.DEAD)
 		{
+			gameObject.GetComponent<SoundManager>().CRACK4();
 			SphereBit.GetComponent<MeshRenderer>().material = Player4Damage;
 			PlayerStats.PlayerDamage += 1;
 			gameObject.GetComponent<Toast>().NewToast("last legs");
@@ -88,13 +95,15 @@ public class DIE : MonoBehaviour
 	{
 		PlayerStats.DEAD = true;
 
+		gameObject.GetComponent<SoundManager>().SMASH();
 
 		MarbleBitMeshRenderer = SphereBit.GetComponent<MeshRenderer>();
 		LightBitLight = LightBit.GetComponent<Light>();
 		InnerBitMeshRenderer = InnerbitBit.GetComponent<MeshRenderer>();
 
-		
-		
+
+
+
 		StartCoroutine(PlayerDebrisProcedure(SphereBit.transform.position));
 		StartCoroutine(ThisCamera.GetComponent<CameraFade>().DoFadeOut(0.6f));
 		StartCoroutine(KillAndTeleportPlayer());
@@ -114,7 +123,8 @@ public class DIE : MonoBehaviour
 			PlayerStats.PlayerDeaths ++;
 			DeathRecorded = true;
 			PlayerStats.PlayerDamage = 0;
-			gameObject.GetComponent<Toast>().NewToast("dead");
+			int rand = Random.Range(0, phrases.Length);
+			gameObject.GetComponent<Toast>().NewToast(phrases[rand]);
 			SphereBit.GetComponent<MeshRenderer>().material = PlayerNoDamage;
 
 		}
