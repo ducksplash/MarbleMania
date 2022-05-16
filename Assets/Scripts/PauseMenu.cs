@@ -172,7 +172,7 @@ public class PauseMenu : MonoBehaviour
 	   
 	   
 	   
-		if (Input.GetKeyUp(PlayerStats.InputForPAUSE) || Input.GetKeyUp(KeyCode.Escape))
+		if (Input.GetKeyUp(PlayerStats.InputForPAUSE) || Input.GetKeyUp(KeyCode.Escape) && !PlayerStats.STOP)
 		{
 		   if (PlayerStats.Playing)
 		   {
@@ -182,7 +182,7 @@ public class PauseMenu : MonoBehaviour
 	   
 	   
 	   
-		if (Input.GetKeyUp(PlayerStats.InputForREARVIEW) || Input.GetKeyUp(KeyCode.V))
+		if (Input.GetKeyUp(PlayerStats.InputForREARVIEW) || Input.GetKeyUp(KeyCode.V) && !PlayerStats.STOP)
 		{
 		   if (PlayerStats.Playing)
 		   {
@@ -193,7 +193,7 @@ public class PauseMenu : MonoBehaviour
 
 
 
-			if (Input.GetKeyUp(PlayerStats.InputForRESTART))
+			if (Input.GetKeyUp(PlayerStats.InputForRESTART) && !PlayerStats.STOP)
 			{
 				if (PlayerStats.Playing)
 				{
@@ -202,7 +202,7 @@ public class PauseMenu : MonoBehaviour
 			}
 
 
-			if(Input.GetKeyDown(PlayerStats.InputForJUMP) || Input.GetKeyDown(KeyCode.RightShift))
+			if(Input.GetKeyDown(PlayerStats.InputForJUMP) || Input.GetKeyDown(KeyCode.RightShift) && !PlayerStats.STOP)
 			{
  
 				if((Time.time - lastTapTime) < tapSpeed)
