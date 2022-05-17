@@ -23,9 +23,13 @@ public class TubeHandler : MonoBehaviour
 			if (collision.gameObject.name.Contains("PLAYER"))
 			{
 				PlayerRB.velocity = 200 * (PlayerRB.velocity.normalized);
-			}
-		
-    }
+				Player.GetComponent<SoundManager>().WOOSH();
+
+				collision.transform.parent = gameObject.transform;
+
+		}
+
+	}
 
     
 
@@ -34,8 +38,8 @@ public class TubeHandler : MonoBehaviour
     //Detect collisions between the GameObjects with Colliders attached
     void OnCollisionExit(Collision collision)
     {
+		collision.transform.parent = null;
+	}
 
-    }
-	
-	
+
 }

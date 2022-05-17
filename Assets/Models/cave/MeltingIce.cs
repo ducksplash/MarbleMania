@@ -41,7 +41,7 @@ public class MeltingIce : MonoBehaviour
 				icecubeMaterials.EnableKeyword("_EMISSION");
 
 
-				StartCoroutine(DropIce());
+				StartCoroutine(DropIce(collision.gameObject));
 
 			
 		}
@@ -58,7 +58,7 @@ public class MeltingIce : MonoBehaviour
 		}
 	}
 
-	IEnumerator DropIce()
+	IEnumerator DropIce(GameObject thePlayer)
 	{
 		yield return new WaitForSeconds(1.5f);
 
@@ -67,6 +67,7 @@ public class MeltingIce : MonoBehaviour
 
 		meltani.SetTrigger("melt");
 
+		thePlayer.GetComponent<SoundManager>().ICEMELT();
 
 
 		StartCoroutine(DestroyIce());

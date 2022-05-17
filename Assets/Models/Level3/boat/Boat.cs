@@ -99,6 +99,7 @@ void OnTriggerEnter(Collider other)
 		CurrentBoat.transform.parent = transform;
 		TheBoat = CurrentBoat;
 		Rains = TheBoat.transform.Find("rains").GetComponent<ParticleSystem>();
+		RainSound = TheBoat.transform.Find("rains").GetComponent<AudioSource>();
 		BoatRB = TheBoat.GetComponent<Rigidbody>();
 		PlayerLock = TheBoat.transform.Find("seat");
 

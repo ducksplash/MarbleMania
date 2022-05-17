@@ -7,7 +7,7 @@ public class PortalHandlerEnter : MonoBehaviour
 {
 	
 	public GameObject Player;
-	
+	public Light DirLight;
 	public GameObject Target;
 	
 	private bool IsTravelling = false;
@@ -38,7 +38,7 @@ public class PortalHandlerEnter : MonoBehaviour
 			other.gameObject.GetComponentInParent<Boat>().ExitBoat();
 			other.gameObject.GetComponentInParent<Boat>().DestroyBoat();
 			Player.GetComponent<SoundManager>().PORTAL();
-
+			DirLight.enabled = false;
 			StartCoroutine(TravelTimeout());
 
 			Debug.Log("got boat");

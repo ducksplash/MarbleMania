@@ -12,6 +12,7 @@ public class WaterTube : MonoBehaviour
 	public Transform PlayerLockBottom;
 	public Transform PlayerLockTop;
 	public float LaunchForce;
+	private bool toasted;
 	void Start()
 	{
 	
@@ -35,9 +36,9 @@ public class WaterTube : MonoBehaviour
 		PlayerRB.velocity = Vector3.zero;
 		PlayerRB = Player.GetComponent<Rigidbody>();
 		Debug.Log("wooosh");
-		
-	
-			
+
+
+
 		Player.transform.position = PlayerLockBottom.position;			
 		
 		ElevatePlayer();
@@ -52,6 +53,11 @@ public class WaterTube : MonoBehaviour
         PlayerRB.mass = 0.1f;
         PlayerRB.AddForce(0, LaunchForce, 0);
 		Player.GetComponent<SoundManager>().WOOSH();
+		if (!toasted)
+		{
+			Player.GetComponent<Toast>().NewToast("Aim for the boat");
+			toasted = true;
+		}
 
 		Invoke("ReleasePlayer",0.5f);
 	}

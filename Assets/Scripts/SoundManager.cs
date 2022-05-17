@@ -44,6 +44,7 @@ public class SoundManager : MonoBehaviour
 	public AudioClip SharkSpotted;
 	public AudioClip MunchSound;
 	public AudioClip Woosh;
+	public AudioClip Melt;
 
 
 	public AudioClip ExplosionClip;
@@ -129,6 +130,20 @@ public class SoundManager : MonoBehaviour
 		
 	}
 
+
+
+
+
+
+
+	public void ICEMELT()
+	{
+		if (PlayerStats.SoundFXEnabled)
+		{
+			SFXAudioSource.PlayOneShot(Melt, SFXVolume);
+		}
+
+	}
 
 
 

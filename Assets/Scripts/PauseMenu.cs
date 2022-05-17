@@ -202,7 +202,7 @@ public class PauseMenu : MonoBehaviour
 			}
 
 
-			if(Input.GetKeyDown(PlayerStats.InputForJUMP) || Input.GetKeyDown(KeyCode.RightShift) && !PlayerStats.STOP)
+			if(Input.GetKeyDown(KeyCode.KeypadPeriod) && !PlayerStats.STOP)
 			{
  
 				if((Time.time - lastTapTime) < tapSpeed)

@@ -65,9 +65,9 @@ public class PlayerStats : MonoBehaviour
 	
 	
 	// LEVEL VARS
-	public static float TimeLevel1 = 120f;
-	public static float TimeLevel2 = 200f;
-	public static float TimeLevel3 = 200f;
+	public static float TimeLevel1 = 140f;
+	public static float TimeLevel2 = 160f;
+	public static float TimeLevel3 = 180f;
 	public static float TimeLevel4 = 1999f;
 	public static float TimeLevel5 = 1999f;
 	public static float TimeLevel6 = 1999f;
