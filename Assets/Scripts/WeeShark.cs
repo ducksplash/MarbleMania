@@ -34,7 +34,7 @@ public class WeeShark : MonoBehaviour
 	private bool IsDead;
 	public Material SharkEyes;
 	private Color SharkEyeColor;
-	
+	public bool PlayerSpotted;
 	
 	
 	
@@ -151,7 +151,7 @@ public class WeeShark : MonoBehaviour
 	
 	
 	
-	void Update()
+	void FixedUpdate()
 	{
 		if (!IsDead)
 		{
@@ -166,7 +166,7 @@ public class WeeShark : MonoBehaviour
 			var targetRotation = Quaternion.LookRotation(nextPos - transform.position);
 		 
 			// Smoothly rotate towards the target point.
-			transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 2f * Time.deltaTime);
+			transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 2f * Time.smoothDeltaTime);
 
 			}	
 		
@@ -178,13 +178,10 @@ public class WeeShark : MonoBehaviour
 			if (Vector3.Distance(gameObject.transform.position, PlayerTransform.position) > 3f)
 			{
 
-					PlayerTransform.gameObject.GetComponent<SoundManager>().SHARK();
-
-
 			var targetRotation = Quaternion.LookRotation(PlayerTransform.position - transform.position);
 		 
 			// Smoothly rotate towards the target point.
-			transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 2f * Time.deltaTime);
+			transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 2f * Time.smoothDeltaTime);
 
 			}	
 		
@@ -192,25 +189,27 @@ public class WeeShark : MonoBehaviour
 		
 		
 		if (Vector3.Distance(gameObject.transform.position, PlayerTransform.position) < (SharkVisionDistance - 2))
-        {	
-			
+        {
+
+
+
 			if (OnPatrol)
 			{
 				OnPatrol = false;
 				OnAttack = true;
-				
-				
+
+				PlayerSpotted = true;
+				StartCoroutine(SawPlayer());
+
 				StopCoroutine(TheCurrentCoroutine);
 				TheCurrentCoroutine = AttackPlayer();
-				StartCoroutine(TheCurrentCoroutine);
-				
-				
+				StartCoroutine(TheCurrentCoroutine);				
 			}
-		
+			
 		}	
 
 
-		
+
 		if (Vector3.Distance(gameObject.transform.position, PlayerTransform.position) > SharkVisionDistance)
         {	
 			
@@ -257,22 +256,31 @@ public class WeeShark : MonoBehaviour
 		}
 		}
 	}
-	
-	
-	
-	
+
+
+
+
 	IEnumerator SharkSwim(Vector3 TheNextPosition)
 	{
 		while (Vector3.Distance(gameObject.transform.position, TheNextPosition) > 0f && IsSwimming)
 		{
-		yield return new WaitForSeconds(0.1f);
-		WeeSharkRB.AddForce((TheNextPosition - gameObject.transform.position) * sharkspeed);
+			yield return new WaitForSeconds(0.1f);
+			WeeSharkRB.AddForce((TheNextPosition - gameObject.transform.position) * sharkspeed);
 		}
 		IsSwimming = false;
 		yield return new WaitForSeconds(2);
 	}
-	
-    
+
+
+
+
+
+	IEnumerator SawPlayer()
+	{
+
+		PlayerTransform.gameObject.GetComponent<SoundManager>().SHARK();
+		yield return new WaitForSeconds(2);
+	}
 	IEnumerator AttackPlayer()
 	{
 		
@@ -297,7 +305,8 @@ public class WeeShark : MonoBehaviour
 	{
 		OnPatrol = true;
 		OnAttack = false;
-		SharkEating = false;
+		SharkEating = false; 
+		PlayerSpotted = false;
 		NoseCollider.enabled = true;
 		StopCoroutine(TheCurrentCoroutine);
 		TheCurrentCoroutine = SharkSwim(nextPos);

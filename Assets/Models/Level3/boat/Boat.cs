@@ -12,6 +12,7 @@ public class Boat : MonoBehaviour
 	public Rigidbody BoatRB;
 	private bool InBoat;
 	public ParticleSystem Rains;
+	public AudioSource RainSound;
 	public bool BoatIntact;
 	public Vector3 BoatStartPos;
 	public GameObject BoatPrefab;
@@ -23,8 +24,9 @@ public class Boat : MonoBehaviour
 		
 		PlayerRB = Player.GetComponent<Rigidbody>();
 		InBoat = false;
-		
+
 		Rains = TheBoat.transform.Find("rains").GetComponent<ParticleSystem>();
+		RainSound = TheBoat.transform.Find("rains").GetComponent<AudioSource>();
 		PlayerLock = TheBoat.transform.Find("seat");
     }
 	
@@ -44,6 +46,7 @@ void OnTriggerEnter(Collider other)
 				PlayerStats.STOP = true;
 				PlayerRB.velocity = Vector3.zero;
 				PlayerRB.isKinematic = true;
+				RainSound.Play();
 				PlayerRB.useGravity = false;
 				Player.transform.parent = TheBoat.transform;
 				Rains.Play();
@@ -77,7 +80,8 @@ void OnTriggerEnter(Collider other)
 	PlayerRB.useGravity = true;
 	Player.transform.parent = null;
 	Rains.Stop();				
-	InBoat = false;	
+	InBoat = false;
+	RainSound.Stop();
 	Debug.Log("all this happened");
 	}
 

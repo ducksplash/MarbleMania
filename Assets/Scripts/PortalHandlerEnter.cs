@@ -37,7 +37,7 @@ public class PortalHandlerEnter : MonoBehaviour
 			Player.transform.position = Target.transform.position;
 			other.gameObject.GetComponentInParent<Boat>().ExitBoat();
 			other.gameObject.GetComponentInParent<Boat>().DestroyBoat();
-			other.gameObject.GetComponent<SoundManager>().PORTAL();
+			Player.GetComponent<SoundManager>().PORTAL();
 
 			StartCoroutine(TravelTimeout());
 
