@@ -33,11 +33,26 @@ public class GameStart : MonoBehaviour
 	public GameObject ChangeMeshButton;
 	private string MeshName;
 	private Image MeshThumbnail;
-	
-	
+	public TextMeshProUGUI HighScoreText;
+
+
 	void Start()
 	{
-		
+
+
+
+
+		if (PlayerPrefs.GetString("HighScore") == "")
+		{
+			HighScoreText.text = "0";
+		}
+		else
+		{
+			HighScoreText.text = PlayerPrefs.GetString("HighScore");
+		}
+
+
+
 		CustomiserButtonsDone = false;
 		
 		PlayerStatsScript = gameObject.GetComponent<PlayerStats>();

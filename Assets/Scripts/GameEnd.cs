@@ -32,6 +32,7 @@ public class GameEnd : MonoBehaviour
 
 		FinScoreNet = (PlayerStats.PlayerScore - (PlayerStats.PlayerDeaths * DeathTax));
 
+		PlayerPrefs.SetString("HighScore", FinScoreNet.ToString());
 
 		PlayerScoreGUIText.text = FinScoreNet.ToString();
 		PlayerDeathsGUIText.text = FinDeaths.ToString();

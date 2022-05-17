@@ -112,26 +112,45 @@ public class WeeShark : MonoBehaviour
 	{
 		if (!IsDead)
 		{
-		 foreach(ContactPoint contact in other.contacts)
-         {
-             var colName = contact.thisCollider.name;
+			foreach (ContactPoint contact in other.contacts)
+			{
+				var colName = contact.thisCollider.name;
 
-			if (colName.Contains("nose"))
-			{				
+				if (colName.Contains("nose"))
+				{
+					if (other.transform.name.Contains("PLAYER"))
+					{
+						NoseCollider.enabled = false;
+						StopCoroutine(TheCurrentCoroutine);
+						TheCurrentCoroutine = EatPlayer();
+						StartCoroutine(TheCurrentCoroutine);
+
+					}
+
+				}
+
+			}
+		}
+        else
+        {
+			foreach (ContactPoint contact in other.contacts)
+			{
 				if (other.transform.name.Contains("PLAYER"))
 				{
-					NoseCollider.enabled = false;
-					StopCoroutine(TheCurrentCoroutine);
-					TheCurrentCoroutine = EatPlayer();
-					StartCoroutine(TheCurrentCoroutine);
-			
-				}	
-				
-			}
+					Debug.Log("shork is collectable");
 
-         }
-		}
-		
+					other.gameObject.GetComponent<SoundManager>().PICKUP();
+
+					other.gameObject.GetComponent<Score>().Add(250, "CollectedShark");
+
+					other.gameObject.GetComponent<ScriptsPirateHat>().AddHat();
+					PlayerStats.HatOnFella = true;
+
+					Destroy(gameObject);
+
+				}
+			}
+        }
 	}
 	
 	
@@ -175,7 +194,7 @@ public class WeeShark : MonoBehaviour
 		if (OnAttack)
 		{			
 			
-			if (Vector3.Distance(gameObject.transform.position, PlayerTransform.position) > 3f)
+			if (Vector3.Distance(gameObject.transform.position, PlayerTransform.position) > 3f && PlayerStats.InWater)
 			{
 
 			var targetRotation = Quaternion.LookRotation(PlayerTransform.position - transform.position);
@@ -188,7 +207,7 @@ public class WeeShark : MonoBehaviour
 		}
 		
 		
-		if (Vector3.Distance(gameObject.transform.position, PlayerTransform.position) < (SharkVisionDistance - 2))
+		if (Vector3.Distance(gameObject.transform.position, PlayerTransform.position) < (SharkVisionDistance - 2) && PlayerStats.InWater)
         {
 
 
@@ -210,7 +229,7 @@ public class WeeShark : MonoBehaviour
 
 
 
-		if (Vector3.Distance(gameObject.transform.position, PlayerTransform.position) > SharkVisionDistance)
+		if (Vector3.Distance(gameObject.transform.position, PlayerTransform.position) > SharkVisionDistance || !PlayerStats.InWater)
         {	
 			
 			if (OnAttack)

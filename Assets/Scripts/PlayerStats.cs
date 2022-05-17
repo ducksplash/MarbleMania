@@ -12,6 +12,7 @@ public class PlayerStats : MonoBehaviour
 {
 	
 	// PLAYER VARS
+
 	public static bool DEAD = false;
 	public static int PlayerScore;
 	public static int PlayerDeaths;
@@ -36,9 +37,9 @@ public class PlayerStats : MonoBehaviour
 	public static float BallSpeed;
 	public static bool FlightMode;
 	public static bool InWater;
-	
-	
-	
+	public static bool HatOnFella = false;
+
+
 	public static Color32 PlayerColor;
 	public static Color32 PlayerMiddleColor;
 	
@@ -64,7 +65,7 @@ public class PlayerStats : MonoBehaviour
 	
 	
 	// LEVEL VARS
-	public static float TimeLevel1 = 200f;
+	public static float TimeLevel1 = 120f;
 	public static float TimeLevel2 = 200f;
 	public static float TimeLevel3 = 200f;
 	public static float TimeLevel4 = 1999f;
@@ -78,7 +79,7 @@ public class PlayerStats : MonoBehaviour
 	
 	public TextMeshProUGUI PlayerScoreGUIText;
 	public TextMeshProUGUI PlayerDeathsGUIText;
-	
+
 	public static Dictionary<int, Dictionary<string,float>> LevelDict;
 	public static Dictionary<string,Texture> PlayerPrefabMeshDict;
 	public static string PlayerMiddleBit;

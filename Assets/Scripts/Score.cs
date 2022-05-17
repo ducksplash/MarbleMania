@@ -50,7 +50,14 @@ public class Score : MonoBehaviour
 
 		if (doType.Equals("RuddyShark"))
 		{
-			gameObject.GetComponent<Toast>().NewToast("Bumped The Shark; +"+ScoreForThat+" points");
+			gameObject.GetComponent<Toast>().NewToast("Bumped The Shark; +" + ScoreForThat + " points");
+			PlayerStats.PlayerScoreThisLevel += ScoreForThat;
+		}
+
+
+		if (doType.Equals("CollectedShark"))
+		{
+			gameObject.GetComponent<Toast>().NewToast("Collectable Shark; +" + ScoreForThat + " points");
 			PlayerStats.PlayerScoreThisLevel += ScoreForThat;
 		}
 
