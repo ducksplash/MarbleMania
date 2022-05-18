@@ -83,9 +83,12 @@ public class LevelManager : MonoBehaviour
 
 	void Start()
     {
+		if (PlayerStats.DeviceType == "PC")
+		{
+			Cursor.lockState = CursorLockMode.None;
+		}
 
-		Cursor.lockState = CursorLockMode.None;
-	    LevelOver = false;
+		LevelOver = false;
 		LevelComplete = false;
 		LevelFailed = false;
 		ContestedScore = 0;
@@ -123,10 +126,12 @@ public class LevelManager : MonoBehaviour
 	
 	public void BootFluffer()
 	{
-		
-		
-		
+
+
+		if (PlayerStats.DeviceType == "PC")
+		{
 			Cursor.lockState = CursorLockMode.None;
+		}
 		if (!PlayerStats.MainMenu)
 		{
 			LevelStartLevelText.text = SceneManager.GetActiveScene().name;
@@ -249,8 +254,10 @@ public class LevelManager : MonoBehaviour
 		LevelComplete = true;
 		PlayerStats.STOP = true;
 
-		Cursor.lockState = CursorLockMode.None;
-
+		if (PlayerStats.DeviceType == "PC")
+		{
+			Cursor.lockState = CursorLockMode.None;
+		}
 		LevelManager.CloseAllStatic();
 		
 		ThisHUDGUI.alpha = 0.0f;
@@ -293,8 +300,10 @@ public class LevelManager : MonoBehaviour
 	{
 		gameObject.GetComponent<SoundManager>().TIMERUP();
 
-		Cursor.lockState = CursorLockMode.None;
-
+		if (PlayerStats.DeviceType == "PC")
+		{
+			Cursor.lockState = CursorLockMode.None;
+		}
 		TimeUpTriggered = true;
 		
 		CloseAll();
@@ -410,7 +419,10 @@ public class LevelManager : MonoBehaviour
 	
 	public void StartLevel(int levelNumber)
 	{
-        Cursor.lockState = CursorLockMode.Locked;
+		if (PlayerStats.DeviceType == "PC")
+		{
+			Cursor.lockState = CursorLockMode.Locked;
+		}
 		var thislevelNumber = levelNumber.ToString();
 		StartLevelAnimator.SetTrigger("StartLevel");		
 		PausedPanel.GetComponent<CanvasGroup>().blocksRaycasts = false;
