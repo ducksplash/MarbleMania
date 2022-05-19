@@ -126,8 +126,8 @@ public class PlayerStats : MonoBehaviour
 		// SET DEVICE TYPE
 		// COME BACK AND DO ME RIGHT LATER!!
 
-		//DeviceType = "PC";
-		DeviceType = "MOBILE";
+		DeviceType = "PC";
+		//DeviceType = "MOBILE";
 
 
 

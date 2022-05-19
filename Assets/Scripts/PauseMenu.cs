@@ -643,7 +643,7 @@ public class PauseMenu : MonoBehaviour
 		Debug.Log("Pause DoResume");
 			if (PlayerStats.DeviceType == "PC")
 			{
-				Cursor.lockState = CursorLockMode.None;
+				Cursor.lockState = CursorLockMode.Locked;
 			}
 			PlayerStats.GamePaused = false;
 			gameObject.GetComponent<SoundManager>().MenuBackward();
