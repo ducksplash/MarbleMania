@@ -52,9 +52,9 @@ public class WaterTube : MonoBehaviour
 
         PlayerRB.mass = 0.1f;
         PlayerRB.AddForce(0, LaunchForce, 0);
-		Player.GetComponent<SoundManager>().WOOSH();
 		if (!toasted)
 		{
+			Player.GetComponent<SoundManager>().WOOSH();
 			Player.GetComponent<Toast>().NewToast("Aim for the boat");
 			toasted = true;
 		}
@@ -72,6 +72,7 @@ public class WaterTube : MonoBehaviour
         PlayerRB.mass = 10f;
         PlayerRB.drag = 0.3f;
 		PlayerStats.STOP = false;
+		toasted = false;
 	}
 	
 }

@@ -382,6 +382,7 @@ public class GameStart : MonoBehaviour
 		var getSelectedMesh = Resources.Load<Mesh>("playermeshes/"+selectedMesh);
 		MarbleInnerBit.GetComponent<MeshFilter>().mesh = getSelectedMesh;
 		PlayerStats.PlayerMiddleBit = selectedMesh;
+		PlayerPrefs.SetString("PlayerMesh", selectedMesh);
 		Debug.Log(PlayerStats.PlayerMiddleBit);
 	}
 	

@@ -112,8 +112,4 @@ public class PlayerInputs : MonoBehaviour
 
     }
 
-    void Update()
-    {
-		
-    }
 }

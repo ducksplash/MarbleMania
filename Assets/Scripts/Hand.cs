@@ -32,7 +32,8 @@ public class Hand : MonoBehaviour
     }
 
     
-    private void Update()
+    
+    void FixedUpdate()
     {
         if (Vector3.Distance(DetectorBit.transform.position, PlayerTransform.position) < DetectionDistance)
         {

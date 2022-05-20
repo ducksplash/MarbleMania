@@ -10,7 +10,7 @@ public class MainMenuRotatingPlatform : MonoBehaviour
 	
 	
 	
-	void Update()
+	void FixedUpdate()
 	{
 	
 			gameObject.transform.Rotate(new Vector3 (0, 3, 0) * (Time.smoothDeltaTime * 7));

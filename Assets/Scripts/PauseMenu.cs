@@ -534,6 +534,7 @@ public class PauseMenu : MonoBehaviour
 		var getSelectedMesh = Resources.Load<Mesh>("playermeshes/"+selectedMesh);
 		MarbleInnerBit.GetComponent<MeshFilter>().mesh = getSelectedMesh;
 		PlayerStats.PlayerMiddleBit = selectedMesh;
+		PlayerPrefs.SetString("PlayerMesh", selectedMesh);
 		Debug.Log(PlayerStats.PlayerMiddleBit);
 	}
 	
@@ -581,8 +582,7 @@ public class PauseMenu : MonoBehaviour
 		SceneManager.LoadScene("mainmenu");
 		PlayerStats.PlayerMiddleBit = "default";	
 		
-		PlayerStats.PlayerColor = new Color32(200,200,200,255);
-		PlayerStats.PlayerMiddleColor = new Color32(200,200,200,255);
+
 	}
 	
 	public void DoQuitToDesktop()

@@ -21,7 +21,7 @@ public class LongSpike : MonoBehaviour
 	
 
 
-	void Update()
+	void FixedUpdate()
 	{
 
 			 if (Vector3.Distance(transform.position, Player.position) < detDist)

@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 public class mouseClickedName : MonoBehaviour
 {
 	
-	void Update()
+	void FixedUpdate()
 	{
      if( Input.GetMouseButtonDown(0) )
      {

@@ -99,6 +99,13 @@ public class PlayerStats : MonoBehaviour
 		
 		PlayerStats.SoundFXEnabled = true;
 		PlayerStats.SoundBGMEnabled = true;
+
+
+		if (PlayerPrefs.GetString("PlayerMesh") != "")
+        {
+			PlayerMiddleBit = PlayerPrefs.GetString("PlayerMesh");
+		}
+
 		if (String.IsNullOrEmpty(PlayerMiddleBit))
 		{
 		PlayerMiddleBit = "default";
@@ -410,19 +417,9 @@ public class PlayerStats : MonoBehaviour
 	}
 	
 	
-	void Update()
+	void FixedUpdate()
 	{
-		
-		if (CollisionHandler.GoalTriggered || LevelManager.TimeUpTriggered || !Playing )
-		{
-			GlobalCondition = "HALT";
-		}
-		else
-		{
-			GlobalCondition = "PLAY";
-		}
-		
-		
+			
 		
 		var ScoreToDisplay = PlayerScoreThisLevel + PlayerScore;
 		

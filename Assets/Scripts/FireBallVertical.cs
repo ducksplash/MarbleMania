@@ -21,7 +21,7 @@ public class FireBallVertical : MonoBehaviour
     }
 
     
-    private void Update()
+    private void FixedUpdate()
     {
 
 		if (!rockUp)

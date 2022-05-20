@@ -6,7 +6,7 @@ public class TubeHandler : MonoBehaviour
 {
 	public GameObject Player;
 	Rigidbody PlayerRB;
-	
+	private bool Wooshed;
 
 	void Start()
 	{
@@ -23,22 +23,34 @@ public class TubeHandler : MonoBehaviour
 			if (collision.gameObject.name.Contains("PLAYER"))
 			{
 				PlayerRB.velocity = 200 * (PlayerRB.velocity.normalized);
+			if (!Wooshed)
+			{
 				Player.GetComponent<SoundManager>().WOOSH();
+				Wooshed = true;
 
-				collision.transform.parent = gameObject.transform;
+				StartCoroutine(UnWoosh());
+			}
+			collision.transform.parent = gameObject.transform;
 
 		}
 
 	}
 
     
+	IEnumerator UnWoosh()
+    {
+		yield return new WaitForSeconds(5);
 
+		Wooshed = false;
+
+    }
 		
 	
     //Detect collisions between the GameObjects with Colliders attached
     void OnCollisionExit(Collision collision)
     {
 		collision.transform.parent = null;
+
 	}
 
 

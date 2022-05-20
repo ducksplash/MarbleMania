@@ -17,7 +17,7 @@ public class FallingRocks : MonoBehaviour
 	private bool DebounceRock = false;
 	
     
-    private void Update()
+    void FixedUpdate()
     {
 
 

@@ -143,7 +143,6 @@ public class WeeShark : MonoBehaviour
 
 					other.gameObject.GetComponent<Score>().Add(250, "CollectedShark");
 
-					other.gameObject.GetComponent<ScriptsPirateHat>().AddHat();
 					PlayerStats.HatOnFella = true;
 
 					Destroy(gameObject);

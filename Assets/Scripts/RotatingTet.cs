@@ -14,7 +14,7 @@ public class RotatingTet : MonoBehaviour
 	}
 	
 	
-	void Update()
+	void FixedUpdate()
 	{
 		gameObject.transform.Rotate(new Vector3 (0, 4, 0) * (Time.smoothDeltaTime * 7));
 	}

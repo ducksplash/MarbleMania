@@ -32,7 +32,7 @@ public class Fan : MonoBehaviour
 	
 	
 	
-	void Update()
+	void FixedUpdate()
 	{
 		
 		if (FanActivated)

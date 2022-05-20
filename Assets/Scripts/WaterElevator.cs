@@ -12,6 +12,8 @@ public class WaterElevator : MonoBehaviour
 	public GameObject TransportLaunchPad;
 	public Transform PlayerLock;
 	public float LaunchForce;
+	private bool Wooshed;
+
 	void Start()
 	{
 	
@@ -45,9 +47,14 @@ public class WaterElevator : MonoBehaviour
 				if (other.gameObject.name.Contains("PLAYER"))
 				{
 				PlayerStats.STOP = true;
-				Player.GetComponent<SoundManager>().WOOSH();
 
-				PlayerRB.velocity = Vector3.zero;
+					if (!Wooshed)
+					{
+						Player.GetComponent<SoundManager>().WOOSH();
+						Wooshed = true;
+					}
+
+					PlayerRB.velocity = Vector3.zero;
 				PlayerRB = Player.GetComponent<Rigidbody>();
 				Debug.Log("wooosh");
 				
@@ -67,7 +74,7 @@ public class WaterElevator : MonoBehaviour
 
         PlayerRB.mass = 0.1f;
         PlayerRB.AddForce(0, LaunchForce, 0);
-
+		Wooshed = false;
 
 	}
 	

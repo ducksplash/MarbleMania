@@ -13,7 +13,7 @@ public class SloopRimColours : MonoBehaviour
     bool greenToRed = false;
     bool redToBlue = false;
 
-    void Update()
+    void FixedUpdate()
     {
 
         timer += Time.deltaTime / seconds;

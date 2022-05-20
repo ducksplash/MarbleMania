@@ -27,7 +27,7 @@ using System.Collections;
  
  
  
-     void Update()
+     void FixedUpdate()
      {
 		 
 		 if (!PlayerStats.GamePaused)

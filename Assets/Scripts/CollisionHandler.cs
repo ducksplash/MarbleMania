@@ -245,7 +245,7 @@ public class CollisionHandler : MonoBehaviour
 
 
 
-			if (gameObject.name.Contains("Collectable-C"))
+			if (gameObject.name.Contains("Collectable-Cat"))
 			{
 
 				other.gameObject.GetComponent<SoundManager>().PICKUP();

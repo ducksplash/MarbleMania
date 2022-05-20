@@ -39,9 +39,6 @@ void Awake()
 	SpawnY = SpawnYorig;
 	SpawnZ = SpawnZorig;	
 	
-	Debug.Log(SpawnXorig);
-	Debug.Log(SpawnYorig);
-	Debug.Log(SpawnZorig);
 	
 	//ThisCameraAnimator.SetTrigger("DoUnfade");
 

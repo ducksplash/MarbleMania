@@ -43,52 +43,52 @@ public class Score : MonoBehaviour
 
 		if (doType.Equals("Spiked"))
 		{
-			gameObject.GetComponent<Toast>().NewToast("Enemy Got Piked; +" + ScoreForThat + " points");
+			gameObject.GetComponent<Toast>().NewToast("Enemy Got Piked\nAdd" + ScoreForThat + " points");
 			PlayerStats.PlayerScoreThisLevel += ScoreForThat;
 		}
 
 
 		if (doType.Equals("RuddyShark"))
 		{
-			gameObject.GetComponent<Toast>().NewToast("Bumped The Shark; +" + ScoreForThat + " points");
+			gameObject.GetComponent<Toast>().NewToast("Bumped The Shark\nAdd" + ScoreForThat + " points");
 			PlayerStats.PlayerScoreThisLevel += ScoreForThat;
 		}
 
 
 		if (doType.Equals("CollectedShark"))
 		{
-			gameObject.GetComponent<Toast>().NewToast("Collectable Shark; +" + ScoreForThat + " points");
+			gameObject.GetComponent<Toast>().NewToast("Who goes back to collect the shark??\nAdd" + ScoreForThat + " points");
 			PlayerStats.PlayerScoreThisLevel += ScoreForThat;
 		}
 
 		if (doType.Equals("EnemyPortal"))
 		{
-			gameObject.GetComponent<Toast>().NewToast("Portal Trap; +" + ScoreForThat + " points");
+			gameObject.GetComponent<Toast>().NewToast("Portal Trap\nAdd" + ScoreForThat + " points");
 			PlayerStats.PlayerScoreThisLevel += ScoreForThat;
 		}
 
 		if (doType.Equals("EnemyVoid"))
 		{
-			gameObject.GetComponent<Toast>().NewToast("Enemy Voided; +" + ScoreForThat + " points");
+			gameObject.GetComponent<Toast>().NewToast("Enemy Voided\nAdd" + ScoreForThat + " points");
 			PlayerStats.PlayerScoreThisLevel += ScoreForThat;
 		}
 
 		if (doType.Equals("WeeBeastie"))
 		{
-			gameObject.GetComponent<Toast>().NewToast("WeeBeastie was sent to Tartarus; +" + ScoreForThat + " points");
+			gameObject.GetComponent<Toast>().NewToast("Wee Beastie was sent to Tartarus\nAdd" + ScoreForThat + " points");
 			PlayerStats.PlayerScoreThisLevel += ScoreForThat;
 		}
 
 		if (doType.Equals("FoundGod"))
 		{
-			gameObject.GetComponent<Toast>().NewToast("Collectable GOD found!; +" + ScoreForThat + " points");
+			gameObject.GetComponent<Toast>().NewToast("Meow!\nAdd" + ScoreForThat + " points");
 			PlayerStats.PlayerScoreThisLevel += ScoreForThat;
 		}
 
 
 		if (doType.Equals("FoundHamster"))
 		{
-			gameObject.GetComponent<Toast>().NewToast("Collectable Hamster found! +" + ScoreForThat + " points");
+			gameObject.GetComponent<Toast>().NewToast("Squeak! +" + ScoreForThat + " points");
 			PlayerStats.PlayerScoreThisLevel += ScoreForThat;
 		}
 
@@ -96,7 +96,7 @@ public class Score : MonoBehaviour
 
 		if (doType.Equals("FoundDuck"))
 		{
-			gameObject.GetComponent<Toast>().NewToast("Collectable Duck found! +" + ScoreForThat + " points");
+			gameObject.GetComponent<Toast>().NewToast("Quack! +" + ScoreForThat + " points");
 			PlayerStats.PlayerScoreThisLevel += ScoreForThat;
 		}
 

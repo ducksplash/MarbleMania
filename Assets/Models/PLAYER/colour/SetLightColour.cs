@@ -11,9 +11,23 @@ public class SetLightColour : MonoBehaviour
 
     private void Start()
     {
-		previewGraphic.color = PlayerStats.PlayerColor;
-        //previewGraphic.color = colorPicker.color;
-		thisLightColorPicker = theLightColorPicker.GetComponent<LightColorPicker>();
+
+        var coltmp = new Color(0, 0, 0);
+        if (PlayerPrefs.GetString("CoreColor") != "")
+        {
+            ColorUtility.TryParseHtmlString("#" + PlayerPrefs.GetString("CoreColor"), out coltmp);
+            Debug.Log("stored in prefs");
+        }
+        else
+        {
+            coltmp = PlayerStats.PlayerMiddleColor;
+            Debug.Log("pulled from pinfo");
+        }
+
+
+		previewGraphic.color = coltmp;
+
+        thisLightColorPicker = theLightColorPicker.GetComponent<LightColorPicker>();
 		
         thisLightColorPicker.onColorChanged += OnColorChanged;
     }
@@ -22,6 +36,11 @@ public class SetLightColour : MonoBehaviour
     {
         previewGraphic.color = c;
 		PlayerStats.PlayerColor = c;
+        string colorString = ColorUtility.ToHtmlStringRGB(c);
+
+        PlayerPrefs.SetString("CoreColor", colorString);
+
+
     }
 
     private void OnDestroy()

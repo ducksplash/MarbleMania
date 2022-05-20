@@ -22,13 +22,9 @@ public class EruptingVolcano : MonoBehaviour
 	
 	
     
-    private void Update()
+    private void FixedUpdate()
     {
 
-		if (Input.GetKeyUp(KeyCode.M))
-		{
-			CreateAestheticRock();
-		}
 
 
     if (IsInRange && !DebounceRock)
