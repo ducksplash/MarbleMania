@@ -10,9 +10,9 @@ using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour
 {
-
+	
 	// PLAYER VARS
-	public static string DeviceType;
+
 	public static bool DEAD = false;
 	public static int PlayerScore;
 	public static int PlayerDeaths;
@@ -120,23 +120,8 @@ public class PlayerStats : MonoBehaviour
 		{
 			PlayerMiddleColor = new Color32(200,200,200,255);
 		}
-
-
-
-		// SET DEVICE TYPE
-		// COME BACK AND DO ME RIGHT LATER!!
-
-		DeviceType = "PC";
-		//DeviceType = "MOBILE";
-
-
-
-
-
-
-
-
-
+		
+		
 	}
 
 	

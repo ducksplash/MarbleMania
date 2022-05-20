@@ -304,13 +304,9 @@ public class PauseMenu : MonoBehaviour
 	   {
 		   
 		gameObject.GetComponent<SoundManager>().MenuForward();
+        Cursor.lockState = CursorLockMode.None;
 
-		if (PlayerStats.DeviceType == "PC")
-		{
-				Cursor.lockState = CursorLockMode.None;
-		}
-
-			CloseAll();
+		CloseAll();
 		
 		
 		PausedScreen.alpha = 1f;
@@ -330,12 +326,9 @@ public class PauseMenu : MonoBehaviour
 		//Time.timeScale = 0;
 	   }
 	   else
-	   {
-
-			if (PlayerStats.DeviceType == "PC")
-			{
-				Cursor.lockState = CursorLockMode.None;
-			}
+	   { 
+   
+			Cursor.lockState = CursorLockMode.None;
 			PlayerStats.GamePaused = false;
 			DoResume();
 	   }
@@ -601,10 +594,7 @@ public class PauseMenu : MonoBehaviour
 	
 	public void DoRestartLevel()
 	{
-		if (PlayerStats.DeviceType == "PC")
-		{
-			Cursor.lockState = CursorLockMode.None;
-		}
+        Cursor.lockState = CursorLockMode.None;
 		gameObject.GetComponent<SoundManager>().MenuForward();
 		PlayerStats.GamePaused = true;
 		//Time.timeScale = 0;
@@ -641,10 +631,7 @@ public class PauseMenu : MonoBehaviour
 		if (PlayerStats.Playing)
 		{
 		Debug.Log("Pause DoResume");
-			if (PlayerStats.DeviceType == "PC")
-			{
-				Cursor.lockState = CursorLockMode.Locked;
-			}
+			Cursor.lockState = CursorLockMode.Locked;
 			PlayerStats.GamePaused = false;
 			gameObject.GetComponent<SoundManager>().MenuBackward();
 		}

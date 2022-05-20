@@ -24,6 +24,7 @@ public class portalin : MonoBehaviour
 			PlayerStats.STOP = true;
 			StartCoroutine(TravelTimeout());
 			other.gameObject.GetComponent<SoundManager>().PORTAL();
+			other.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0,-6000,0));
 
 		}
 
