@@ -28,16 +28,18 @@ public class RotatingTet : MonoBehaviour
 
 			if (gameObject.name.Contains("FLAMES"))
 			{
-				other.gameObject.GetComponent<SoundManager>().SMASH();
-				other.gameObject.GetComponent<Toast>().NewToast("cooked");
+				Debug.Log("we still use this?");
 				other.transform.GetComponent<DIE>().DEATH();
-				
+
+				if (PlayerStats.shielded)
+                {
+					other.transform.GetComponent<ShieldScript>().RemoveShield();
+					gameObject.GetComponent<SoundManager>().POP();
+				}
+
 			}
 		}
-
     }
-	
-	
 	
 	
 }

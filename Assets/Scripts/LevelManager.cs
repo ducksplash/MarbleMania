@@ -136,7 +136,6 @@ public class LevelManager : MonoBehaviour
 			LevelStartDeathsText.text = PlayerStats.PlayerDeaths.ToString();	
 
 
-			PlayerStats.DoGameMode(PlayerStats.Difficulty);
 			
 			
 			// default inputs

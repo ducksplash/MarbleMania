@@ -23,7 +23,10 @@ public class GameStart : MonoBehaviour
 	private GameObject BGMSlider;
 	private GameObject SFXSlider;
 	public CanvasGroup CustomiseScreen;
-	
+
+	private GameObject DiffEasyToggle;
+	private GameObject DiffNormalToggle;
+	private GameObject DiffHardToggle;
 	public GameObject MeshListScrollViewContents;
 	private bool CustomiserButtonsDone;
 	
@@ -34,6 +37,7 @@ public class GameStart : MonoBehaviour
 	private string MeshName;
 	private Image MeshThumbnail;
 	public TextMeshProUGUI HighScoreText;
+	public TextMeshProUGUI DifficultySupplemental;
 
 
 	void Start()
@@ -69,7 +73,58 @@ public class GameStart : MonoBehaviour
 		SFXSlider.GetComponent<Slider>().value = SoundManager.SFXVolume;	
 		
 		gameObject.GetComponent<SoundManager>().BootAudio();
-		
+
+
+
+
+
+
+		var diff = PlayerPrefs.GetInt("GameDifficulty");
+
+		if (diff == 0)
+		{
+
+			DiffEasyToggle = GameObject.Find("EasyToggle");
+			DiffEasyToggle.GetComponent<Toggle>().isOn = true;
+
+			DiffNormalToggle = GameObject.Find("NormalToggle");
+			DiffNormalToggle.GetComponent<Toggle>().isOn = false;
+
+			DiffHardToggle = GameObject.Find("HardToggle");
+			DiffHardToggle.GetComponent<Toggle>().isOn = false;
+
+		}
+
+		if (diff == 1)
+		{
+
+			DiffEasyToggle = GameObject.Find("EasyToggle");
+			DiffEasyToggle.GetComponent<Toggle>().isOn = false;
+
+			DiffNormalToggle = GameObject.Find("NormalToggle");
+			DiffNormalToggle.GetComponent<Toggle>().isOn = true;
+
+			DiffHardToggle = GameObject.Find("HardToggle");
+			DiffHardToggle.GetComponent<Toggle>().isOn = false;
+
+		}
+
+		if (diff == 2)
+		{
+
+			DiffEasyToggle = GameObject.Find("EasyToggle");
+			DiffEasyToggle.GetComponent<Toggle>().isOn = false;
+
+			DiffNormalToggle = GameObject.Find("NormalToggle");
+			DiffNormalToggle.GetComponent<Toggle>().isOn = false;
+
+			DiffHardToggle = GameObject.Find("HardToggle");
+			DiffHardToggle.GetComponent<Toggle>().isOn = true;
+
+		}
+
+
+
 	}
 
 
@@ -293,18 +348,22 @@ public class GameStart : MonoBehaviour
 		gameObject.GetComponent<SoundManager>().MenuForward();
 
 		PlayerStats.DoGameMode(0);
+		DifficultySupplemental.text = "Life on easy mode. Enemies are effectively blind, docile and respawn slowly.";
 	}
 	
 	public void DoStandardMode()
 	{
 		gameObject.GetComponent<SoundManager>().MenuForward();
+		DifficultySupplemental.text = "The standard play mode.";
 		PlayerStats.DoGameMode(1);
 	}	
 	
 	public void DoHardMode()
 	{
 		gameObject.GetComponent<SoundManager>().MenuForward();
+		DifficultySupplemental.text = "Enemies will hunt you relentlessly and respawn fast.";
 		PlayerStats.DoGameMode(2);
+
 	}	
 
 	

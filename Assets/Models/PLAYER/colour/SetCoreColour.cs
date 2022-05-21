@@ -20,12 +20,10 @@ public class SetCoreColour : MonoBehaviour
         if (PlayerPrefs.GetString("CoreColor") != "")
         {
             ColorUtility.TryParseHtmlString("#" + PlayerPrefs.GetString("CoreColor"), out coltmp);
-            Debug.Log("stored in prefs");
         }
         else
         {
             coltmp = PlayerStats.PlayerMiddleColor;
-            Debug.Log("pulled from pinfo");
         }
 
         CoreMaterial.SetColor("_Color", coltmp);		

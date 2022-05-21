@@ -57,9 +57,6 @@ public class ClawGear : MonoBehaviour
     public IEnumerator RaiseAndLower()
 	{
 
-		Debug.Log("called");
-
-
 		if (GearState == "DOWN")
 		{
 			var ii = 200;

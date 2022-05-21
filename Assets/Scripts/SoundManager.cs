@@ -319,7 +319,6 @@ public class SoundManager : MonoBehaviour
 	
 	public void PICKUP()
 	{
-		Debug.Log("sound mgr");
 		
 		if (PlayerStats.SoundFXEnabled)
 		{

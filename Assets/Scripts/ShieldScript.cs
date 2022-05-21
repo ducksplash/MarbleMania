@@ -76,6 +76,17 @@ public class ShieldScript : MonoBehaviour
 			gameObject.GetComponent<SoundManager>().POP();
 			gameObject.GetComponent<Toast>().NewToast("you're on your own, soz.");
 		}
+
+
+		if (collision.gameObject.name.Contains("PoleAxeBlade") && PlayerStats.shielded && !amnesty)
+		{
+			RemoveShield();
+
+			gameObject.GetComponent<SoundManager>().POP();
+			gameObject.GetComponent<Toast>().NewToast("you're on your own, soz.");
+		}
+
+
 	}
 
 

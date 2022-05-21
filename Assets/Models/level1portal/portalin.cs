@@ -19,7 +19,6 @@ public class portalin : MonoBehaviour
 		{
 			// we're just disabling gravity here and then making a noise. 
 
-			Debug.Log(PortalNumber+" gotportal");
 			IsTravelling = true;
 			PlayerStats.STOP = true;
 			StartCoroutine(TravelTimeout());
@@ -34,7 +33,6 @@ public class portalin : MonoBehaviour
 	IEnumerator TravelTimeout()
 	{
 
-		Debug.Log("follow up");
 		yield return new WaitForSeconds(1f);
 		IsTravelling = false;
 		PlayerStats.STOP = false;

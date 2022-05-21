@@ -29,7 +29,6 @@ void Awake()
 {
 	
 	_camera = Camera.main;
-	//ThisCameraAnimator = _camera.GetComponent<Animator>();
 
 	SpawnXorig = Player.transform.position.x;
 	SpawnYorig = Player.transform.position.y;
@@ -38,10 +37,6 @@ void Awake()
 	SpawnX = SpawnXorig;
 	SpawnY = SpawnYorig;
 	SpawnZ = SpawnZorig;	
-	
-	
-	//ThisCameraAnimator.SetTrigger("DoUnfade");
-
 }
 
 
@@ -131,7 +126,6 @@ void Update()
 
 void FixedUpdate()
 {    
-
 MovePlayer();
 		
     if (Jumping)
@@ -141,13 +135,8 @@ MovePlayer();
 				rb.AddForce(0, jumpForce, 0);	
 				onTheGround = false;
 				Jumping = false;
-    }
-	
-	
-	
+    }	
 }
-
-
 
 
 
@@ -188,14 +177,8 @@ void MovePlayer()
 				gameObject.transform.Translate(-Camera.main.transform.forward / 2, Space.World);
 			}	
 		}
-		
 	}
-	
-	
 }
-
-
-	
  void OnCollisionEnter(Collision other)
      {
          if (other.gameObject.layer == 3)
@@ -206,19 +189,7 @@ void MovePlayer()
 			{
 				gameObject.GetComponent<SoundManager>().LAND();
 			}
-         }
-		 		 
-				 
-				 
-				 
-		 
-	//	 if (other.relativeVelocity.magnitude > 70)
-	//	 {
-	//		gameObject.GetComponent<Toast>().NewToast("shattered");
-	//		gameObject.GetComponent<ShieldScript>().RemoveShield();
-	//		gameObject.GetComponent<DIE>().DEATH();
-	//	 }
-		 
+         }	 
      }	
 	
  void OnCollisionStay(Collision other)
@@ -231,14 +202,7 @@ void MovePlayer()
 	
  void OnCollisionExit(Collision other)
      {
-
         onTheGround = false;
-		
-    }
-
-
-	
-	
-	
+     }
 }
 

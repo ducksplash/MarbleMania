@@ -21,7 +21,6 @@ public class SetLightColour : MonoBehaviour
         else
         {
             coltmp = PlayerStats.PlayerMiddleColor;
-            Debug.Log("pulled from pinfo");
         }
 
 

@@ -161,6 +161,7 @@ public class PlayerStats : MonoBehaviour
 			EnemyMoveSpeed = 28;
 			EnemyVisionDistance = 40;
 			EnemyRespawnTime = 5;
+
 		}	
 		
 		if (GameMode == 1)
@@ -168,7 +169,7 @@ public class PlayerStats : MonoBehaviour
 			Difficulty = 1;
 			EnemyMoveSpeed = 38;
 			EnemyVisionDistance = 50;
-			EnemyRespawnTime = 3;
+			EnemyRespawnTime = 4;
 		}
 		
 		if (GameMode == 2)
@@ -176,16 +177,17 @@ public class PlayerStats : MonoBehaviour
 			Difficulty = 2;
 			EnemyMoveSpeed = 48;
 			EnemyVisionDistance = 60;
-			EnemyRespawnTime = 1;
+			EnemyRespawnTime = 3;
 		}
-		
-		
+
+		PlayerPrefs.SetInt("GameDifficulty", GameMode);
+
 	}
-	
-	
-	
-	
-	
+
+
+
+
+
 	public void initialisePlayerMeshPrefabDictionary()
 	{
 		
@@ -444,13 +446,28 @@ public class PlayerStats : MonoBehaviour
 				foreach (KeyValuePair<string, float> Item in LevelDict[levelNumber])
 				{
 
-				Debug.Log("LVL: "+Item.Key);
-				Debug.Log("TIME: "+Item.Value);
-				
-				PlayerStats.PlayerTime = Item.Value;
-				Timer.timeRemaining = Item.Value;
+				var diff = PlayerPrefs.GetInt("GameDifficulty");
+
+				if (diff == 0)
+				{
+					PlayerStats.PlayerTime = Mathf.Round(Item.Value * 1.2f);
+					Timer.timeRemaining = Mathf.Round(Item.Value * 1.2f);
+			}
+				else if (diff == 1)
+				{
+					PlayerStats.PlayerTime = Item.Value;
+					Timer.timeRemaining = Item.Value;
+				}
+				else
+				{
+					PlayerStats.PlayerTime = Mathf.Round(Item.Value * 0.8f);
+				Timer.timeRemaining = Mathf.Round(Item.Value * 0.8f);
+			}
+
+
 				PlayerStats.LevelName = Item.Key;
-				
+
+
 				}
 				
 				

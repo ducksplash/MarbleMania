@@ -73,7 +73,6 @@ public class PauseMenu : MonoBehaviour
    {
 	   
 	   
-		Debug.Log("Pause Menu Start");
 		lastTapTime = 0;
 		
 		CustomiserButtonsDone = false;
@@ -110,10 +109,12 @@ public class PauseMenu : MonoBehaviour
 		SFXSlider.GetComponent<Slider>().value = SoundManager.SFXVolume;	
 		
 		
-		DoResume();	   
+		DoResume();
+
+
+		var diff = PlayerPrefs.GetInt("GameDifficulty");
 		
-		
-		if (PlayerStats.Difficulty == 0)
+		if (diff == 0)
 		{
 			
 		DiffEasyToggle = GameObject.Find("EasyToggle");
@@ -127,7 +128,7 @@ public class PauseMenu : MonoBehaviour
 			
 		}
 		
-		if (PlayerStats.Difficulty == 1)
+		if (diff == 1)
 		{
 			
 		DiffEasyToggle = GameObject.Find("EasyToggle");
@@ -141,7 +142,7 @@ public class PauseMenu : MonoBehaviour
 			
 		}
 		
-		if (PlayerStats.Difficulty == 2)
+		if (diff == 2)
 		{
 			
 		DiffEasyToggle = GameObject.Find("EasyToggle");
@@ -535,7 +536,6 @@ public class PauseMenu : MonoBehaviour
 		MarbleInnerBit.GetComponent<MeshFilter>().mesh = getSelectedMesh;
 		PlayerStats.PlayerMiddleBit = selectedMesh;
 		PlayerPrefs.SetString("PlayerMesh", selectedMesh);
-		Debug.Log(PlayerStats.PlayerMiddleBit);
 	}
 	
 	
@@ -573,7 +573,6 @@ public class PauseMenu : MonoBehaviour
 		PlayerStats.PlayerScore = 0;	
 		PlayerStats.PlayerDeaths = 0;	
 		PlayerStats.CurrentLevel = 0;	
-		//PlayerStats.Difficulty = 1;		
 		CheckPoint.ResetCheckpoint();
 		
 		PlayerStats.MainMenu = true;
@@ -630,7 +629,6 @@ public class PauseMenu : MonoBehaviour
 		
 		if (PlayerStats.Playing)
 		{
-		Debug.Log("Pause DoResume");
 			Cursor.lockState = CursorLockMode.Locked;
 			PlayerStats.GamePaused = false;
 			gameObject.GetComponent<SoundManager>().MenuBackward();
