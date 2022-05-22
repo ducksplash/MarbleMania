@@ -221,7 +221,7 @@ public class CollisionHandler : MonoBehaviour
 			}
 
 
-			if (gameObject.name.Contains("hamster"))
+			if (gameObject.name.ToLower().Contains("hamster"))
 			{
 
 				Player.GetComponent<SoundManager>().PICKUP();
@@ -233,7 +233,7 @@ public class CollisionHandler : MonoBehaviour
 
 
 
-			if (gameObject.name.Contains("duck"))
+			if (gameObject.name.ToLower().Contains("duck"))
 			{
 
 				Player.GetComponent<SoundManager>().PICKUP();
@@ -245,7 +245,7 @@ public class CollisionHandler : MonoBehaviour
 
 
 
-			if (gameObject.name.Contains("cat"))
+			if (gameObject.name.ToLower().Contains("cat"))
 			{
 
 				Player.GetComponent<SoundManager>().PICKUP();
