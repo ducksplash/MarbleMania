@@ -50,6 +50,10 @@ public class WeeBeastie : MonoBehaviour
 		if (Vector3.Distance(BeastTransform.position, PlayerTransform.position) < BeastVisionDistance)
         {	
 			
+			if (Vector3.Distance(BeastTransform.position, PlayerTransform.position) < BeastRunDistance)
+			{	
+				
+				
 				if (!DebounceAnimation)
 				{
 					DebounceAnimation = true;
@@ -76,6 +80,11 @@ public class WeeBeastie : MonoBehaviour
 
 				}
 
+				
+				
+				
+				
+			}
 			else
 			{
 				if (DebounceAnimation)
