@@ -28,7 +28,6 @@ public class PointyGear : MonoBehaviour
 
 	private void OnCollisionExit(Collision collision)
 	{
-		Debug.Log("exi");
 		collision.transform.parent = null;
 	}
 

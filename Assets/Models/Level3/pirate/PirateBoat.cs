@@ -147,7 +147,6 @@ void OnTriggerEnter(Collider other)
 
 			Player.GetComponent<SoundManager>().EXPLOSION();
 
-			Debug.Log("Fire!");			
 			
 		yield return new WaitForSeconds(2);
 		}

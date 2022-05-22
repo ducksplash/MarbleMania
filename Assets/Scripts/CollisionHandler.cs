@@ -135,8 +135,8 @@ public class CollisionHandler : MonoBehaviour
 
 			if (gameObject.name.Equals("GOAL") && !GoalTriggered)
 			{
-				
-			other.gameObject.GetComponent<SoundManager>().LEVELCOMPLETE();
+
+			Player.GetComponent<SoundManager>().LEVELCOMPLETE();
 
 			GoalTriggered = true;
 			
@@ -156,15 +156,15 @@ public class CollisionHandler : MonoBehaviour
 			
 			if (gameObject.name.Contains("CollectableShield"))
 			{
-				
-				other.gameObject.GetComponent<SoundManager>().PICKUP();
+
+				Player.GetComponent<SoundManager>().PICKUP();
 				if (!PlayerStats.shielded)
 				{
-					other.GetComponent<ShieldScript>().AddShield();
+					Player.GetComponent<ShieldScript>().AddShield();
 				}
-				
-				
-				other.GetComponent<Score>().Add(15,"CollectableShield");
+
+
+				Player.GetComponent<Score>().Add(15,"CollectableShield");
 				
 				Destroy(gameObject);
 			}
@@ -173,10 +173,10 @@ public class CollisionHandler : MonoBehaviour
 			if (gameObject.name.Contains("CollectableTime"))
 			{
 
-				other.gameObject.GetComponent<SoundManager>().PICKUP();
+				Player.GetComponent<SoundManager>().PICKUP();
 				Timer.timeRemaining += (float)ExtraTime;
 
-				other.GetComponent<Score>().Add(ExtraTime, "Add Seconds");
+				Player.GetComponent<Score>().Add(ExtraTime, "Add Seconds");
 				Destroy(gameObject);
 			}
 
@@ -185,7 +185,7 @@ public class CollisionHandler : MonoBehaviour
 			if (gameObject.name.Contains("Water Specular"))
 			{
 
-				other.gameObject.GetComponent<SoundManager>().SPLASH();
+				Player.GetComponent<SoundManager>().SPLASH();
 
 			}
 
@@ -195,9 +195,9 @@ public class CollisionHandler : MonoBehaviour
 			if (gameObject.name.Contains("sign-"))
 			{
 
-				other.gameObject.GetComponent<SoundManager>().OTHER();
+				Player.GetComponent<SoundManager>().OTHER();
 
-				other.GetComponent<Score>().Add(15, "silent");
+				Player.GetComponent<Score>().Add(15, "silent");
 
 
 				var signText = gameObject.transform.GetChild(0).GetChild(0).GetChild(0).gameObject;
@@ -205,7 +205,7 @@ public class CollisionHandler : MonoBehaviour
 
 
 
-				other.gameObject.GetComponent<Toast>().NewToast(mytext);
+				Player.GetComponent<Toast>().NewToast(mytext);
 
 
 				Destroy(gameObject);
@@ -213,10 +213,10 @@ public class CollisionHandler : MonoBehaviour
 			if (gameObject.name.Contains("Collectable2x"))
 			{
 
-				other.gameObject.GetComponent<SoundManager>().PICKUP();
+				Player.GetComponent<SoundManager>().PICKUP();
 				PlayerStats.ScoreMultiplier = 2;
 
-				other.GetComponent<Score>().Add(15, "2x Score");
+				Player.GetComponent<Score>().Add(15, "2x Score");
 				Destroy(gameObject);
 			}
 
@@ -224,9 +224,9 @@ public class CollisionHandler : MonoBehaviour
 			if (gameObject.name.Contains("hamster"))
 			{
 
-				other.gameObject.GetComponent<SoundManager>().PICKUP();
+				Player.GetComponent<SoundManager>().PICKUP();
 
-				other.GetComponent<Score>().Add(2000, "FoundHamster");
+				Player.GetComponent<Score>().Add(2000, "FoundHamster");
 				Destroy(gameObject);
 			}
 
@@ -236,44 +236,23 @@ public class CollisionHandler : MonoBehaviour
 			if (gameObject.name.Contains("duck"))
 			{
 
-				other.gameObject.GetComponent<SoundManager>().PICKUP();
+				Player.GetComponent<SoundManager>().PICKUP();
 
-				other.GetComponent<Score>().Add(3000, "FoundDuck");
+				Player.GetComponent<Score>().Add(3000, "FoundDuck");
 				Destroy(gameObject);
 			}
 
 
 
 
-			if (gameObject.name.Contains("Collectable-Cat"))
+			if (gameObject.name.Contains("cat"))
 			{
 
-				other.gameObject.GetComponent<SoundManager>().PICKUP();
+				Player.GetComponent<SoundManager>().PICKUP();
 
-				other.GetComponent<Score>().Add(1000, "FoundGod");
+				Player.GetComponent<Score>().Add(1000, "FoundGod");
 				Destroy(gameObject);
 			}
-
-
-			// end collectables
-
-
-
-
-
-			if (gameObject.name.Contains("wooosh"))
-			{				
-				other.gameObject.GetComponent<Toast>().NewToast("see you next week");
-			}			
-			
-			
-			if (gameObject.name.Contains("exitlobby"))
-			{
-				
-				
-				other.gameObject.GetComponent<Toast>().NewToast("good luck out there :)");
-			}	
-			
 
 		}
 		

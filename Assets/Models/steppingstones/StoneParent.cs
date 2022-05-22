@@ -38,7 +38,6 @@ public class StoneParent: MonoBehaviour
 		// correct odd 90degree issue
 		InstantiatedStone.transform.Rotate(-90, 0, 0);
 
-		Debug.Log("replen");
 
 	}
 }

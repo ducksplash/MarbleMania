@@ -42,7 +42,6 @@ void OnTriggerEnter(Collider other)
 
 			if (other.gameObject.name.Contains("PLAYER"))
 			{
-				Debug.Log("grab player");
 				PlayerStats.STOP = true;
 				PlayerRB.velocity = Vector3.zero;
 				PlayerRB.isKinematic = true;
@@ -82,7 +81,6 @@ void OnTriggerEnter(Collider other)
 	Rains.Stop();				
 	InBoat = false;
 	RainSound.Stop();
-	Debug.Log("all this happened");
 	}
 
 

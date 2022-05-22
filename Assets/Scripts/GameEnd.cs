@@ -52,15 +52,9 @@ public class GameEnd : MonoBehaviour
 	{
 
 		gameObject.GetComponent<SoundManager>().MenuBackward();
-		SceneManager.LoadScene("mainmenu");
 
-	}
+		gameObject.GetComponent<LevelLoader>().LoadLevel("mainmenu");
 
-	public void ToCredits()
-	{
-
-		gameObject.GetComponent<SoundManager>().MenuBackward();
-		SceneManager.LoadScene("credits");
 
 	}
 

@@ -354,7 +354,9 @@ public class LevelManager : MonoBehaviour
 	{
 		var nextLevel = PlayerStats.CurrentLevel+1;
 		PlayerStats.Playing = false;
-		SceneManager.LoadScene(nextLevel);
+
+		gameObject.GetComponent<LevelLoader>().LoadLevel(nextLevel.ToString());
+
 		
 	}
 
@@ -400,13 +402,16 @@ public class LevelManager : MonoBehaviour
 		PlayerRb.velocity = Vector3.zero;
         PlayerRb.angularVelocity = Vector3.zero;
 		gameObject.transform.position = new Vector3(Movement.SpawnX,Movement.SpawnY,Movement.SpawnZ);
-		SceneManager.LoadScene(PlayerStats.CurrentLevel);
-		
-		
-		
+
+
+		gameObject.GetComponent<LevelLoader>().LoadLevel(PlayerStats.CurrentLevel.ToString());
+
+
+
+
 	}
-	
-	
+
+
 	public void StartLevel(int levelNumber)
 	{
         Cursor.lockState = CursorLockMode.Locked;
@@ -452,7 +457,9 @@ public class LevelManager : MonoBehaviour
 		PlayerStats.PlayerDeaths = 0;	
 		PlayerStats.CurrentLevel = 0;		
 		CheckPoint.ResetCheckpoint();
-		SceneManager.LoadScene(PlayerStats.CurrentLevel);
+
+		gameObject.GetComponent<LevelLoader>().LoadLevel(PlayerStats.CurrentLevel.ToString());
+
 
 	}
 }

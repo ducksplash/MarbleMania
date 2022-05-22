@@ -74,7 +74,7 @@ public class SoundManager : MonoBehaviour
 		SFXVolume = 0.6f;
 		SFXAudioSource.volume = SFXVolume;
 		
-		BGMVolume = 0.1f;
+		BGMVolume = 0.3f;
 		BGMAudioSource.volume = BGMVolume;		
 		
 				

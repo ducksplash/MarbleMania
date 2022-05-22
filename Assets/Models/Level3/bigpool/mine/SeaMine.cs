@@ -37,7 +37,6 @@ public class SeaMine : MonoBehaviour
 	{
 		if (other.transform.name.Contains("playervessel") && MineExists)
 		{
-		Debug.Log("player hit");
 		StartCoroutine(SplosionProcedure());
 		
 		
@@ -56,7 +55,6 @@ public class SeaMine : MonoBehaviour
 		
 		if (other.transform.name.Contains("enemyvessel") && MineExists)
 		{
-		Debug.Log("enemy hit");
 		StartCoroutine(EnemySplosionProcedure(other));
 		Destroy(TheMine);
 		
@@ -85,7 +83,6 @@ public class SeaMine : MonoBehaviour
 
 		Player.GetComponent<SoundManager>().EXPLOSION();
 
-		Debug.Log("forceplayer");
 			Vector3 direction = Player.transform.position - transform.position;
 			Player.GetComponent<Rigidbody>().AddForce(direction.normalized * 100,ForceMode.Impulse);	
 			Player.GetComponent<DIE>().DEATH();
@@ -103,7 +100,6 @@ public class SeaMine : MonoBehaviour
         InstantiatedExplosion = Instantiate(ExplosionPrefab, gameObject.transform.position, Quaternion.identity);
 
 
-			Debug.Log("destroy enemy");
 			
 			theOther.transform.parent.parent.GetComponent<PirateBoat>().DestroyBoat();
 			

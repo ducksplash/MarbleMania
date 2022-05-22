@@ -137,7 +137,6 @@ public class WeeShark : MonoBehaviour
 			{
 				if (other.transform.name.Contains("PLAYER"))
 				{
-					Debug.Log("shork is collectable");
 
 					other.gameObject.GetComponent<SoundManager>().PICKUP();
 
@@ -255,7 +254,6 @@ public class WeeShark : MonoBehaviour
 		{
 			SharkEating = true;	
 			SharkAni.SetTrigger("eat");
-			Debug.Log("eaty");
 			PlayerRB.velocity = Vector3.zero;
 			PlayerRB.angularVelocity = Vector3.zero;
 			PlayerRB.constraints = RigidbodyConstraints.FreezeAll;

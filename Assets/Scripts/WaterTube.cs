@@ -35,7 +35,6 @@ public class WaterTube : MonoBehaviour
 		
 		PlayerRB.velocity = Vector3.zero;
 		PlayerRB = Player.GetComponent<Rigidbody>();
-		Debug.Log("wooosh");
 
 
 

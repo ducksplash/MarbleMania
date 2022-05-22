@@ -44,8 +44,6 @@ public class GameStart : MonoBehaviour
 	{
 
 
-
-
 		if (PlayerPrefs.GetString("HighScore") == "")
 		{
 			HighScoreText.text = "0";
@@ -85,10 +83,10 @@ public class GameStart : MonoBehaviour
 		{
 
 			DiffEasyToggle = GameObject.Find("EasyToggle");
-			DiffEasyToggle.GetComponent<Toggle>().isOn = true;
+			DiffEasyToggle.GetComponent<Toggle>().isOn = false;
 
 			DiffNormalToggle = GameObject.Find("NormalToggle");
-			DiffNormalToggle.GetComponent<Toggle>().isOn = false;
+			DiffNormalToggle.GetComponent<Toggle>().isOn = true;
 
 			DiffHardToggle = GameObject.Find("HardToggle");
 			DiffHardToggle.GetComponent<Toggle>().isOn = false;
@@ -99,10 +97,10 @@ public class GameStart : MonoBehaviour
 		{
 
 			DiffEasyToggle = GameObject.Find("EasyToggle");
-			DiffEasyToggle.GetComponent<Toggle>().isOn = false;
+			DiffEasyToggle.GetComponent<Toggle>().isOn = true;
 
 			DiffNormalToggle = GameObject.Find("NormalToggle");
-			DiffNormalToggle.GetComponent<Toggle>().isOn = true;
+			DiffNormalToggle.GetComponent<Toggle>().isOn = false;
 
 			DiffHardToggle = GameObject.Find("HardToggle");
 			DiffHardToggle.GetComponent<Toggle>().isOn = false;
@@ -182,7 +180,8 @@ public class GameStart : MonoBehaviour
 		PlayerStats.PlayerScore = 0;
 		PlayerStats.PlayerDeaths = 0;
 		PlayerStats.CurrentLevel = 0;
-		SceneManager.LoadScene("1");
+
+		gameObject.GetComponent<LevelLoader>().LoadLevel("1");
 
 	}
 
@@ -196,7 +195,7 @@ public class GameStart : MonoBehaviour
 		PlayerStats.PlayerScore = 0;
 		PlayerStats.PlayerDeaths = 0;
 		PlayerStats.CurrentLevel = 0;
-		SceneManager.LoadScene("2");
+		gameObject.GetComponent<LevelLoader>().LoadLevel("2");
 
 	}
 
@@ -210,7 +209,7 @@ public class GameStart : MonoBehaviour
 		PlayerStats.PlayerScore = 0;
 		PlayerStats.PlayerDeaths = 0;
 		PlayerStats.CurrentLevel = 0;
-		SceneManager.LoadScene("3");
+		gameObject.GetComponent<LevelLoader>().LoadLevel("3");
 
 	}
 
@@ -347,21 +346,21 @@ public class GameStart : MonoBehaviour
 	{
 		gameObject.GetComponent<SoundManager>().MenuForward();
 
-		PlayerStats.DoGameMode(0);
-		DifficultySupplemental.text = "Life on easy mode. Enemies are effectively blind, docile and respawn slowly.";
+		PlayerStats.DoGameMode(1);
+		DifficultySupplemental.text = "Life on easy mode. Enemies are docile and respawn slowly, and you get more time.";
 	}
 	
 	public void DoStandardMode()
 	{
 		gameObject.GetComponent<SoundManager>().MenuForward();
 		DifficultySupplemental.text = "The standard play mode.";
-		PlayerStats.DoGameMode(1);
+		PlayerStats.DoGameMode(0);
 	}	
 	
 	public void DoHardMode()
 	{
 		gameObject.GetComponent<SoundManager>().MenuForward();
-		DifficultySupplemental.text = "Enemies will hunt you relentlessly and respawn fast.";
+		DifficultySupplemental.text = "Enemies will hunt you relentlessly and respawn fast with less time on the clock.";
 		PlayerStats.DoGameMode(2);
 
 	}	
@@ -419,7 +418,6 @@ public class GameStart : MonoBehaviour
 				thisChangeMeshButton.GetComponentInChildren<RawImage>().texture = entry.Value;
 				
 				thisChangeMeshButton.GetComponent<Button>().onClick.AddListener(delegate {DoSwapMesh(entry.Key);});
-				Debug.Log(entry.Key);
 				itty += 1;
 				CustomiserButtonsDone = true;
 			}
@@ -442,7 +440,6 @@ public class GameStart : MonoBehaviour
 		MarbleInnerBit.GetComponent<MeshFilter>().mesh = getSelectedMesh;
 		PlayerStats.PlayerMiddleBit = selectedMesh;
 		PlayerPrefs.SetString("PlayerMesh", selectedMesh);
-		Debug.Log(PlayerStats.PlayerMiddleBit);
 	}
 	
 }

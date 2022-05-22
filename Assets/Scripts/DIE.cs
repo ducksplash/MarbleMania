@@ -128,10 +128,22 @@ public class DIE : MonoBehaviour
 			SphereBit.GetComponent<MeshRenderer>().material = PlayerNoDamage;
 
 		}
-		
-		
-			SphereBit.GetComponent<MeshRenderer>().material = PlayerNoDamage;
-			LightBit.GetComponent<Light>().color = PlayerStats.PlayerColor;
+
+
+
+
+		var coltmp = new Color(0, 0, 0);
+		if (PlayerPrefs.GetString("CoreColor") != "")
+		{
+			ColorUtility.TryParseHtmlString("#" + PlayerPrefs.GetString("CoreColor"), out coltmp);
+		}
+		else
+		{
+			coltmp = PlayerStats.PlayerMiddleColor;
+		}
+
+		SphereBit.GetComponent<MeshRenderer>().material = PlayerNoDamage;
+			LightBit.GetComponent<Light>().color = coltmp;
 	}
 	
 	
@@ -160,6 +172,8 @@ public class DIE : MonoBehaviour
 		
 	IEnumerator DestroyEnemy(Vector3 enemyRespawnLanding, Transform thePlayer,GameObject deadEnemy, GameObject debris)
 	{
+
+
 
 
 		yield return new WaitForSeconds(PlayerStats.EnemyRespawnTime);		

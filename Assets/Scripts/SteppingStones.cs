@@ -39,7 +39,6 @@ public class SteppingStones : MonoBehaviour
 	{
 		if (!onStone && collision.gameObject.name.Contains("PLAYER"))
 		{
-			Debug.Log("onstone " + steppingStone.name);
 
 			if (isCursed)
             {
@@ -61,7 +60,6 @@ public class SteppingStones : MonoBehaviour
 				float emissiveIntensity = 0.8f;
 				Color emissiveColor = new Color32(0, 60, 0, 255);
 
-				Debug.Log("found good");
 				steppingStoneMats.SetColor("_EmissionColor", emissiveColor * emissiveIntensity);
 				steppingStoneMats.SetColor("_Color", emissiveColor);
 				steppingStoneMats.EnableKeyword("_EMISSION");
@@ -76,7 +74,6 @@ public class SteppingStones : MonoBehaviour
 				Color emissiveColor = new Color32(255, 0, 0, 255);
 
 
-				Debug.Log("found bad");
 				steppingStoneMats.SetColor("_EmissionColor", emissiveColor * emissiveIntensity);
 				steppingStoneMats.SetColor("_Color", emissiveColor);
 				steppingStoneMats.EnableKeyword("_EMISSION");

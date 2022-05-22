@@ -43,8 +43,6 @@ public class BoatCollision : MonoBehaviour
 
 
 
-			Debug.Log("cannonball");
-			Debug.Log(DamageLevel);
 
 			if (DamageLevel > 2)
 			{
@@ -59,7 +57,6 @@ public class BoatCollision : MonoBehaviour
 		if (other.gameObject.name.ToLower().Contains("portal"))
 		{
 
-			Debug.Log("wer we go'n lads?");
 		}
 	}
 

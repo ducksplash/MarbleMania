@@ -69,9 +69,7 @@ public class WaterWorks : MonoBehaviour
 			
 			PlayerStats.InWater = true;
 			other.GetComponent<Rigidbody>();
-		
-			Debug.Log("enter the water");
-		
+				
 		}
 	}
  
@@ -81,7 +79,6 @@ public class WaterWorks : MonoBehaviour
 		if (other.transform.name.Contains("PLAYER"))
 		{
 			PlayerStats.InWater = false;
-			Debug.Log("leave the water");
 		}
 		
 	}

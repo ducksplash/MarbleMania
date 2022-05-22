@@ -29,13 +29,11 @@ public class MeltingIce : MonoBehaviour
 	{
 		if (!onIce && collision.gameObject.name.Equals("PLAYER"))
 		{
-			Debug.Log("on ice " + IceCube.name);
 
 				float emissiveIntensity = 0.8f;
 				Color emissiveColor = new Color32(0,0,50,255);
 
 
-				Debug.Log("found bad");
 				icecubeMaterials.SetColor("_EmissionColor", emissiveColor * emissiveIntensity);
 				icecubeMaterials.SetColor("_Color", emissiveColor);
 				icecubeMaterials.EnableKeyword("_EMISSION");
@@ -51,7 +49,6 @@ public class MeltingIce : MonoBehaviour
 			Color emissiveColor = new Color32(0, 0, 50, 255);
 
 
-			Debug.Log("found bad");
 			icecubeMaterials.SetColor("_EmissionColor", emissiveColor * emissiveIntensity);
 			icecubeMaterials.SetColor("_Color", emissiveColor);
 			icecubeMaterials.EnableKeyword("_EMISSION");

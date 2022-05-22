@@ -16,7 +16,6 @@ public class SetLightColour : MonoBehaviour
         if (PlayerPrefs.GetString("CoreColor") != "")
         {
             ColorUtility.TryParseHtmlString("#" + PlayerPrefs.GetString("CoreColor"), out coltmp);
-            Debug.Log("stored in prefs");
         }
         else
         {

@@ -41,7 +41,6 @@ public class PortalHandlerEnter : MonoBehaviour
 			DirLight.enabled = false;
 			StartCoroutine(TravelTimeout());
 
-			Debug.Log("got boat");
 
 		}
 

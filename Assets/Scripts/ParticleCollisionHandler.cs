@@ -35,7 +35,6 @@ public class ParticleCollisionHandler : MonoBehaviour
 
 
 					int rand = Random.Range(0, phrases.Length);
-					Debug.Log("shieldless");
 
 					DidTheDeath = true;
 					other.gameObject.GetComponent<Toast>().NewToast(phrases[rand]);

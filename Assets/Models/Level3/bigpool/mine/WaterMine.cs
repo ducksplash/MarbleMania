@@ -44,7 +44,6 @@ public class WaterMine : MonoBehaviour
 		
 		if (other.transform.name.Contains("Shark"))
 		{
-		Debug.Log("mine");
 		
 		StartCoroutine(SplosionProcedure());
 		Shark.GetComponent<WeeShark>().SetDead();
@@ -68,7 +67,6 @@ public class WaterMine : MonoBehaviour
 
 		if (playerInRange)
 		{
-			Debug.Log("forceplayer");
 			Vector3 direction = Player.transform.position - transform.position;
 			Player.GetComponent<Rigidbody>().AddForce(direction.normalized * 100,ForceMode.Impulse);	
 			Player.GetComponent<DIE>().DEATH();
@@ -77,7 +75,6 @@ public class WaterMine : MonoBehaviour
 
 		if (sharkInRange)
 		{
-			Debug.Log("forceshark");
 			Vector3 direction = Shark.transform.position - transform.position;
 			Shark.GetComponent<Rigidbody>().AddForce(direction.normalized * 100,ForceMode.Impulse);
 			

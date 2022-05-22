@@ -38,7 +38,6 @@ public class IceParent : MonoBehaviour
 		// correct odd 90degree issue
 		InstantiatedIce.transform.Rotate(-90, 0, 0);
 
-		Debug.Log("replen");
 
 	}
 }

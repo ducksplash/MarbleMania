@@ -24,12 +24,10 @@ public class MMSetCoreColour : MonoBehaviour
         if (PlayerPrefs.GetString("CoreColor") != "")
         {
             ColorUtility.TryParseHtmlString("#" + PlayerPrefs.GetString("CoreColor"), out coltmp);
-            Debug.Log("stored in prefs");
         }
         else
         {
             coltmp = PlayerStats.PlayerMiddleColor;
-            Debug.Log("pulled from pinfo");
         }
 
 

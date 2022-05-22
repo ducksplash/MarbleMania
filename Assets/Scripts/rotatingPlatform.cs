@@ -34,7 +34,6 @@ public class RotatingPlatform : MonoBehaviour
 	{
 		if (collision.gameObject.name.Contains("PLAYER"))
 		{
-			Debug.Log("exi");
 			collision.transform.parent = null;
 		}
 	}

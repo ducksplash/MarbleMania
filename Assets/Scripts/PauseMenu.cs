@@ -513,7 +513,6 @@ public class PauseMenu : MonoBehaviour
 				thisChangeMeshButton.GetComponentInChildren<RawImage>().texture = entry.Value;
 				
 				thisChangeMeshButton.GetComponent<Button>().onClick.AddListener(delegate {DoSwapMesh(entry.Key);});
-				Debug.Log(entry.Key);
 				itty += 1;
 				CustomiserButtonsDone = true;
 			}
@@ -578,7 +577,10 @@ public class PauseMenu : MonoBehaviour
 		PlayerStats.MainMenu = true;
 		PlayerStats.GamePaused = false;
 		//Time.timeScale = 0;
-		SceneManager.LoadScene("mainmenu");
+
+		gameObject.GetComponent<LevelLoader>().LoadLevel("mainmenu");
+
+
 		PlayerStats.PlayerMiddleBit = "default";	
 		
 

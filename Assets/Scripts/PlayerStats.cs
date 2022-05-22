@@ -88,6 +88,17 @@ public class PlayerStats : MonoBehaviour
 	
 	void Awake()
 	{
+
+		// default game mode
+		if (PlayerPrefs.GetInt("GameMode") < 1)
+		{
+			GameMode = 0;
+			Difficulty = 1;
+			EnemyMoveSpeed = 38;
+			EnemyVisionDistance = 50;
+			EnemyRespawnTime = 5;
+		}
+
 		LevelDict = new Dictionary<int, Dictionary<string,float>>();	
 		PlayerPrefabMeshDict = new Dictionary<string,Texture>();			
 		initialiseLevelDictionary();	
@@ -108,7 +119,7 @@ public class PlayerStats : MonoBehaviour
 
 		if (String.IsNullOrEmpty(PlayerMiddleBit))
 		{
-		PlayerMiddleBit = "default";
+			PlayerMiddleBit = "default";
 		}
 		
 		
@@ -155,29 +166,27 @@ public class PlayerStats : MonoBehaviour
 	public static void DoGameMode(int GameMode)
 	{
 		
-		if (GameMode == 0)
+		if (GameMode == 1)
 		{
 			Difficulty = 0;
 			EnemyMoveSpeed = 28;
 			EnemyVisionDistance = 40;
-			EnemyRespawnTime = 5;
+			EnemyRespawnTime = 6;
 
 		}	
-		
-		if (GameMode == 1)
-		{
-			Difficulty = 1;
-			EnemyMoveSpeed = 38;
-			EnemyVisionDistance = 50;
-			EnemyRespawnTime = 4;
-		}
-		
-		if (GameMode == 2)
+		else if (GameMode == 2)
 		{
 			Difficulty = 2;
 			EnemyMoveSpeed = 48;
 			EnemyVisionDistance = 60;
-			EnemyRespawnTime = 3;
+			EnemyRespawnTime = 4;
+		}
+		else
+        {
+			Difficulty = 1;
+			EnemyMoveSpeed = 38;
+			EnemyVisionDistance = 50;
+			EnemyRespawnTime = 5;
 		}
 
 		PlayerPrefs.SetInt("GameDifficulty", GameMode);
