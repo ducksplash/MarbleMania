@@ -5,20 +5,10 @@ using UnityEngine;
 public class PointyGear : MonoBehaviour
 {
 	
-
-
-	
-	
-	
 	void FixedUpdate()
 	{
-	
-			gameObject.transform.Rotate(new Vector3 (0, 0, 8) * (Time.fixedDeltaTime * 8));
-
-
-		
+		gameObject.transform.Rotate(new Vector3 (0, 0, 8) * (Time.fixedDeltaTime * 8));
 	}
-
 
 
 	private void OnCollisionEnter(Collision collision)
@@ -30,8 +20,6 @@ public class PointyGear : MonoBehaviour
 	{
 		collision.transform.parent = null;
 	}
-
-
 
 
 }
