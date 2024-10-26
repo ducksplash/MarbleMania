@@ -18,7 +18,7 @@ MonoBehaviour:
     m_Value: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.03
+    m_Value: 0.25
   scatter:
     m_OverrideState: 0
     m_Value: 0.7
@@ -37,6 +37,7 @@ MonoBehaviour:
   dirtTexture:
     m_OverrideState: 0
     m_Value: {fileID: 2800000, guid: b09866a8b40dd2c41b114e45ffce1dc2, type: 3}
+    dimension: 1
   dirtIntensity:
     m_OverrideState: 0
     m_Value: 0
@@ -118,7 +119,7 @@ MonoBehaviour:
   active: 1
   postExposure:
     m_OverrideState: 1
-    m_Value: 1.57
+    m_Value: 2
   contrast:
     m_OverrideState: 1
     m_Value: 35
@@ -180,7 +181,7 @@ MonoBehaviour:
   active: 1
   lift:
     m_OverrideState: 0
-    m_Value: {x: 1, y: 0.69702554, z: 0.015691042, w: -0.074947156}
+    m_Value: {x: 0.9600141, y: 1, z: 0.9723423, w: 0.009798612}
   gamma:
     m_OverrideState: 1
     m_Value: {x: 0.96832025, y: 0.99258906, z: 1, w: 0.59999996}

@@ -18,10 +18,10 @@ MonoBehaviour:
     m_Value: {x: 0, y: 0.24249649, z: 1, w: -1}
   midtones:
     m_OverrideState: 1
-    m_Value: {x: 0.13487315, y: 0.8453004, z: 1, w: -0.6573755}
+    m_Value: {x: 0.13487315, y: 0.8453004, z: 1, w: -0.48788399}
   highlights:
     m_OverrideState: 0
-    m_Value: {x: 0, y: 0.6689539, z: 1, w: 1}
+    m_Value: {x: 0.922482, y: 1, z: 0, w: 1}
   shadowsStart:
     m_OverrideState: 0
     m_Value: 0
@@ -83,7 +83,7 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.071
+    m_Value: 0.151
   smoothness:
     m_OverrideState: 1
     m_Value: 0.844
@@ -108,7 +108,7 @@ MonoBehaviour:
     m_Value: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 2.05
+    m_Value: 1
   scatter:
     m_OverrideState: 0
     m_Value: 0.7
@@ -127,6 +127,7 @@ MonoBehaviour:
   dirtTexture:
     m_OverrideState: 0
     m_Value: {fileID: -2726291805237375986, guid: 97340a79c1032df4ea3570b3ffdbdf1c, type: 2}
+    dimension: 1
   dirtIntensity:
     m_OverrideState: 0
     m_Value: 0

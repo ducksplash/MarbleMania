@@ -18,7 +18,6 @@ public class PirateBoat : MonoBehaviour
 	public GameObject BoatPrefab;
 	public GameObject CurrentBoat;
 	public bool PlayerSpotted = false;
-	private Light CrookLight;
 	public Material CrookLightMaterial;
 	public Color CrookLightSpottedColor;
 	public GameObject CannonBallPrefab;
@@ -40,7 +39,6 @@ public class PirateBoat : MonoBehaviour
     {
 		
 		CurrentBoat = TheBoat;
-		CrookLight = CurrentBoat.GetComponentInChildren<Light>();
 		BoatStartPos = transform.position;
 		BoatIntact = true;
 		CrookLightMaterial.SetColor("_EmissionColor", CrookLightStartColor);
@@ -87,22 +85,18 @@ void OnTriggerEnter(Collider other)
 
 			TheBoat.transform.rotation = rotation;
 
-	
-	
-
+			
 					
 			if (Vector3.Distance(TheBoat.transform.position, Player.transform.position) < PirateVisionDistance && !PlayerSpotted)
 			{
 				CrookLightMaterial.SetColor("_EmissionColor", CrookLightSpottedColor);
 				Player.transform.GetComponent<SoundManager>().ENEMYSPOTTED();
-				CrookLight.GetComponent<Light>().color = CrookLightSpottedColor;
 				PlayerSpotted = true;
 			}
 			
 			if (Vector3.Distance(TheBoat.transform.position, Player.transform.position) > PirateVisionDistance && PlayerSpotted)
 			{
 				CrookLightMaterial.SetColor("_EmissionColor", CrookLightStartColor);
-				CrookLight.GetComponent<Light>().color = CrookLightStartColor;
 				PlayerSpotted = false;
 			}
 			
@@ -171,7 +165,7 @@ void OnTriggerEnter(Collider other)
 			{
 				Vector3 direction = Player.transform.position - TheBoat.transform.position;
 			
-				var moveForce = direction * 2.5f;
+				var moveForce = direction * 1.5f;
 				BoatRB.AddForce(moveForce);
 			}	
 		}		
@@ -197,7 +191,6 @@ void OnTriggerEnter(Collider other)
 		CurrentBoat.transform.parent = transform;
 		BoatIntact = true;
 		TheBoat = CurrentBoat;
-		CrookLight = CurrentBoat.GetComponentInChildren<Light>();
 		BoatRB = TheBoat.GetComponent<Rigidbody>();
 		CannonDirection = TheBoat.transform.Find("CannonballDir");
 		CannonBallTarget = TheBoat.transform.Find("CannonballTarget");

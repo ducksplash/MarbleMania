@@ -57,7 +57,7 @@ public class MeltingIce : MonoBehaviour
 
 	IEnumerator DropIce(GameObject thePlayer)
 	{
-		yield return new WaitForSeconds(1.5f);
+		yield return new WaitForSeconds(2.5f);
 
 		// animate melt here
 		IceCube.GetComponent<BoxCollider>().isTrigger = true;
